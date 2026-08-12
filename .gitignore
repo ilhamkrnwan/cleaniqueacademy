@@ -1,0 +1,49 @@
+# WordPress core
+wp-admin/
+wp-includes/
+index.php
+license.txt
+readme.html
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-config.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+# Environment & Config
+db-config.md
+.htaccess
+.env
+.env.*
+
+# Default WP themes & plugins
+wp-content/themes/twentytwentyfive/
+wp-content/themes/twentytwentyfour/
+wp-content/themes/twentytwentythree/
+wp-content/plugins/akismet/
+wp-content/plugins/hello.php
+
+# Uploads & User Content
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/cache/
+wp-content/languages/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
