@@ -24,7 +24,7 @@ get_header();
                         <span class="card-badge"><?php echo $durasi ? esc_html( $durasi ) : 'Program Pelatihan'; ?></span>
                         <h3 class="card-title"><?php the_title(); ?></h3>
                         <?php if ( $target ) : ?>
-                            <p style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; margin-bottom: 0.5rem;">👥 Target: <?php echo esc_html( $target ); ?></p>
+                            <p style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; margin-bottom: 0.5rem;">Target: <?php echo esc_html( $target ); ?></p>
                         <?php endif; ?>
                         <div class="card-text"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ); ?></div>
                         <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">

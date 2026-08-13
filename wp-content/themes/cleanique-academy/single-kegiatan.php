@@ -13,9 +13,9 @@ while ( have_posts() ) : the_post();
         <span class="section-subtitle">Dokumentasi Kegiatan</span>
         <h1 class="hero-title" style="margin-bottom: 1rem;"><?php the_title(); ?></h1>
         <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; color: var(--color-text-muted); font-weight: 600;">
-            <?php if ( $tanggal ) : ?><span>📅 <?php echo esc_html( $tanggal ); ?></span><?php endif; ?>
-            <?php if ( $lokasi ) : ?><span>📍 <?php echo esc_html( $lokasi ); ?></span><?php endif; ?>
-            <?php if ( $peserta ) : ?><span>👥 <?php echo esc_html( $peserta ); ?></span><?php endif; ?>
+            <?php if ( $tanggal ) : ?><span>Tanggal: <?php echo esc_html( $tanggal ); ?></span><?php endif; ?>
+            <?php if ( $lokasi ) : ?><span>Lokasi: <?php echo esc_html( $lokasi ); ?></span><?php endif; ?>
+            <?php if ( $peserta ) : ?><span>Peserta: <?php echo esc_html( $peserta ); ?></span><?php endif; ?>
         </div>
     </div>
 </div>

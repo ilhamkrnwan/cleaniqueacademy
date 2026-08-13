@@ -27,7 +27,7 @@ get_header();
                         <?php endif; ?>
                         <span class="card-badge"><?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?></span>
                         <h3 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <p style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; margin-bottom: 0.5rem;">📍 <?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></p>
+                        <p style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; margin-bottom: 0.5rem;"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></p>
                         <div class="card-text"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></div>
                         <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="align-self: flex-start; padding: 0.4rem 0.9rem; font-size: 0.85rem;">Detail Kegiatan</a>
                     </div>

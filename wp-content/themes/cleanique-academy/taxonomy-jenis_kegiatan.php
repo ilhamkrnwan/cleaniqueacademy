@@ -1,0 +1,89 @@
+<?php
+/**
+ * Taxonomy Archive Template - Jenis Kegiatan
+ * Displays kegiatan posts filtered by taxonomy term (jenis_kegiatan).
+ */
+get_header();
+
+$term = get_queried_object();
+
+cleanique_render_page_hero( array(
+    'title'    => single_term_title( '', false ),
+    'badge'    => 'Jenis Kegiatan',
+    'subtitle' => term_description() ? wp_strip_all_tags( term_description() ) : sprintf( 'Seluruh kegiatan Cleanique Academy dalam kategori %s.', single_term_title( '', false ) ),
+    'theme'    => 'light',
+) );
+?>
+
+<section class="section">
+    <div class="container">
+
+        <!-- Taxonomy Term Navigation -->
+        <?php
+        $all_terms = get_terms( array(
+            'taxonomy'   => 'jenis_kegiatan',
+            'hide_empty' => true,
+        ) );
+
+        if ( ! is_wp_error( $all_terms ) && ! empty( $all_terms ) ) : ?>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; justify-content: center;">
+                <a href="<?php echo esc_url( get_post_type_archive_link( 'kegiatan' ) ); ?>"
+                   class="btn btn-outline"
+                   style="padding: 0.4rem 1rem; font-size: 0.85rem; <?php echo ! is_tax() ? 'background: var(--color-primary); color: #fff; border-color: var(--color-primary);' : ''; ?>">
+                    Semua
+                </a>
+                <?php foreach ( $all_terms as $t ) : ?>
+                    <a href="<?php echo esc_url( get_term_link( $t ) ); ?>"
+                       class="btn btn-outline"
+                       style="padding: 0.4rem 1rem; font-size: 0.85rem; <?php echo ( is_tax( 'jenis_kegiatan', $t->slug ) ) ? 'background: var(--color-primary); color: #fff; border-color: var(--color-primary);' : ''; ?>">
+                        <?php echo esc_html( $t->name ); ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
+        <div class="grid grid-3">
+            <?php
+            if ( have_posts() ) :
+                while ( have_posts() ) : the_post();
+                    $tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
+                    $lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+                    ?>
+                    <div class="card">
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <div style="margin: -2rem -2rem 1.25rem -2rem; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
+                                <?php the_post_thumbnail( 'medium_large', array( 'style' => 'width:100%; height:200px; object-fit:cover;' ) ); ?>
+                            </div>
+                        <?php endif; ?>
+                        <span class="card-badge"><?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?></span>
+                        <h3 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                        <?php if ( $lokasi ) : ?>
+                            <p style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; margin-bottom: 0.5rem;"><?php echo esc_html( $lokasi ); ?></p>
+                        <?php endif; ?>
+                        <div class="card-text"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></div>
+                        <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="align-self: flex-start; padding: 0.4rem 0.9rem; font-size: 0.85rem;">Detail Kegiatan</a>
+                    </div>
+                <?php
+                endwhile;
+            else :
+                ?>
+                <div style="text-align: center; grid-column: 1/-1; padding: 3rem 0;">
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">Belum ada kegiatan dalam kategori ini.</p>
+                    <a href="<?php echo esc_url( get_post_type_archive_link( 'kegiatan' ) ); ?>" class="btn btn-primary">Lihat Semua Kegiatan</a>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+            <?php the_posts_pagination( array(
+                'mid_size'  => 2,
+                'prev_text' => __( '&laquo; Sebelumnya', 'cleanique-academy' ),
+                'next_text' => __( 'Berikutnya &raquo;', 'cleanique-academy' ),
+            ) ); ?>
+        </div>
+
+    </div>
+</section>
+
+<?php
+get_footer();

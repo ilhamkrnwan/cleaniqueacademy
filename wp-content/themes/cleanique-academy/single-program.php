@@ -13,9 +13,9 @@ while ( have_posts() ) : the_post();
         <span class="section-subtitle">Detail Program Pelatihan</span>
         <h1 class="hero-title" style="margin-bottom: 1rem;"><?php the_title(); ?></h1>
         <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; color: var(--color-text-muted); font-weight: 600;">
-            <?php if ( $durasi ) : ?><span>⏱️ Durasi: <?php echo esc_html( $durasi ); ?></span><?php endif; ?>
-            <?php if ( $harga ) : ?><span>💰 Investasi: <?php echo esc_html( $harga ); ?></span><?php endif; ?>
-            <?php if ( $target ) : ?><span>👥 Target: <?php echo esc_html( $target ); ?></span><?php endif; ?>
+            <?php if ( $durasi ) : ?><span>Durasi: <?php echo esc_html( $durasi ); ?></span><?php endif; ?>
+            <?php if ( $harga ) : ?><span>Investasi: <?php echo esc_html( $harga ); ?></span><?php endif; ?>
+            <?php if ( $target ) : ?><span>Target: <?php echo esc_html( $target ); ?></span><?php endif; ?>
         </div>
     </div>
 </div>

@@ -18,10 +18,10 @@ get_header();
         <div class="grid grid-2">
             <div class="card">
                 <h3 style="font-size: 1.35rem; margin-bottom: 1rem;">Informasi Kontak</h3>
-                <p style="margin-bottom: 0.75rem;"><strong>📍 Alamat Penyelenggaraan:</strong><br><span style="color: var(--color-text-muted);">Yogyakarta & Kota-kota Besar Indonesia</span></p>
-                <p style="margin-bottom: 0.75rem;"><strong>📱 WhatsApp Official:</strong><br><span style="color: var(--color-text-muted);">0812-3456-7890</span></p>
-                <p style="margin-bottom: 0.75rem;"><strong>✉️ Email:</strong><br><span style="color: var(--color-text-muted);">info@cleaniqueacademy.com</span></p>
-                <p style="margin-bottom: 0.75rem;"><strong>🕒 Jam Operasional:</strong><br><span style="color: var(--color-text-muted);">Senin - Sabtu (08.00 - 17.00 WIB)</span></p>
+                <p style="margin-bottom: 0.75rem;"><strong>Alamat Penyelenggaraan:</strong><br><span style="color: var(--color-text-muted);">Yogyakarta & Kota-kota Besar Indonesia</span></p>
+                <p style="margin-bottom: 0.75rem;"><strong>WhatsApp Official:</strong><br><span style="color: var(--color-text-muted);">0878-8559-0088</span></p>
+                <p style="margin-bottom: 0.75rem;"><strong>Email:</strong><br><span style="color: var(--color-text-muted);">indotechberkahabadi@gmail.com</span></p>
+                <p style="margin-bottom: 0.75rem;"><strong>Jam Operasional:</strong><br><span style="color: var(--color-text-muted);">Senin - Sabtu (08.00 - 17.00 WIB)</span></p>
             </div>
 
             <div class="card" style="background-color: var(--color-bg-surface);">
