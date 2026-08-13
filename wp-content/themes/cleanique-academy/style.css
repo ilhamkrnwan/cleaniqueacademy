@@ -1907,3 +1907,13 @@ details.toc-details[open] summary.toc-summary .toc-chevron {
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
 }
 
+/* 6 Alasan Accordion Dropdown Styles */
+summary.reason-accordion-header::after {
+  display: none !important;
+}
+
+details.reason-accordion-item[open] .chevron-icon {
+  transform: rotate(180deg) !important;
+}
+
+
