@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <li><a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>">Program</a></li>
                     <li><a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>">Galeri</a></li>
                     <li><a href="<?php echo esc_url( home_url( '/artikel/' ) ); ?>">Artikel</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/tentang-kami/#kontak' ) ); ?>">Kontak</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>">Kontak</a></li>
                 </ul>
             </nav>
 
@@ -96,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <li><a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>">Program</a></li>
             <li><a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>">Galeri</a></li>
             <li><a href="<?php echo esc_url( home_url( '/artikel/' ) ); ?>">Artikel</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/tentang-kami/#kontak' ) ); ?>">Kontak</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>">Kontak</a></li>
         </ul>
 
         <!-- Drawer Footer Info Section -->

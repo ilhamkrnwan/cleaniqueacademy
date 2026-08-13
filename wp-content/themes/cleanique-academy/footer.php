@@ -43,8 +43,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <li><a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>">Program Pelatihan</a></li>
                     <li><a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>">Dokumentasi Galeri</a></li>
                     <li><a href="<?php echo esc_url( home_url( '/artikel/' ) ); ?>">Artikel & Edukasi</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/tentang-kami/#kontak' ) ); ?>">Kontak Perusahaan</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/tentang-kami/#faq' ) ); ?>">FAQ & Pertanyaan</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>">Kontak Perusahaan</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">FAQ & Pertanyaan</a></li>
                 </ul>
             </div>
 
