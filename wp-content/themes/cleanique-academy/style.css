@@ -1912,8 +1912,18 @@ summary.reason-accordion-header::after {
   display: none !important;
 }
 
-details.reason-accordion-item[open] .chevron-icon {
-  transform: rotate(180deg) !important;
+details.reason-accordion-item[open] .toggle-plus-minus {
+  background: #0284c7 !important;
 }
+
+details.reason-accordion-item[open] .plus-icon {
+  display: none !important;
+}
+
+details.reason-accordion-item[open] .minus-icon {
+  display: block !important;
+  stroke: #ffffff !important;
+}
+
 
 
