@@ -574,7 +574,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
 </section>
 
 <!-- 9. Promo Investasi Pelatihan (Program Section) -->
-<section id="program-unggulan" class="section" style="background-color: #11262d; color: #ffffff; padding: 3.5rem 0;">
+<section id="program-unggulan" class="section" style="background-color: #11262d; color: #ffffff; padding: 3.5rem 0; overflow: hidden;">
     <div class="container" style="max-width: 1080px;">
         
         <!-- Header Promo Section -->
@@ -582,16 +582,16 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.75rem;">
                 Promo Investasi Pelatihan Bulan <?php echo date_i18n('F Y'); ?>
             </h2>
-            <p style="font-size: 0.92rem; line-height: 1.65; color: #94a3b8;">
+            <p style="font-size: 0.92rem; line-height: 1.65; color: #94a3b8; margin: 0;">
                 Training diadakan di Jogja setiap akhir pekan, <strong>Sabtu - Minggu</strong>. Materi pelatihan pembuatan chemical laundry mengacu pada formula baku yang biasa dibuat oleh para produsen chemical laundry, baik formula yang kompleks maupun yang sangat sederhana. Formula telah kami riset berdasarkan efisiensi, kegunaan, dan kepentingan yang dipandang dari berbagai sisi. Ada dua kelas utama yang dapat Anda pilih:
             </p>
         </div>
 
         <!-- GRID UTAMA BARIS 1: KELAS KOLEKTIF & KELAS PRIVAT -->
-        <div class="grid grid-2" style="gap: 1.5rem; margin-bottom: 2rem; align-items: stretch;">
+        <div class="grid grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem; align-items: stretch;">
             
             <!-- KELAS KOLEKTIF -->
-            <div style="background: #ffffff; border-radius: 12px; padding: 2rem 1.5rem; color: #1e293b; display: flex; flex-direction: column; position: relative; box-shadow: 0 15px 30px rgba(0,0,0,0.2);">
+            <div class="program-card-box">
                 <div style="text-align: center; margin-bottom: 1.25rem;">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" alt="Cleanique Academy" style="height: 38px; margin: 0 auto 0.85rem auto; display: block;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; letter-spacing: 0.05em; color: #0f172a; text-transform: uppercase;">KELAS KOLEKTIF</h3>
@@ -645,10 +645,10 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             </div>
 
             <!-- KELAS PRIVAT -->
-            <div style="background: #ffffff; border-radius: 12px; padding: 2rem 1.5rem; color: #1e293b; display: flex; flex-direction: column; position: relative; box-shadow: 0 15px 30px rgba(0,0,0,0.2); overflow: hidden;">
+            <div class="program-card-box">
                 
-                <!-- Ribbon Corner Badge -->
-                <div style="position: absolute; top: 18px; right: -35px; background: #dc2626; color: #ffffff; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; padding: 0.35rem 2.8rem; transform: rotate(40deg); box-shadow: 0 4px 8px rgba(0,0,0,0.15); letter-spacing: 0.05em; z-index: 10;">
+                <!-- Sleek Top Badge Pill (Non-overflowing) -->
+                <div style="background: #dc2626; color: #ffffff; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 6px; width: fit-content; margin: 0 auto 0.75rem auto; box-shadow: 0 4px 8px rgba(220, 38, 38, 0.25); letter-spacing: 0.04em;">
                     Bonus Cara Menghitung HPP
                 </div>
 
@@ -707,10 +707,10 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
         </div>
 
         <!-- GRID UTAMA BARIS 2: KELAS 1 PRODUK & KELAS CUSTOM -->
-        <div class="grid grid-2" style="gap: 1.5rem; margin-bottom: 2rem; align-items: stretch;">
+        <div class="grid grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem; align-items: stretch;">
             
             <!-- KELAS 1 PRODUK -->
-            <div style="background: #ffffff; border-radius: 12px; padding: 1.75rem 1.5rem; color: #1e293b; display: flex; flex-direction: column; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.15);">
+            <div class="program-card-box" style="text-align: center;">
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" alt="Cleanique Academy" style="height: 34px; margin: 0 auto 0.85rem auto; display: block;">
                 <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; letter-spacing: 0.05em; color: #0f172a; text-transform: uppercase; margin-bottom: 0.75rem;">KELAS 1 PRODUK</h3>
                 <p style="font-size: 0.86rem; line-height: 1.55; color: #475569; margin-bottom: 1.25rem;">
@@ -722,7 +722,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             </div>
 
             <!-- KELAS CUSTOM -->
-            <div style="background: #ffffff; border-radius: 12px; padding: 1.75rem 1.5rem; color: #1e293b; display: flex; flex-direction: column; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.15);">
+            <div class="program-card-box" style="text-align: center;">
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" alt="Cleanique Academy" style="height: 34px; margin: 0 auto 0.85rem auto; display: block;">
                 <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; letter-spacing: 0.05em; color: #0f172a; text-transform: uppercase; margin-bottom: 0.75rem;">KELAS CUSTOM</h3>
                 <p style="font-size: 0.86rem; line-height: 1.55; color: #475569; margin-bottom: 1.25rem;">
@@ -736,38 +736,60 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
         </div>
 
         <!-- ADD-ON BANNER -->
-        <div style="text-align: center; margin-bottom: 2.25rem; background: rgba(255, 255, 255, 0.06); border: 1px dashed rgba(255, 255, 255, 0.25); border-radius: 10px; padding: 1.25rem;">
-            <h4 style="font-size: 1.1rem; font-weight: 800; color: #ffffff; margin-bottom: 0.35rem;">Add On : Tambah materi 1 juta per-formula</h4>
-            <div style="display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
-                <span style="text-decoration: line-through; color: #94a3b8; font-size: 1rem; font-weight: 700;">Rp 1.500.000,-</span>
-                <span style="font-size: 1.65rem; font-weight: 800; color: #38bdf8;">Rp 1.000.000,-</span>
+        <div style="text-align: center; margin-bottom: 1.75rem; background: rgba(255, 255, 255, 0.06); border: 1px dashed rgba(255, 255, 255, 0.25); border-radius: 10px; padding: 1rem 1.25rem;">
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: #ffffff; margin-bottom: 0.35rem;">Add On : Tambah materi 1 juta per-formula</h4>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 0.6rem; flex-wrap: wrap;">
+                <span style="text-decoration: line-through; color: #94a3b8; font-size: 0.95rem; font-weight: 700;">Rp 1.500.000,-</span>
+                <span style="font-size: 1.5rem; font-weight: 800; color: #38bdf8;">Rp 1.000.000,-</span>
             </div>
         </div>
 
         <!-- QUOTE CALLOUT BOX (IPHONE QUOTE) -->
-        <div style="max-width: 820px; margin: 0 auto 2.5rem auto; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 12px; padding: 1.75rem; background: rgba(15, 23, 42, 0.5); text-align: center; position: relative;">
-            <span style="position: absolute; top: -16px; left: 20px; background: #11262d; padding: 0 8px; color: #94a3b8; font-size: 2rem; font-family: serif; line-height: 1;">“</span>
-            
-            <p style="font-style: italic; font-size: 0.92rem; line-height: 1.65; color: #e2e8f0; margin-bottom: 0.75rem;">
-                Investasi terbaik bukanlah barang, melainkan ilmu. Dengan Rp9 juta, Anda bisa membeli satu iPhone nilainya akan terus menurun. Namun dengan Rp9 juta untuk mengikuti pelatihan pembuatan sabun kami, Anda mendapatkan bekal ilmu dan keterampilan yang bisa menghasilkan, bahkan membuka jalan untuk membeli 10 iPhone atau lebih.
+        <div style="max-width: 820px; margin: 0 auto 2rem auto; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 12px; padding: 1.35rem 1.25rem; background: rgba(15, 23, 42, 0.5); text-align: center; position: relative;">
+            <p style="font-style: italic; font-size: 0.9rem; line-height: 1.65; color: #e2e8f0; margin-bottom: 0.65rem;">
+                “Investasi terbaik bukanlah barang, melainkan ilmu. Dengan Rp9 juta, Anda bisa membeli satu iPhone nilainya akan terus menurun. Namun dengan Rp9 juta untuk mengikuti pelatihan pembuatan sabun kami, Anda mendapatkan bekal ilmu dan keterampilan yang bisa menghasilkan, bahkan membuka jalan untuk membeli 10 iPhone atau lebih.”
             </p>
-            
-            <strong style="color: #facc15; font-size: 0.95rem; display: block;">
+            <strong style="color: #facc15; font-size: 0.9rem; display: block;">
                 Ilmu tidak habis dipakai, justru terus bertambah nilainya.
             </strong>
-            
-            <span style="position: absolute; bottom: -24px; right: 20px; background: #11262d; padding: 0 8px; color: #94a3b8; font-size: 2rem; font-family: serif; line-height: 1;">”</span>
         </div>
 
         <!-- MAIN BOTTOM CTA BUTTON -->
         <div style="text-align: center;">
-            <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya berminat ambil promo investasi pelatihan.' ) ); ?>" target="_blank" style="display: inline-block; background: #ffffff; color: #0f172a; font-weight: 800; font-size: 1rem; padding: 0.9rem 2.25rem; border-radius: 8px; text-decoration: none; box-shadow: 0 8px 20px rgba(255,255,255,0.12); transition: all 0.2s ease;">
+            <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya berminat ambil promo investasi pelatihan.' ) ); ?>" target="_blank" style="display: inline-block; background: #ffffff; color: #0f172a; font-weight: 800; font-size: 0.95rem; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; box-shadow: 0 8px 20px rgba(255,255,255,0.12); transition: all 0.2s ease;">
                 Dapatkan Promo Pelatihan <?php echo date('Y'); ?>!
             </a>
         </div>
 
     </div>
 </section>
+
+<style>
+.program-card-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .program-card-box {
+    padding: 1.25rem 1rem !important;
+  }
+  #program-unggulan h2 {
+    font-size: 1.5rem !important;
+  }
+  #program-unggulan .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+</style>
 
 <!-- 8. Galeri Dokumentasi & Kegiatan Terbaru -->
 <section class="section">
