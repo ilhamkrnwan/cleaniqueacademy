@@ -291,17 +291,19 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             <?php
             $kegiatan_query = new WP_Query( array(
                 'post_type'      => 'kegiatan',
-                'posts_per_page' => 3,
+                'posts_per_page' => 9,
             ) );
 
             if ( $kegiatan_query->have_posts() ) :
                 while ( $kegiatan_query->have_posts() ) : $kegiatan_query->the_post();
-                    $tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
-                    $lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+                    $tanggal   = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
+                    $lokasi    = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+                    $img_url   = cleanique_get_kegiatan_thumbnail_url( get_the_ID() );
+                    $title_txt = get_the_title();
                     ?>
                     <div class="gallery-overlay-card">
-                        <div class="gallery-card-image-wrap">
-                            <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                        <div class="gallery-card-image-wrap" onclick="cleaniqueOpenLightboxForImageSrc('<?php echo esc_js( $img_url ); ?>', '<?php echo esc_js( $title_txt ); ?>')" style="cursor: zoom-in;">
+                            <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $title_txt ); ?>">
                             <div class="gallery-card-badge-top">
                                 <?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?>
                             </div>
@@ -311,8 +313,11 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                                 <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></span>
                                 <h3 class="gallery-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                 <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></p>
-                                <div class="gallery-card-actions">
-                                    <a href="<?php the_permalink(); ?>" class="gallery-card-btn">Lihat Dokumentasi &rarr;</a>
+                                <div class="gallery-card-actions" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                    <button type="button" class="gallery-card-btn" onclick="cleaniqueOpenLightboxForImageSrc('<?php echo esc_js( $img_url ); ?>', '<?php echo esc_js( $title_txt ); ?>')" style="background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.4); color: #fff; border-radius: 9999px; padding: 0.4rem 0.85rem; font-size: 0.82rem; font-weight: 700; cursor: pointer; backdrop-filter: blur(4px);">
+                                        Lihat Foto
+                                    </button>
+                                    <a href="<?php the_permalink(); ?>" class="gallery-card-btn">Lihat Detail &rarr;</a>
                                 </div>
                             </div>
                         </div>

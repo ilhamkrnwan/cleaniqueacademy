@@ -305,7 +305,22 @@ function cleaniqueOpenUnivLightbox(index, imagesList) {
         } else {
             prevBtn.style.display = 'flex';
             nextBtn.style.display = 'flex';
-        }
+    }
+}
+
+function cleaniqueOpenLightboxForImageSrc(src, caption) {
+    var modal = document.getElementById('universalImageLightbox');
+    var imgEl = document.getElementById('univLightboxImg');
+    var capEl = document.getElementById('univLightboxCaption');
+    if (modal && imgEl) {
+        imgEl.src = src;
+        capEl.textContent = caption || '';
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        var prevBtn = document.getElementById('univLightboxPrev');
+        var nextBtn = document.getElementById('univLightboxNext');
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
     }
 }
 
