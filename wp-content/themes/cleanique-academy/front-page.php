@@ -284,73 +284,84 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             
             <!-- Card 1 -->
             <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
-                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-1.webp' ); ?>" alt="Belajar dari Produsen" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div class="reason-img-wrap" style="width: 200px; min-width: 200px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-1.webp' ); ?>" alt="Belajar dari Produsen Berpengalaman" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
-                    <span style="display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Penyelenggara Sejak 2011</span>
-                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">1. Belajar Langsung dari Produsen Berpengalaman</h3>
-                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Kami adalah perusahaan chemical sejak 2011. Bebas dari trial & error karena Anda langsung diajarkan formula teruji siap pakai.</p>
+                    <span style="display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Eksis Sejak 2011</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">Belajar Langsung dari Produsen Yang Berpengalaman</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Kami Perusahaan Chemical yang berdiri sejak 2011, dan dari awal berdiri sampai saat ini kami telah melewati banyak sekali trial and error, dan sekarang kamu ngga perlu lagi mengalami masa-masa itu, jika kamu mengikuti pelatihan dari kami. Jadi masa sulit kami telah lewat, kini kamu tinggal menikmati hasilnya dengan ikut pelatihan dari kami.</p>
                 </div>
             </div>
 
             <!-- Card 2 -->
             <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
-                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-2.webp' ); ?>" alt="Praktikum Langsung" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div class="reason-img-wrap" style="width: 200px; min-width: 200px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-2.webp' ); ?>" alt="Lengkap Teori dan Praktek" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
-                    <span style="display: inline-block; background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Hands-on 80% Praktik</span>
-                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">2. Teori & Praktikum Langsung di Lapangan</h3>
-                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Metode praktikum langsung (hands-on) diperbanyak. Anda meracik sendiri bahan kimia hingga menjadi produk jadi siap edar.</p>
+                    <span style="display: inline-block; background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Dominan Praktikum</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">Lengkap, Pelatihan Meliputi Teori dan Juga Praktek</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Teori itu biasa dilakukan oleh si pembuat pelatihan bahkan sampai panjang lebar sampai pada akhirnya yang diajarkan hanya mendapatkan teori banyak minim praktek. Kami mengedepankan training dengan metode Praktek diperbanyak ketimbang teori, saat teori yang didapat itu kurang, kamu bisa bertanya sampai kamu bisa memahaminya.</p>
                 </div>
             </div>
 
             <!-- Card 3 -->
             <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
-                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
+                <div class="reason-img-wrap" style="width: 200px; min-width: 200px; position: relative; overflow: hidden;">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-3.webp' ); ?>" alt="Produk Terjual 1 Juta Unit" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
-                    <span style="display: inline-block; background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Terbukti Diterima Pasar</span>
-                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">3. Produk Terbukti Terjual > 1 Juta Unit</h3>
-                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Produk formulasi kami terbukti laku keras di pasaran. Kami bukan penyedia kursus teoritis tanpa bukti nyata.</p>
+                    <span style="display: inline-block; background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Terbukti Laku di Pasar</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">Produk Chemical Kami Sudah Terjual Lebih dari 1 Juta Unit</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Banyak kursus yang menawarkan produk chemical, dengan penawaran menggiurkan yang biasanya lebih murah. Tapi Cek dulu sebelum mengambil penawaran itu, punyakah produk yang dijual di pasaran atau hanya sekelompok orang yang hanya tahu-tahu saja tanpa ada bukti produk yang dia jual atau dipasarkan. Buktikan dulu INGAT!!! Kami bukan distributor parfum, deterjen, pelembut dan pembersih lain.</p>
                 </div>
             </div>
 
             <!-- Card 4 -->
             <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
-                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-4.webp' ); ?>" alt="Ribuan Alumni" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div class="reason-img-wrap" style="width: 200px; min-width: 200px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-4.webp' ); ?>" alt="Tim Ahli Berpengalaman" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
-                    <span style="display: inline-block; background: #f3e8ff; color: #7e22ce; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Jaringan Alumni Luas</span>
-                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">4. Tim Ahli & Ribuan Alumni Berkelanjutan</h3>
-                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Melahirkan ribuan pengusaha laundry dan produsen chemical di seluruh Indonesia yang bisnisnya berkembang pesat.</p>
+                    <span style="display: inline-block; background: #f3e8ff; color: #7e22ce; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Trainer & Praktisi Senior</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">Tim Ahli, Trainer Sudah Berpengalaman di Dunia Produksi Chemical</h3>
+                    <div style="font-size: 0.83rem; color: #64748b; line-height: 1.55; margin: 0;">
+                        1. Kami BUKAN pemain baru di dunia bisnis laundry, Kami telah berdiri dan eksis sejak tahun 2011 dengan website pertama kami <a href="https://www.peluangusahalaundry.com" target="_blank" style="color: #0284c7; font-weight: 700; text-decoration: underline;">peluangusahalaundry.com</a>.<br>
+                        2. Untuk website inipun Kami sudah ada sejak tahun 2013.<br>
+                        3. Kami telah melahirkan banyak pengusaha-pengusaha laundry sejak tahun 2012, baik itu sebagai pelaku jasa laundry yang membuka outlet laundry maupun sebagai produsen chemical / pewangi / deterjen laundry yang mungkin produknya juga sudah pernah Anda beli.
+                    </div>
                 </div>
             </div>
 
             <!-- Card 5 -->
             <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
-                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
+                <div class="reason-img-wrap" style="width: 200px; min-width: 200px; position: relative; overflow: hidden;">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-5.webp' ); ?>" alt="Efisien Tanpa Kuliah Kimia" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
-                    <span style="display: inline-block; background: #ffe4e6; color: #be123c; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Fast & Intensive</span>
-                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">5. Efisien: Tanpa Kuliah Kimia Berbulan-bulan</h3>
-                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Menguasai dasar formulasi, fungsi bahan aktif, dan cara meracik pembersih secara efisien hanya dalam 1–2 hari.</p>
+                    <span style="display: inline-block; background: #ffe4e6; color: #be123c; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Cepat & Praktis</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">Efisien, Tidak Harus Kuliah Jurusan Kimia untuk Bisa Membuat Produk Chemical</h3>
+                    <p style="font-size: 0.83rem; color: #64748b; line-height: 1.55; margin: 0 0 0.5rem 0;">Sadar nggak sih? Banyak orang mengira harus kuliah jurusan kimia dulu untuk bisa membuat produk chemical sendiri. Padahal, untuk kebutuhan usaha laundry, Anda bisa mempelajari dasar-dasar formulasi, fungsi bahan, hingga cara pembuatannya hanya dalam waktu 1–2 hari melalui pelatihan ini.</p>
+                    <div style="font-size: 0.82rem; font-weight: 700; color: #334155; margin-bottom: 0.2rem;">Setelah mengikuti pelatihan, Anda bisa:</div>
+                    <ol style="margin: 0; padding-left: 1.2rem; font-size: 0.8rem; color: #475569; line-height: 1.45;">
+                        <li>Membuka jasa cleaning service rumahan atau profesional.</li>
+                        <li>Menjadi reseller atau agen produk chemical.</li>
+                        <li>Menawarkan layanan konsultasi atau training ke komunitas Anda.</li>
+                        <li>Menambah layanan baru di usaha laundry, office cleaning, atau homecare.</li>
+                    </ol>
                 </div>
             </div>
 
             <!-- Card 6 -->
             <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
-                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-6.webp' ); ?>" alt="Bimbingan Jangka Panjang" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div class="reason-img-wrap" style="width: 200px; min-width: 200px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-6.webp' ); ?>" alt="Ekosistem Bisnis dan Bimbingan Jangka Panjang" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
-                    <span style="display: inline-block; background: #ccfbf1; color: #0f766e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Lifetime Support</span>
-                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">6. Ekosistem Bisnis & Bimbingan Pasca Kelas</h3>
-                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Bergabung dalam ekosistem alumni, supplier bahan baku terpercaya, serta grup konsultasi berkelanjutan.</p>
+                    <span style="display: inline-block; background: #ccfbf1; color: #0f766e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Bimbingan Berkelanjutan</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">Ekosistem Bisnis dan Bimbingan Jangka Panjang</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Kami tidak membiarkan Anda berjuang sendirian setelah kelas selesai. Kami menyediakan akses jaringan ke sesama pengusaha dan mitra yang sudah berhasil di lapangan. Anda langsung masuk ke dalam ekosistem di mana Anda bisa scale up, mencari partner distribusi, dan merancang strategi komersial. Fokusnya bukan sekadar produksi, tapi percepatan meraih keuntungan bisnis berkelanjutan.</p>
                 </div>
             </div>
 
