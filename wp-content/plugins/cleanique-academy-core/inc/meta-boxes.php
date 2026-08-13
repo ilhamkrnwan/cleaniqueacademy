@@ -58,6 +58,11 @@ function cac_kegiatan_meta_box_html( $post ) {
         <label for="cac_materi_singkat"><strong>Materi Utama (pisahkan koma):</strong></label><br>
         <textarea id="cac_materi_singkat" name="cac_materi_singkat" class="widefat" rows="3" placeholder="Formulasi Deterjen, Teknik Spoting Stain, Operasional Laundry"><?php echo esc_textarea( $materi ); ?></textarea>
     </p>
+    <p>
+        <label for="cac_gallery_urls"><strong>Galeri Foto Dokumentasi (URL Gambar, pisahkan baris baru):</strong></label><br>
+        <textarea id="cac_gallery_urls" name="cac_gallery_urls" class="widefat" rows="4" placeholder="https://domain.com/foto1.jpg&#10;https://domain.com/foto2.jpg"><?php echo esc_textarea( get_post_meta( $post->ID, '_cac_gallery_urls', true ) ); ?></textarea>
+        <span class="description">Masukkan URL foto dokumentasi kegiatan (1 URL per baris). Foto ini akan ditampilkan sebagai grid galeri interaktif dengan lightbox.</span>
+    </p>
     <?php
 }
 
@@ -121,6 +126,7 @@ function cac_save_meta_boxes( $post_id ) {
         if ( isset( $_POST['cac_lokasi_detail'] ) ) update_post_meta( $post_id, '_cac_lokasi_detail', sanitize_text_field( $_POST['cac_lokasi_detail'] ) );
         if ( isset( $_POST['cac_jumlah_peserta'] ) ) update_post_meta( $post_id, '_cac_jumlah_peserta', sanitize_text_field( $_POST['cac_jumlah_peserta'] ) );
         if ( isset( $_POST['cac_materi_singkat'] ) ) update_post_meta( $post_id, '_cac_materi_singkat', sanitize_textarea_field( $_POST['cac_materi_singkat'] ) );
+        if ( isset( $_POST['cac_gallery_urls'] ) ) update_post_meta( $post_id, '_cac_gallery_urls', sanitize_textarea_field( $_POST['cac_gallery_urls'] ) );
     }
 
     // Program
