@@ -301,7 +301,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                     $img_url   = cleanique_get_kegiatan_thumbnail_url( get_the_ID() );
                     $title_txt = get_the_title();
                     ?>
-                    <div class="gallery-overlay-card" onclick="cleaniqueOpenLightboxForImageSrc('<?php echo esc_js( $img_url ); ?>', '<?php echo esc_js( $title_txt ); ?>')" style="cursor: pointer;">
+                    <div class="gallery-overlay-card" data-img-src="<?php echo esc_url( $img_url ); ?>" data-title="<?php echo esc_attr( $title_txt ); ?>" onclick="cleaniqueOpenLightboxFromCard(this)" style="cursor: pointer;">
                         <div class="gallery-card-image-wrap">
                             <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $title_txt ); ?>">
                             <div class="gallery-card-badge-top">

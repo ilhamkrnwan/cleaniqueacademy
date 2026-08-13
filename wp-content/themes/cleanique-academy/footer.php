@@ -305,6 +305,7 @@ function cleaniqueOpenUnivLightbox(index, imagesList) {
         } else {
             prevBtn.style.display = 'flex';
             nextBtn.style.display = 'flex';
+        }
     }
 }
 
@@ -322,6 +323,13 @@ function cleaniqueOpenLightboxForImageSrc(src, caption) {
         if (prevBtn) prevBtn.style.display = 'none';
         if (nextBtn) nextBtn.style.display = 'none';
     }
+}
+
+function cleaniqueOpenLightboxFromCard(cardEl) {
+    if (!cardEl) return;
+    var src = cardEl.getAttribute('data-img-src');
+    var caption = cardEl.getAttribute('data-title');
+    cleaniqueOpenLightboxForImageSrc(src, caption);
 }
 
 function cleaniqueCloseUnivLightbox() {
