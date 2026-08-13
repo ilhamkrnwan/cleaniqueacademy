@@ -83,56 +83,7 @@ cleanique_render_page_hero( array(
 
         </div>
 
-        <!-- 2. FORM KONSULTASI INTERAKTIF LANGSUNG KE WHATSAPP -->
-        <div style="max-width: 850px; margin: 0 auto 4rem auto; background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md);">
-            <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
-                <span class="section-subtitle">Formulir Pesan Cepat</span>
-                <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Kirim Pertanyaan / Konsultasi</h2>
-                <p class="section-description" style="font-size: 0.95rem;">Isi formulir di bawah ini untuk terhubung langsung dengan tim konsultan via WhatsApp.</p>
-            </div>
-
-            <form id="contactFormWa" onsubmit="handleContactFormSubmit(event)">
-                <div class="grid grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
-                    <div>
-                        <label for="contact_nama" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Nama Lengkap *</label>
-                        <input type="text" id="contact_nama" required placeholder="Contoh: Budi Santoso" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.95rem;">
-                    </div>
-                    <div>
-                        <label for="contact_wa" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Nomor WhatsApp *</label>
-                        <input type="tel" id="contact_wa" required placeholder="Contoh: 08123456789" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.95rem;">
-                    </div>
-                </div>
-
-                <div class="grid grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
-                    <div>
-                        <label for="contact_kota" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Kota Asal / Domisili</label>
-                        <input type="text" id="contact_kota" placeholder="Contoh: Yogyakarta / Jakarta" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.95rem;">
-                    </div>
-                    <div>
-                        <label for="contact_topik" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Topik Konsultasi *</label>
-                        <select id="contact_topik" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.95rem; background: #fff;">
-                            <option value="Pendaftaran Pelatihan Tatap Muka">Pendaftaran Pelatihan Tatap Muka</option>
-                            <option value="Konsultasi Formulasi Kimia Laundry/Homecare">Konsultasi Formulasi Kimia Laundry/Homecare</option>
-                            <option value="Informasi Kemitraan & Keagenan">Informasi Kemitraan & Keagenan</option>
-                            <option value="Privat Class / In-House Training">Privat Class / In-House Training</option>
-                            <option value="Pertanyaan Umum">Pertanyaan Umum</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 1.75rem;">
-                    <label for="contact_pesan" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Pesan / Pertanyaan Anda *</label>
-                    <textarea id="contact_pesan" rows="4" required placeholder="Tuliskan pertanyaan atau rencana bisnis pelatihan Anda secara singkat..." style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.95rem;"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-whatsapp wa-action-btn" style="width: 100%; padding: 0.9rem; font-size: 1rem; font-weight: 700; border-radius: var(--radius-md);">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
-                    <span>Kirim Pesan via WhatsApp</span>
-                </button>
-            </form>
-        </div>
-
-        <!-- 3. PETA LOKASI TRAINING CENTER YOGYAKARTA -->
+        <!-- 2. PETA LOKASI TRAINING CENTER YOGYAKARTA -->
         <div style="background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; padding: 2.5rem;">
             <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
                 <span class="section-subtitle">Lokasi Penyelenggaraan</span>
@@ -156,29 +107,6 @@ cleanique_render_page_hero( array(
 
     </div>
 </section>
-
-<!-- Script Form Handler -->
-<script>
-function handleContactFormSubmit(e) {
-    e.preventDefault();
-    var nama   = document.getElementById('contact_nama').value;
-    var wa     = document.getElementById('contact_wa').value;
-    var kota   = document.getElementById('contact_kota').value;
-    var topik  = document.getElementById('contact_topik').value;
-    var pesan  = document.getElementById('contact_pesan').value;
-
-    var text = "Halo Cleanique Academy (PT Indotech Berkah Abadi),\n" +
-               "Saya mau konsultasi via Halaman Kontak Website.\n\n" +
-               "*Nama:* " + nama + "\n" +
-               "*No. WA:* " + wa + "\n" +
-               "*Kota:* " + (kota ? kota : '-') + "\n" +
-               "*Topik:* " + topik + "\n\n" +
-               "*Pesan:* " + pesan;
-
-    var waUrl = "https://api.whatsapp.com/send/?phone=6282215840088&text=" + encodeURIComponent(text) + "&type=phone_number&app_absent=0";
-    window.open(waUrl, '_blank');
-}
-</script>
 
 <?php
 get_footer();
