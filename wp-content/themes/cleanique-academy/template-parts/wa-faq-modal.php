@@ -1,7 +1,7 @@
 <?php
 /**
  * WhatsApp Assistant FAQ Modal Component
- * Displays an interactive WhatsApp assistant popup modal with typing effect and FAQ options.
+ * Displays an interactive WhatsApp assistant popup modal with welcome card, clean list items, and typing effect.
  * Target WhatsApp Number: 6282215840088
  */
 ?>
@@ -37,113 +37,73 @@
         <!-- Modal Body -->
         <div class="wa-modal-body">
             
-            <!-- LIST VIEW: PILIH PERTANYAAN -->
+            <!-- LIST VIEW: WELCOME MESSAGE & PILIH PERTANYAAN -->
             <div class="wa-view-list" id="waFaqListView">
+                
+                <!-- Welcome Message Card -->
+                <div class="wa-welcome-card">
+                    <h4 class="wa-welcome-title">Selamat datang di Cleanique Academy</h4>
+                    <p class="wa-welcome-desc">Kami dapat membantu menjawab pertanyaan seputar pelatihan pembuatan produk kimia laundry & homecare sebelum Anda terhubung dengan admin.</p>
+                    <div class="wa-welcome-footer">
+                        Produsen chemical sejak 2011 &middot; 1.000.000+ produk terjual
+                    </div>
+                </div>
+
                 <span class="wa-section-label">PILIH PERTANYAAN</span>
                 <div class="wa-faq-items-group">
                     
                     <!-- 1. Biaya & Promo Pelatihan -->
                     <div class="wa-faq-item" data-faq-id="biaya-promo">
-                        <div class="wa-item-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
-                            </svg>
-                        </div>
                         <span class="wa-item-title">Biaya & Promo Pelatihan</span>
-                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </div>
 
                     <!-- 2. Jadwal Pelatihan -->
                     <div class="wa-faq-item" data-faq-id="jadwal-pelatihan">
-                        <div class="wa-item-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                            </svg>
-                        </div>
                         <span class="wa-item-title">Jadwal Pelatihan</span>
-                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </div>
 
                     <!-- 3. Lokasi Pelatihan -->
                     <div class="wa-faq-item" data-faq-id="lokasi-pelatihan">
-                        <div class="wa-item-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
                         <span class="wa-item-title">Lokasi Pelatihan</span>
-                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </div>
 
                     <!-- 4. Sertifikat & Fasilitas -->
                     <div class="wa-faq-item" data-faq-id="sertifikat-fasilitas">
-                        <div class="wa-item-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="8" r="7"></circle>
-                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                            </svg>
-                        </div>
                         <span class="wa-item-title">Sertifikat & Fasilitas</span>
-                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </div>
 
                     <!-- 5. Apakah Bisa Online? -->
                     <div class="wa-faq-item" data-faq-id="bisa-online">
-                        <div class="wa-item-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="1" y1="1" x2="23" y2="23"></line>
-                                <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
-                                <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
-                                <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
-                                <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
-                                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                                <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                            </svg>
-                        </div>
                         <span class="wa-item-title">Apakah Bisa Online?</span>
-                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </div>
 
                     <!-- 6. Cara Pendaftaran -->
                     <div class="wa-faq-item" data-faq-id="cara-pendaftaran">
-                        <div class="wa-item-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                                <path d="M9 14l2 2 4-4"></path>
-                            </svg>
-                        </div>
                         <span class="wa-item-title">Cara Pendaftaran</span>
-                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </div>
 
                     <!-- 7. Pertanyaan lainnya -->
                     <div class="wa-faq-item" data-faq-id="pertanyaan-lainnya">
-                        <div class="wa-item-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 20h9"></path>
-                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                            </svg>
-                        </div>
                         <span class="wa-item-title">Pertanyaan lainnya</span>
-                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="wa-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </div>
@@ -155,11 +115,8 @@
             <div class="wa-view-detail" id="waFaqDetailView" style="display: none;">
                 <div class="wa-detail-card">
                     
-                    <!-- Detail Header (Icon + Title) -->
-                    <div class="wa-detail-header">
-                        <div class="wa-detail-icon-box" id="waDetailIconBox">
-                            <!-- Injected by JS -->
-                        </div>
+                    <!-- Detail Header -->
+                    <div class="wa-detail-header" style="margin-bottom: 0.85rem;">
                         <h4 class="wa-detail-title" id="waDetailTitle">Judul Pertanyaan</h4>
                     </div>
 
@@ -204,15 +161,15 @@
 .wa-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(4px);
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(3px);
   z-index: 999999;
   display: none;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
   opacity: 0;
   transition: opacity 0.25s ease;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .wa-modal-overlay.active {
@@ -222,11 +179,11 @@
 
 .wa-modal-card {
   width: 100%;
-  max-width: 420px;
-  max-height: 90vh;
+  max-width: 400px;
+  max-height: 82vh;
   background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -272,8 +229,8 @@
 }
 
 .wa-avatar {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   background: #ffffff;
@@ -287,7 +244,7 @@
 
 .wa-header-title {
   font-family: var(--font-heading, sans-serif);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
@@ -295,17 +252,54 @@
 }
 
 .wa-header-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #94a3b8;
   margin-top: 2px;
 }
 
 /* Body */
 .wa-modal-body {
-  padding: 1.25rem;
+  padding: 1.15rem;
   overflow-y: auto;
   flex: 1;
   max-height: 65vh;
+}
+
+/* Welcome Card Above Questions */
+.wa-welcome-card {
+  background: #ffffff;
+  border-left: 4px solid #16a34a;
+  border-top: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.15rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.wa-welcome-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.45rem 0;
+  line-height: 1.3;
+}
+
+.wa-welcome-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 0.85rem 0;
+}
+
+.wa-welcome-footer {
+  padding-top: 0.65rem;
+  border-top: 1px dashed #e2e8f0;
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 500;
 }
 
 .wa-section-label {
@@ -314,78 +308,54 @@
   color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
   display: block;
 }
 
-/* FAQ Item Card */
+/* FAQ Item List (No Icon, Sleek Buttons) */
 .wa-faq-item {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  padding: 0.95rem 1rem;
+  justify-content: space-between;
+  padding: 0.9rem 1.15rem;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  margin-bottom: 0.75rem;
+  border-radius: 12px;
+  margin-bottom: 0.65rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .wa-faq-item:hover {
-  border-color: var(--color-primary, #0284c7);
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.1);
-  transform: translateY(-2px);
-}
-
-.wa-item-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: #f0f9ff;
-  color: var(--color-primary, #0284c7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  border-color: #0284c7;
+  background: #f8fafc;
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
 }
 
 .wa-item-title {
   font-size: 0.92rem;
   font-weight: 600;
   color: #1e293b;
-  flex: 1;
 }
 
 .wa-item-chevron {
   color: #94a3b8;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.wa-faq-item:hover .wa-item-chevron {
+  color: #0284c7;
+  transform: translateX(2px);
 }
 
 /* Detail Card */
 .wa-detail-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 1.25rem;
-}
-
-.wa-detail-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.wa-detail-icon-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: #f0fdf4;
-  color: #16a34a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  border-radius: 14px;
+  padding: 1.15rem;
 }
 
 .wa-detail-title {
@@ -430,14 +400,14 @@
 }
 
 .wa-answer-body {
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.92rem;
+  line-height: 1.68;
   color: #334155;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .wa-answer-body p {
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .wa-answer-body p:last-child {
@@ -450,12 +420,12 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.25rem;
+  padding: 0.8rem 1.15rem;
   background: #16a34a !important;
   color: #ffffff !important;
-  border-radius: 12px;
+  border-radius: 10px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
   transition: background 0.2s ease, transform 0.2s ease;
@@ -472,9 +442,21 @@
   padding: 0.75rem 1rem;
   border-top: 1px solid #e2e8f0;
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: #64748b;
   font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .wa-modal-overlay {
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1rem !important;
+    background: rgba(15, 23, 42, 0.6) !important;
+  }
+  .wa-modal-card {
+    max-height: 88vh !important;
+  }
 }
 </style>
 
@@ -491,7 +473,6 @@
         
         var headerSubtitle   = document.getElementById('waHeaderSubtitle');
         var detailTitle      = document.getElementById('waDetailTitle');
-        var detailIconBox    = document.getElementById('waDetailIconBox');
         var typingBox        = document.getElementById('waTypingBox');
         var answerBody       = document.getElementById('waAnswerBody');
         var actionButton     = document.getElementById('waActionButton');
@@ -502,49 +483,42 @@
         var faqData = {
             'biaya-promo': {
                 title: 'Biaya & Promo Pelatihan',
-                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>',
                 answer: '<p>Investasi pelatihan di Cleanique Academy berkisar antara <strong>Rp 1.850.000 hingga Rp 3.000.000</strong> sesuai jenis program praktikum yang dipilih.</p><p>Dapatkan promo potongan biaya spesial berlaku bagi yang melakukan registrasi bulan ini, terbatas hanya untuk 10 pendaftar pertama.</p>',
                 btnText: 'Tanya Biaya & Promo',
                 waMessage: 'Halo Cleanique Academy, saya ingin konsul rincian biaya dan promo pelatihan bulan ini.'
             },
             'jadwal-pelatihan': {
                 title: 'Jadwal Pelatihan',
-                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
                 answer: '<p>Pelatihan praktikum tatap muka diselenggarakan secara berkala setiap bulan pada akhir pekan (Sabtu & Minggu) mulai pukul 08.00 - 16.00 WIB.</p><p>Hubungi tim admin kami untuk mendapatkan kalender jadwal terdekat serta informasi kuota peserta yang masih tersedia.</p>',
                 btnText: 'Cek Jadwal Terdekat',
                 waMessage: 'Halo Cleanique Academy, saya ingin tanya jadwal pelatihan terdekat yang masih tersedia.'
             },
             'lokasi-pelatihan': {
                 title: 'Lokasi Pelatihan',
-                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
                 answer: '<p>Pelatihan tatap muka utama diselenggarakan di <strong>Laboratorium & Training Center Cleanique Academy (PT Indotech Berkah Abadi) di Yogyakarta</strong>.</p><p>Kami juga menyelenggarakan event roadshow pelatihan berkala di kota-kota besar Indonesia seperti Jakarta, Bandung, Surabaya, dan Pekanbaru.</p>',
                 btnText: 'Tanya Lokasi Pelatihan',
                 waMessage: 'Halo Cleanique Academy, saya ingin bertanya info lokasi pelatihan dan rekomendasi penginapan.'
             },
             'sertifikat-fasilitas': {
                 title: 'Sertifikat & Fasilitas',
-                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>',
                 answer: '<p>Setiap peserta mendapatkan sertifikat pelatihan resmi, modul cetak eksklusif, pemahaman jenis bahan kimia (alkali, asam, netral) beserta cara pengencerannya, studi kasus lapangan, dan mystery box.</p><p>Peserta juga dibimbing langsung oleh mentor berpengalaman sejak 2011.</p>',
                 btnText: 'Tanya Fasilitas Lengkap',
                 waMessage: 'Halo Cleanique Academy, saya ingin konsultasi fasilitas dan modul sertifikat pelatihan.'
             },
             'bisa-online': {
                 title: 'Apakah Bisa Online?',
-                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>',
                 answer: '<p>Pelatihan berfokus pada metode <strong>Tatap Muka (Offline)</strong> agar peserta dapat merasakan langsung tekstur, aroma, serta takaran bahan aktif kimia saat praktikum.</p><p>Namun untuk bimbingan awal dan sesi privat formulasi produk, kami juga menyediakan layanan konsultasi secara daring (online).</p>',
                 btnText: 'Konsultasi Kelas Online',
                 waMessage: 'Halo Cleanique Academy, saya ingin bertanya ketersediaan sesi online / privat.'
             },
             'cara-pendaftaran': {
                 title: 'Cara Pendaftaran',
-                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>',
                 answer: '<p>Cara pendaftaran sangat mudah: cukup mendaftar via WhatsApp, memilih jadwal kelas yang diinginkan, dan mengisi form konfirmasi identitas peserta.</p><p>Kuota kelas dibatasi hanya 10-15 peserta per angkatan untuk menjamin efektivitas praktikum.</p>',
                 btnText: 'Daftar Pelatihan Sekarang',
                 waMessage: 'Halo Cleanique Academy, saya ingin mendaftar pelatihan, mohon panduan caranya.'
             },
             'pertanyaan-lainnya': {
                 title: 'Pertanyaan lainnya',
-                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>',
                 answer: '<p>Memiliki pertanyaan khusus mengenai operasional laundry, bisnis produk pembersih rumah tangga (homecare), atau formulasi khusus?</p><p>Tim admin konsultan kami siap melayani dan memberikan jawaban langsung via WhatsApp.</p>',
                 btnText: 'Chat Admin WhatsApp',
                 waMessage: 'Halo Cleanique Academy, saya punya pertanyaan khusus seputar pelatihan.'
@@ -597,7 +571,6 @@
                 actionButton.style.display = 'none';
 
                 detailTitle.textContent = data.title;
-                detailIconBox.innerHTML = data.iconHtml;
 
                 setTimeout(function() {
                     headerSubtitle.textContent = 'Asisten Pelatihan';
@@ -609,7 +582,7 @@
                     actionButtonText.textContent = data.btnText;
                     actionButton.href = 'https://api.whatsapp.com/send/?phone=' + waTargetPhone + '&text=' + encodeURIComponent(data.waMessage) + '&type=phone_number&app_absent=0';
                     actionButton.style.display = 'flex';
-                }, 750);
+                }, 600);
             }
         }
 
@@ -630,7 +603,7 @@
             });
         }
 
-        // Bind trigger strictly to the Floating WA Button (.btn-wa-float) only
+        // Bind trigger strictly to floating WA button & floating bubble
         document.querySelectorAll('.btn-wa-float').forEach(function(btn) {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -646,3 +619,4 @@
     }
 })();
 </script>
+
