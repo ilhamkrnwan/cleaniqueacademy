@@ -88,9 +88,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                     <div style="margin-bottom: 1rem;">
                         <span style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 0.2rem;">ALAMAT</span>
-                        <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">
+                        <a href="https://share.google/7QVmis9RdpoMHwldZ" target="_blank" style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; text-decoration: underline; display: block;" title="Buka Lokasi di Google Maps">
                             Jongke Tengah No. 30, RT.01/RW.23, Sendangadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55285
-                        </p>
+                        </a>
                     </div>
 
                     <div>

@@ -26,7 +26,9 @@ cleanique_render_page_hero( array(
                 
                 <p style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-main);">
                     <strong>Alamat Training Center:</strong><br>
-                    <span style="color: var(--color-text-muted);">Jl. Tajem No. 18, Maguwoharjo, Depok, Sleman, DI Yogyakarta 55281</span>
+                    <a href="https://share.google/7QVmis9RdpoMHwldZ" target="_blank" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">
+                        Jongke Tengah No. 30, RT.01/RW.23, Sendangadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55285
+                    </a>
                 </p>
 
                 <p style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-main);">
@@ -34,6 +36,12 @@ cleanique_render_page_hero( array(
                     <span style="color: var(--color-text-muted);">Senin - Sabtu | 08.00 - 17.00 WIB</span><br>
                     <span style="font-size: 0.82rem; color: #94a3b8;">(Minggu & Hari Libur Nasional Tutup)</span>
                 </p>
+
+                <div>
+                    <a href="https://share.google/7QVmis9RdpoMHwldZ" target="_blank" class="btn btn-outline" style="padding: 0.45rem 0.9rem; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 0.4rem; border-radius: 8px;">
+                        Petunjuk Arah Google Maps &rarr;
+                    </a>
+                </div>
             </div>
 
             <!-- Kartu 2: Saluran WhatsApp CS Resmi -->
@@ -105,6 +113,13 @@ cleanique_render_page_hero( array(
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+            </div>
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <a href="https://share.google/7QVmis9RdpoMHwldZ" target="_blank" class="btn btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.92rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Buka Lokasi di Google Maps (share.google/7QVmis9RdpoMHwldZ)</span>
+                </a>
             </div>
         </div>
 
