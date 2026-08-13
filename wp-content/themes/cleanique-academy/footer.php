@@ -80,9 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div>
                     <span style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 0.3rem;">WHATSAPP</span>
                     <ul style="list-style: none; font-size: 0.85rem; color: #94a3b8; line-height: 1.7;">
-                        <li><a href="https://wa.me/6282215840088" target="_blank" style="color: #94a3b8;">+62 822-1584-0088 <span style="color: #64748b;">( CS Pelatihan )</span></a></li>
-                        <li><a href="https://wa.me/6287885590088" target="_blank" style="color: #94a3b8;">+62 878-8559-0088 <span style="color: #64748b;">( CS Keagenan )</span></a></li>
-                        <li><a href="https://wa.me/6285559474797" target="_blank" style="color: #94a3b8;">+62 855-5947-4797 <span style="color: #64748b;">( CS Retail Produk )</span></a></li>
+                        <li><a href="https://wa.me/6282215840088" target="_blank" style="color: #94a3b8; font-weight: 600;">+62 822-1584-0088 <span style="color: #64748b;">( Official WhatsApp CS )</span></a></li>
                     </ul>
                 </div>
             </div>
