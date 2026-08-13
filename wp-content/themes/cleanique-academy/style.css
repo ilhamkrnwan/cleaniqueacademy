@@ -803,48 +803,67 @@ img {
   font-style: italic;
 }
 
-/* Social Share Buttons */
-.share-section {
-  padding: 1.75rem 0;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+/* Social Share Card Buttons (Matching Custom Circle & Tooltip Design) */
+.share-section-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.6rem;
   margin: 3rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  flex-wrap: wrap;
 }
 
-.share-title {
-  font-size: 1.05rem;
+.share-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.share-header-icon {
+  color: #475569;
+}
+
+.share-title-text {
+  font-size: 0.98rem;
   font-weight: 700;
-  color: var(--color-secondary);
+  color: #334155;
 }
 
 .share-buttons-wrapper {
   display: flex;
-  gap: 0.75rem;
   align-items: center;
+  gap: 0.65rem;
 }
 
-.share-btn {
+/* Circular Buttons */
+.share-circle-btn {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: var(--radius-full);
-  font-size: 0.88rem;
-  font-weight: 600;
+  justify-content: center;
   color: #ffffff;
-  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.share-btn:hover {
-  transform: translateY(-2px);
+.share-circle-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   color: #ffffff;
 }
 
+/* Specific Platform Colors */
 .share-wa {
   background-color: #25d366;
 }
@@ -853,13 +872,64 @@ img {
   background-color: #1877f2;
 }
 
-.share-tw {
-  background-color: #0f1419;
+.share-li {
+  background-color: #0a66c2;
+}
+
+.share-x {
+  background-color: #000000;
 }
 
 .share-copy {
-  background-color: #64748b;
-  cursor: pointer;
+  background-color: #5b6b82;
+}
+
+/* Tooltip Badge Styling */
+.share-circle-btn::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 9px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
+  z-index: 20;
+}
+
+/* Tooltip Triangle Arrow */
+.share-circle-btn::after {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #0f172a transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 20;
+}
+
+.share-circle-btn:hover::before,
+.share-circle-btn:hover::after,
+.share-circle-btn.tooltip-active::before,
+.share-circle-btn.tooltip-active::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Article Navigation Cards (Previous/Next) */

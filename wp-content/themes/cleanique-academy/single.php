@@ -69,24 +69,41 @@ while ( have_posts() ) : the_post();
                         </div>
                     <?php endif; ?>
 
-                    <!-- 4. Share Buttons dengan Icon Sosmed Resmi -->
-                    <div class="share-section">
-                        <span class="share-title">Bagikan Artikel Ini:</span>
+                    <!-- 4. Share Buttons dengan Icon Sosmed Resmi & Circle Buttons -->
+                    <div class="share-section-card">
+                        <div class="share-title-group">
+                            <svg class="share-header-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                <polyline points="16 6 12 2 8 6"></polyline>
+                                <line x1="12" y1="2" x2="12" y2="15"></line>
+                            </svg>
+                            <span class="share-title-text">Bagikan Artikel:</span>
+                        </div>
+
                         <div class="share-buttons-wrapper">
-                            <a href="https://api.whatsapp.com/send?text=<?php echo rawurlencode( $post_title . ' ' . $post_permalink ); ?>" target="_blank" class="share-btn share-wa" aria-label="Share WhatsApp">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
-                                <span>WhatsApp</span>
+                            <!-- WhatsApp -->
+                            <a href="https://api.whatsapp.com/send?text=<?php echo rawurlencode( $post_title . ' ' . $post_permalink ); ?>" target="_blank" class="share-circle-btn share-wa" data-tooltip="WhatsApp" aria-label="Bagikan ke WhatsApp">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
                             </a>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode( $post_permalink ); ?>" target="_blank" class="share-btn share-fb" aria-label="Share Facebook">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                                <span>Facebook</span>
+
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode( $post_permalink ); ?>" target="_blank" class="share-circle-btn share-fb" data-tooltip="Facebook" aria-label="Bagikan ke Facebook">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                             </a>
-                            <a href="https://twitter.com/intent/tweet?url=<?php echo rawurlencode( $post_permalink ); ?>&text=<?php echo rawurlencode( $post_title ); ?>" target="_blank" class="share-btn share-tw" aria-label="Share Twitter">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                                <span>Twitter</span>
+
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo rawurlencode( $post_permalink ); ?>" target="_blank" class="share-circle-btn share-li" data-tooltip="LinkedIn" aria-label="Bagikan ke LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z"/></svg>
                             </a>
-                            <button onclick="navigator.clipboard.writeText('<?php echo esc_js( $post_permalink ); ?>'); alert('Tautan artikel berhasil disalin!');" class="share-btn share-copy">
-                                <span>Salin Link</span>
+
+                            <!-- X (Twitter) -->
+                            <a href="https://twitter.com/intent/tweet?url=<?php echo rawurlencode( $post_permalink ); ?>&text=<?php echo rawurlencode( $post_title ); ?>" target="_blank" class="share-circle-btn share-x" data-tooltip="X (Twitter)" aria-label="Bagikan ke X">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+
+                            <!-- Copy Link Button with Tooltip -->
+                            <button id="copyShareBtn" class="share-circle-btn share-copy" data-tooltip="Salin Link" onclick="cleaniqueCopyArticleLink(this, '<?php echo esc_js( $post_permalink ); ?>')" aria-label="Salin Link Artikel">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -244,6 +261,34 @@ while ( have_posts() ) : the_post();
         </div>
     </div>
 </section>
+
+<script>
+function cleaniqueCopyArticleLink(btn, url) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function() {
+            btn.setAttribute('data-tooltip', 'Berhasil Disalin!');
+            btn.classList.add('tooltip-active');
+            setTimeout(function() {
+                btn.setAttribute('data-tooltip', 'Salin Link');
+                btn.classList.remove('tooltip-active');
+            }, 2200);
+        });
+    } else {
+        var tempInput = document.createElement('input');
+        tempInput.value = url;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        btn.setAttribute('data-tooltip', 'Berhasil Disalin!');
+        btn.classList.add('tooltip-active');
+        setTimeout(function() {
+            btn.setAttribute('data-tooltip', 'Salin Link');
+            btn.classList.remove('tooltip-active');
+        }, 2200);
+    }
+}
+</script>
 
 <?php
 endwhile;
