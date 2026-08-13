@@ -118,7 +118,7 @@ cleanique_render_page_hero( array(
             <div style="text-align: center; margin-top: 1.5rem;">
                 <a href="https://share.google/7QVmis9RdpoMHwldZ" target="_blank" class="btn btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.92rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem;">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>Buka Lokasi di Google Maps (share.google/7QVmis9RdpoMHwldZ)</span>
+                    <span>Buka Lokasi di Google Maps &rarr;</span>
                 </a>
             </div>
         </div>
