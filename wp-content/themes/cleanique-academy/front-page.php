@@ -278,7 +278,147 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
     </div>
 </section>
 
-<!-- 6. Promo Investasi Pelatihan (Kelas Kolektif, Privat, 1 Produk, Custom, Add-On) -->
+<!-- 6. Dokumentasi & Kegiatan Terbaru -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Dokumentasi & Event</span>
+            <h2 class="section-title">Kegiatan Pelatihan Terbaru</h2>
+            <p class="section-description">Bukti dokumentasi pelaksanaan kelas pelatihan di berbagai kota.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <?php
+            $kegiatan_query = new WP_Query( array(
+                'post_type'      => 'kegiatan',
+                'posts_per_page' => 3,
+            ) );
+
+            if ( $kegiatan_query->have_posts() ) :
+                while ( $kegiatan_query->have_posts() ) : $kegiatan_query->the_post();
+                    $tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
+                    $lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+                    ?>
+                    <div class="gallery-overlay-card">
+                        <div class="gallery-card-image-wrap">
+                            <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                            <div class="gallery-card-badge-top">
+                                <?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?>
+                            </div>
+                        </div>
+                        <div class="gallery-card-overlay">
+                            <div class="gallery-card-content">
+                                <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></span>
+                                <h3 class="gallery-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></p>
+                                <div class="gallery-card-actions">
+                                    <a href="<?php the_permalink(); ?>" class="gallery-card-btn">Lihat Dokumentasi &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
+        </div>
+    </div>
+</section>
+
+<!-- 7. Testimonial Alumni Section -->
+<section id="testimoni" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Apa Kata Mereka</span>
+            <h2 class="section-title">Testimoni Alumni & Peserta Pelatihan</h2>
+            <p class="section-description">Kesan dan pengalaman nyata dari para pengusaha dan praktisi setelah mengikuti pelatihan.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <?php
+            $testi_query = new WP_Query( array(
+                'post_type'      => 'testimoni',
+                'posts_per_page' => 9,
+            ) );
+
+            if ( $testi_query->have_posts() ) :
+                while ( $testi_query->have_posts() ) : $testi_query->the_post();
+                    $profesi = get_post_meta( get_the_ID(), '_cac_profesi', true );
+                    $kota    = get_post_meta( get_the_ID(), '_cac_kota', true );
+                    ?>
+                    <div class="card">
+                        <div class="star-rating" style="color: #f59e0b; margin-bottom: 0.75rem; display:flex; gap:0.25rem;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <div class="card-text" style="font-style: italic; line-height: 1.6;">"<?php echo esc_html( get_the_content() ); ?>"</div>
+                        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                            <strong style="display: block; color: var(--color-secondary);"><?php the_title(); ?></strong>
+                            <span style="font-size: 0.85rem; color: var(--color-text-muted);"><?php echo esc_html( $profesi ? $profesi : 'Peserta' ); ?> <?php echo $kota ? '(' . esc_html( $kota ) . ')' : ''; ?></span>
+                        </div>
+                    </div>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
+        </div>
+    </div>
+</section>
+
+<!-- 8. FAQ Accordion Section -->
+<section id="faq" class="section">
+    <div class="container" style="max-width: 850px;">
+        <div class="section-header">
+            <span class="section-subtitle">FAQ</span>
+            <h2 class="section-title">Pertanyaan Sering Diajukan</h2>
+        </div>
+
+        <div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>Apakah pemula tanpa latar belakang kimia bisa mengikuti?</span>
+                </div>
+                <div class="accordion-body">
+                    Bisa. Seluruh materi dirancang secara praktis dan mudah dipahami, langsung dilengkapi dengan formula praktikum siap pakai untuk pemula maupun praktisi.
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>Apakah peserta mendapatkan bahan dan modul pelatihan?</span>
+                </div>
+                <div class="accordion-body">
+                    Ya, setiap peserta mendapatkan modul fisik/digital lengkap, sampel bahan kimia untuk praktikum, serta sertifikat kepesertaan resmi.
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>Mengapa pelatihan diselenggarakan secara langsung (Tatap Muka)?</span>
+                </div>
+                <div class="accordion-body">
+                    Agar peserta dapat menyentuh, mencium aromanya, dan mengenali bahan-bahan kimia secara langsung sehingga tidak salah memilih saat membeli bahan baku di pasaran.
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>Bagaimana jika ingin berkonsultasi setelah pelatihan selesai?</span>
+                </div>
+                <div class="accordion-body">
+                    Cleanique Academy menyediakan grup alumni dan layanan pendampingan lanjutan untuk berkonsultasi seputar kendala produksi maupun formula.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. Promo Investasi Pelatihan (Kelas Kolektif, Privat, 1 Produk, Custom, Add-On) -->
 <section id="program-unggulan" class="section" style="background-color: #11262d; color: #ffffff; padding: 4.5rem 0;">
     <div class="container" style="max-width: 1080px;">
         
@@ -471,146 +611,6 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             </a>
         </div>
 
-    </div>
-</section>
-
-<!-- 7. Dokumentasi & Kegiatan Terbaru -->
-<section class="section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-subtitle">Dokumentasi & Event</span>
-            <h2 class="section-title">Kegiatan Pelatihan Terbaru</h2>
-            <p class="section-description">Bukti dokumentasi pelaksanaan kelas pelatihan di berbagai kota.</p>
-        </div>
-
-        <div class="grid grid-3">
-            <?php
-            $kegiatan_query = new WP_Query( array(
-                'post_type'      => 'kegiatan',
-                'posts_per_page' => 3,
-            ) );
-
-            if ( $kegiatan_query->have_posts() ) :
-                while ( $kegiatan_query->have_posts() ) : $kegiatan_query->the_post();
-                    $tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
-                    $lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
-                    ?>
-                    <div class="gallery-overlay-card">
-                        <div class="gallery-card-image-wrap">
-                            <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
-                            <div class="gallery-card-badge-top">
-                                <?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?>
-                            </div>
-                        </div>
-                        <div class="gallery-card-overlay">
-                            <div class="gallery-card-content">
-                                <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></span>
-                                <h3 class="gallery-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></p>
-                                <div class="gallery-card-actions">
-                                    <a href="<?php the_permalink(); ?>" class="gallery-card-btn">Lihat Dokumentasi &rarr;</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                endwhile;
-                wp_reset_postdata();
-            endif;
-            ?>
-        </div>
-    </div>
-</section>
-
-<!-- 8. Testimonial Alumni Section -->
-<section id="testimoni" class="section section-alt">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-subtitle">Apa Kata Mereka</span>
-            <h2 class="section-title">Testimoni Alumni & Peserta Pelatihan</h2>
-            <p class="section-description">Kesan dan pengalaman nyata dari para pengusaha dan praktisi setelah mengikuti pelatihan.</p>
-        </div>
-
-        <div class="grid grid-3">
-            <?php
-            $testi_query = new WP_Query( array(
-                'post_type'      => 'testimoni',
-                'posts_per_page' => 9,
-            ) );
-
-            if ( $testi_query->have_posts() ) :
-                while ( $testi_query->have_posts() ) : $testi_query->the_post();
-                    $profesi = get_post_meta( get_the_ID(), '_cac_profesi', true );
-                    $kota    = get_post_meta( get_the_ID(), '_cac_kota', true );
-                    ?>
-                    <div class="card">
-                        <div class="star-rating" style="color: #f59e0b; margin-bottom: 0.75rem; display:flex; gap:0.25rem;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </div>
-                        <div class="card-text" style="font-style: italic; line-height: 1.6;">"<?php echo esc_html( get_the_content() ); ?>"</div>
-                        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border);">
-                            <strong style="display: block; color: var(--color-secondary);"><?php the_title(); ?></strong>
-                            <span style="font-size: 0.85rem; color: var(--color-text-muted);"><?php echo esc_html( $profesi ? $profesi : 'Peserta' ); ?> <?php echo $kota ? '(' . esc_html( $kota ) . ')' : ''; ?></span>
-                        </div>
-                    </div>
-                <?php
-                endwhile;
-                wp_reset_postdata();
-            endif;
-            ?>
-        </div>
-    </div>
-</section>
-
-<!-- 9. FAQ Accordion Section -->
-<section id="faq" class="section">
-    <div class="container" style="max-width: 850px;">
-        <div class="section-header">
-            <span class="section-subtitle">FAQ</span>
-            <h2 class="section-title">Pertanyaan Sering Diajukan</h2>
-        </div>
-
-        <div>
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>Apakah pemula tanpa latar belakang kimia bisa mengikuti?</span>
-                </div>
-                <div class="accordion-body">
-                    Bisa. Seluruh materi dirancang secara praktis dan mudah dipahami, langsung dilengkapi dengan formula praktikum siap pakai untuk pemula maupun praktisi.
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>Apakah peserta mendapatkan bahan dan modul pelatihan?</span>
-                </div>
-                <div class="accordion-body">
-                    Ya, setiap peserta mendapatkan modul fisik/digital lengkap, sampel bahan kimia untuk praktikum, serta sertifikat kepesertaan resmi.
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>Mengapa pelatihan diselenggarakan secara langsung (Tatap Muka)?</span>
-                </div>
-                <div class="accordion-body">
-                    Agar peserta dapat menyentuh, mencium aromanya, dan mengenali bahan-bahan kimia secara langsung sehingga tidak salah memilih saat membeli bahan baku di pasaran.
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>Bagaimana jika ingin berkonsultasi setelah pelatihan selesai?</span>
-                </div>
-                <div class="accordion-body">
-                    Cleanique Academy menyediakan grup alumni dan layanan pendampingan lanjutan untuk berkonsultasi seputar kendala produksi maupun formula.
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
