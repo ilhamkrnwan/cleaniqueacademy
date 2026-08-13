@@ -630,15 +630,13 @@
             });
         }
 
-        // Global Capture Event Listener for all WA buttons across the site
-        document.addEventListener('click', function(e) {
-            var waTrigger = e.target.closest('.btn-whatsapp, .btn-wa-float, .btn-header-wa, a[href*="wa.me"], a[href*="api.whatsapp.com"]');
-            if (waTrigger && !waTrigger.classList.contains('wa-action-btn')) {
+        // Bind trigger strictly to the Floating WA Button (.btn-wa-float) only
+        document.querySelectorAll('.btn-wa-float').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
                 e.preventDefault();
-                e.stopPropagation();
                 window.openWaFaqModal();
-            }
-        }, true);
+            });
+        });
     }
 
     if (document.readyState === 'loading') {
