@@ -1826,10 +1826,84 @@ details.accordion-item[open] summary.accordion-header::after {
     width: 20px !important;
     height: 20px !important;
   }
-  .hero-gallery-grid {
-    grid-template-columns: 1fr;
-  }
   .hero-static-title {
     font-size: 2rem;
   }
 }
+
+/* Table of Contents Collapsible Accordion Dropdown */
+details.toc-details {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 2.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+summary.toc-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  user-select: none;
+}
+
+summary.toc-summary::-webkit-details-marker {
+  display: none;
+}
+
+summary.toc-summary .toc-chevron {
+  transition: transform 0.25s ease;
+  color: #64748b;
+}
+
+details.toc-details[open] summary.toc-summary .toc-chevron {
+  transform: rotate(180deg);
+  color: #0284c7;
+}
+
+/* Numeric Pagination */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pagination-wrapper .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.85rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.pagination-wrapper .page-numbers:hover {
+  border-color: #0284c7;
+  color: #0284c7;
+  background: #f0f9ff;
+}
+
+.pagination-wrapper .page-numbers.current {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+

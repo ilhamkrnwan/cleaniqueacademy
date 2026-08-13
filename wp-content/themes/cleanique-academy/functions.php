@@ -114,7 +114,7 @@ function cleanique_get_reading_time( $content = '' ) {
     return max( 1, $reading_time ) . ' Menit Baca';
 }
 
-// Generate Table of Contents (TOC) from Content H2 & H3
+// Generate Table of Contents (TOC) from Content H2 & H3 (Collapsible Accordion Dropdown)
 function cleanique_generate_toc_and_content( $content ) {
     if ( ! is_single() ) {
         return array( 'toc' => '', 'content' => $content );
@@ -125,8 +125,11 @@ function cleanique_generate_toc_and_content( $content ) {
         return array( 'toc' => '', 'content' => $content );
     }
 
-    $toc_html = '<div class="toc-box">';
-    $toc_html .= '<h3 class="toc-title">Daftar Isi Artikel</h3>';
+    $toc_html  = '<details class="toc-box toc-details" open>';
+    $toc_html .= '<summary class="toc-summary">';
+    $toc_html .= '<span class="toc-title">Daftar Isi Artikel</span>';
+    $toc_html .= '<svg class="toc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+    $toc_html .= '</summary>';
     $toc_html .= '<ul class="toc-list">';
 
     $index = 0;
@@ -144,7 +147,7 @@ function cleanique_generate_toc_and_content( $content ) {
         $toc_html    .= '<li' . $indent_class . '><a href="#' . $slug . '">' . esc_html( $text ) . '</a></li>';
     }
 
-    $toc_html .= '</ul></div>';
+    $toc_html .= '</ul></details>';
 
     return array( 'toc' => $toc_html, 'content' => $content );
 }
