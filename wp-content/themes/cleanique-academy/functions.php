@@ -89,7 +89,7 @@ function cleanique_customize_register( $wp_customize ) {
 
     // 4. YouTube Video URL / Embed Code
     $wp_customize->add_setting( 'cleanique_youtube_video_url', array(
-        'default'   => 'https://www.youtube.com/embed/ONlKuDzdCkE',
+        'default'   => 'https://www.youtube.com/embed/TwVdCpcpOzo',
         'type'      => 'theme_mod',
         'sanitize_callback' => 'esc_url_raw',
     ) );

@@ -8,7 +8,7 @@ get_header();
 $promo_image_url  = get_theme_mod( 'cleanique_promo_banner_image', get_template_directory_uri() . '/assets/images/promo-banner.jpeg' );
 $promo_text       = get_theme_mod( 'cleanique_promo_text', 'Dapatkan Promo Pelatihan Terbatas berlaku bagi yang melakukan registrasi bulan ini, terbatas hanya untuk 10 pendaftar pertama.' );
 $promo_btn_label  = get_theme_mod( 'cleanique_promo_btn_label', 'Ambil Promo' );
-$video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.youtube.com/embed/ONlKuDzdCkE' );
+$video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.youtube.com/embed/TwVdCpcpOzo' );
 ?>
 
 <!-- 1. Hero Section with Title & Static Gallery -->

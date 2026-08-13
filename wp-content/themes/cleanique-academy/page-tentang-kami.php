@@ -27,14 +27,14 @@ cleanique_render_page_hero( array(
             </p>
         </div>
 
-        <!-- VIDEO PENJELASAN CLEANIQUE ACADEMY -->
-        <div style="margin-bottom: 3rem; background: #ffffff; border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
-            <div style="text-align: center; margin-bottom: 1.25rem;">
+        <!-- VIDEO PENJELASAN CLEANIQUE ACADEMY (YOUTUBE SHORTS) -->
+        <div style="margin-bottom: 3rem; background: #ffffff; border: 1px solid var(--color-border); border-radius: 12px; padding: 1.75rem 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center;">
+            <div style="margin-bottom: 1.25rem;">
                 <span style="display: inline-block; background: #e0f2fe; color: #0284c7; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 6px; margin-bottom: 0.35rem;">Video Profil Academy</span>
                 <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0;">Pengenalan & Suasana Pelatihan Cleanique Academy</h3>
             </div>
-            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.12);">
-                <iframe src="https://www.youtube.com/embed/S2uNtz34mEE" title="Cleanique Academy Video Penjelasan" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div style="max-width: 360px; margin: 0 auto; position: relative; width: 100%; aspect-ratio: 9/16; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                <iframe src="https://www.youtube.com/embed/TwVdCpcpOzo" title="Cleanique Academy Video Penjelasan" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
