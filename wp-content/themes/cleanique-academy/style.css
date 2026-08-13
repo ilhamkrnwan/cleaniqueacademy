@@ -806,7 +806,7 @@ img {
 /* Interactive Photo-Focused Overlay Gallery Cards */
 .gallery-overlay-card {
   position: relative;
-  height: 340px;
+  height: 370px;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
@@ -855,11 +855,11 @@ img {
   position: absolute;
   inset: 0;
   z-index: 4;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.55) 55%, rgba(15, 23, 42, 0.1) 100%);
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.94) 0%, rgba(15, 23, 42, 0.6) 55%, rgba(15, 23, 42, 0.15) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.5rem;
+  padding: 1.25rem 1.25rem 1.5rem 1.25rem;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -868,22 +868,30 @@ img {
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.gallery-overlay-card:hover .gallery-card-content {
+  transform: translateY(-4px);
+}
+
 .gallery-card-lokasi {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: #38bdf8;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
 .gallery-card-title {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 0.35rem;
   line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .gallery-card-title a {
@@ -897,14 +905,17 @@ img {
 }
 
 .gallery-card-desc {
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   color: #cbd5e1;
-  line-height: 1.5;
-  margin-bottom: 0.85rem;
+  line-height: 1.45;
+  margin-bottom: 0.65rem;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .gallery-card-actions {
@@ -912,6 +923,8 @@ img {
   opacity: 0;
   overflow: hidden;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-top: 2px;
+  padding-bottom: 4px;
 }
 
 .gallery-card-btn {
@@ -944,12 +957,12 @@ img {
 }
 
 .gallery-overlay-card:hover .gallery-card-desc {
-  max-height: 80px;
+  max-height: 70px;
   opacity: 1;
 }
 
 .gallery-overlay-card:hover .gallery-card-actions {
-  max-height: 50px;
+  max-height: 70px;
   opacity: 1;
 }
 
