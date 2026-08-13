@@ -15,12 +15,6 @@ cleanique_render_page_hero( array(
 <section class="section" style="padding-top: 2.5rem;">
     <div class="container" style="max-width: 900px;">
         
-        <!-- Live Search Box for FAQ -->
-        <div style="margin-bottom: 3rem; background: #ffffff; padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid var(--color-border); box-shadow: 0 4px 16px rgba(0,0,0,0.04); position: relative;">
-            <input type="text" id="faqSearchInput" placeholder="Ketik kata kunci pertanyaan (misal: bahan baku, HPP, parfum, lokasi...)" style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.6rem; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; outline: none; transition: border-color 0.2s;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 2.25rem; top: 50%; transform: translateY(-50%);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </div>
-
         <!-- CATEGORY 1: INFORMASI UMUM & PENDAFTARAN -->
         <div class="faq-category-block" style="margin-bottom: 3rem;">
             <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 2px solid #e0f2fe;">
@@ -206,45 +200,6 @@ cleanique_render_page_hero( array(
 
     </div>
 </section>
-
-<!-- LIVE FILTER SCRIPT FOR FAQ SEARCH INPUT -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var searchInput = document.getElementById('faqSearchInput');
-    if (!searchInput) return;
-
-    searchInput.addEventListener('input', function() {
-        var term = searchInput.value.toLowerCase().trim();
-        var categoryBlocks = document.querySelectorAll('.faq-category-block');
-
-        categoryBlocks.forEach(function(block) {
-            var items = block.querySelectorAll('.accordion-item');
-            var hasMatchInBlock = false;
-
-            items.forEach(function(item) {
-                var headerText = item.querySelector('.accordion-header') ? item.querySelector('.accordion-header').textContent.toLowerCase() : '';
-                var bodyText   = item.querySelector('.accordion-body') ? item.querySelector('.accordion-body').textContent.toLowerCase() : '';
-
-                if (headerText.indexOf(term) !== -1 || bodyText.indexOf(term) !== -1) {
-                    item.style.display = '';
-                    hasMatchInBlock = true;
-                    if (term.length > 2) {
-                        item.setAttribute('open', 'true');
-                    }
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-
-            if (hasMatchInBlock) {
-                block.style.display = '';
-            } else {
-                block.style.display = 'none';
-            }
-        });
-    });
-});
-</script>
 
 <?php
 get_footer();
