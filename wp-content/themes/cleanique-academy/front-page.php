@@ -271,70 +271,119 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
 </style>
 
 <!-- 4. 6 Alasan Mengapa Harus Memilih Cleanique Academy -->
-<section id="alasan-memilih" class="section section-alt">
-    <div class="container" style="max-width: 900px;">
-        <div class="section-header">
-            <span class="section-subtitle">Keunggulan Pelatihan</span>
-            <h2 class="section-title">6 Alasan Mengapa Harus Memilih Pelatihan Kimia Cleanique Academy</h2>
+<section id="alasan-memilih" class="section" style="background: #ffffff; padding: 5rem 0;">
+    <div class="container" style="max-width: 1140px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+            <span class="section-subtitle" style="color: #0284c7; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; display: block; margin-bottom: 0.5rem;">Keunggulan Pelatihan</span>
+            <h2 class="section-title" style="font-size: 2.2rem; font-weight: 800; color: #0f172a; margin: 0;">
+                6 Alasan Mengapa Harus Memilih Pelatihan Kimia Cleanique Academy
+            </h2>
         </div>
 
-        <div>
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>1. Belajar Langsung dari Produsen Berpengalaman (Sejak 2011)</span>
+        <div class="reasons-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+            
+            <!-- Card 1 -->
+            <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
+                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-1.webp' ); ?>" alt="Belajar dari Produsen" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
-                <div class="accordion-body">
-                    Kami adalah perusahaan chemical yang berdiri sejak 2011. Dari awal berdiri, kami telah melewati ribuan riset dan <i>trial and error</i>. Anda tidak perlu lagi mengulangi masa-masa sulit itu, cukup ikuti pelatihan kami dan nikmati formula siap pakai.
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>2. Lengkap: Teori & Praktikum Langsung di Lapangan</span>
-                </div>
-                <div class="accordion-body">
-                    Kami mengedepankan metode <strong>Praktik Langsung (Hands-on)</strong> diperbanyak ketimbang sekadar teori panjang lebar. Anda meracik sendiri bahan kimia hingga menjadi produk jadi.
+                <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
+                    <span style="display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Penyelenggara Sejak 2011</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">1. Belajar Langsung dari Produsen Berpengalaman</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Kami adalah perusahaan chemical sejak 2011. Bebas dari trial & error karena Anda langsung diajarkan formula teruji siap pakai.</p>
                 </div>
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>3. Produk Chemical Kami Terbukti Terjual > 1 Juta Unit</span>
+            <!-- Card 2 -->
+            <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
+                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-2.webp' ); ?>" alt="Praktikum Langsung" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
-                <div class="accordion-body">
-                    Produk formulasi kami terbukti diterima pasar dan laku keras. Kami bukan penyedia kursus teoritis tanpa bukti produk nyata di pasaran.
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>4. Tim Ahli & Praktisi Berpengalaman Ribuan Alumni</span>
-                </div>
-                <div class="accordion-body">
-                    Eksis sejak 2011, kami telah melahirkan ribuan pengusaha laundry dan produsen chemical di seluruh Indonesia yang produknya telah beredar luas.
+                <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
+                    <span style="display: inline-block; background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Hands-on 80% Praktik</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">2. Teori & Praktikum Langsung di Lapangan</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Metode praktikum langsung (hands-on) diperbanyak. Anda meracik sendiri bahan kimia hingga menjadi produk jadi siap edar.</p>
                 </div>
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>5. Efisien: Tidak Harus Kuliah Kimia Berbulan-bulan</span>
+            <!-- Card 3 -->
+            <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
+                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-3.webp' ); ?>" alt="Produk Terjual 1 Juta Unit" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
-                <div class="accordion-body">
-                    Anda bisa mempelajari dasar formulasi, fungsi bahan aktif, dan cara meracik produk pembersih secara efisien hanya dalam 1–2 hari pelatihan intensive.
+                <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
+                    <span style="display: inline-block; background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Terbukti Diterima Pasar</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">3. Produk Terbukti Terjual > 1 Juta Unit</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Produk formulasi kami terbukti laku keras di pasaran. Kami bukan penyedia kursus teoritis tanpa bukti nyata.</p>
                 </div>
             </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <span>6. Ekosistem Bisnis & Bimbingan Jangka Panjang</span>
+            <!-- Card 4 -->
+            <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
+                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-4.webp' ); ?>" alt="Ribuan Alumni" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
-                <div class="accordion-body">
-                    Setelah kelas selesai, Anda tidak ditinggalkan. Anda bergabung dalam jaringan ekosistem alumni, mitra bahan baku, serta grup konsultasi berkelanjutan.
+                <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
+                    <span style="display: inline-block; background: #f3e8ff; color: #7e22ce; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Jaringan Alumni Luas</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">4. Tim Ahli & Ribuan Alumni Berkelanjutan</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Melahirkan ribuan pengusaha laundry dan produsen chemical di seluruh Indonesia yang bisnisnya berkembang pesat.</p>
                 </div>
             </div>
+
+            <!-- Card 5 -->
+            <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
+                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-5.webp' ); ?>" alt="Efisien Tanpa Kuliah Kimia" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
+                    <span style="display: inline-block; background: #ffe4e6; color: #be123c; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Fast & Intensive</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">5. Efisien: Tanpa Kuliah Kimia Berbulan-bulan</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Menguasai dasar formulasi, fungsi bahan aktif, dan cara meracik pembersih secara efisien hanya dalam 1–2 hari.</p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="reason-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: row; transition: all 0.3s ease;">
+                <div class="reason-img-wrap" style="width: 180px; min-width: 180px; position: relative; overflow: hidden;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-6.webp' ); ?>" alt="Bimbingan Jangka Panjang" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div style="padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center;">
+                    <span style="display: inline-block; background: #ccfbf1; color: #0f766e; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 9999px; width: fit-content; margin-bottom: 0.6rem;">Lifetime Support</span>
+                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.4;">6. Ekosistem Bisnis & Bimbingan Pasca Kelas</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Bergabung dalam ekosistem alumni, supplier bahan baku terpercaya, serta grup konsultasi berkelanjutan.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
+
+<style>
+.reason-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1) !important;
+}
+.reason-card:hover .reason-img-wrap img {
+  transform: scale(1.08);
+}
+.reason-img-wrap img {
+  transition: transform 0.4s ease;
+}
+@media (max-width: 900px) {
+  .reasons-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 640px) {
+  .reason-card {
+    flex-direction: column !important;
+  }
+  .reason-img-wrap {
+    width: 100% !important;
+    height: 160px !important;
+  }
+}
+</style>
 
 <!-- 5. Yang Anda Dapatkan Dari Pelatihan Ini -->
 <section id="yang-didapat" class="section">
