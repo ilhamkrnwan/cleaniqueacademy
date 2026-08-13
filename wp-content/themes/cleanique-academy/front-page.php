@@ -325,51 +325,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
     </div>
 </section>
 
-<!-- 7. Testimonial Alumni Section -->
-<section id="testimoni" class="section section-alt">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-subtitle">Apa Kata Mereka</span>
-            <h2 class="section-title">Testimoni Alumni & Peserta Pelatihan</h2>
-            <p class="section-description">Kesan dan pengalaman nyata dari para pengusaha dan praktisi setelah mengikuti pelatihan.</p>
-        </div>
-
-        <div class="grid grid-3">
-            <?php
-            $testi_query = new WP_Query( array(
-                'post_type'      => 'testimoni',
-                'posts_per_page' => 9,
-            ) );
-
-            if ( $testi_query->have_posts() ) :
-                while ( $testi_query->have_posts() ) : $testi_query->the_post();
-                    $profesi = get_post_meta( get_the_ID(), '_cac_profesi', true );
-                    $kota    = get_post_meta( get_the_ID(), '_cac_kota', true );
-                    ?>
-                    <div class="card">
-                        <div class="star-rating" style="color: #f59e0b; margin-bottom: 0.75rem; display:flex; gap:0.25rem;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </div>
-                        <div class="card-text" style="font-style: italic; line-height: 1.6;">"<?php echo esc_html( get_the_content() ); ?>"</div>
-                        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border);">
-                            <strong style="display: block; color: var(--color-secondary);"><?php the_title(); ?></strong>
-                            <span style="font-size: 0.85rem; color: var(--color-text-muted);"><?php echo esc_html( $profesi ? $profesi : 'Peserta' ); ?> <?php echo $kota ? '(' . esc_html( $kota ) . ')' : ''; ?></span>
-                        </div>
-                    </div>
-                <?php
-                endwhile;
-                wp_reset_postdata();
-            endif;
-            ?>
-        </div>
-    </div>
-</section>
-
-<!-- 8. FAQ Accordion Section -->
+<!-- 7. FAQ Accordion Section -->
 <section id="faq" class="section">
     <div class="container" style="max-width: 850px;">
         <div class="section-header">
@@ -417,7 +373,51 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
     </div>
 </section>
 
-<!-- 9. Promo Investasi Pelatihan (Kelas Kolektif, Privat, 1 Produk, Custom, Add-On) -->
+<!-- 8. Testimonial Alumni Section (Directly Above Program Section) -->
+<section id="testimoni" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Apa Kata Mereka</span>
+            <h2 class="section-title">Testimoni Alumni & Peserta Pelatihan</h2>
+            <p class="section-description">Kesan dan pengalaman nyata dari para pengusaha dan praktisi setelah mengikuti pelatihan.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <?php
+            $testi_query = new WP_Query( array(
+                'post_type'      => 'testimoni',
+                'posts_per_page' => 9,
+            ) );
+
+            if ( $testi_query->have_posts() ) :
+                while ( $testi_query->have_posts() ) : $testi_query->the_post();
+                    $profesi = get_post_meta( get_the_ID(), '_cac_profesi', true );
+                    $kota    = get_post_meta( get_the_ID(), '_cac_kota', true );
+                    ?>
+                    <div class="card">
+                        <div class="star-rating" style="color: #f59e0b; margin-bottom: 0.75rem; display:flex; gap:0.25rem;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <div class="card-text" style="font-style: italic; line-height: 1.6;">"<?php echo esc_html( get_the_content() ); ?>"</div>
+                        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                            <strong style="display: block; color: var(--color-secondary);"><?php the_title(); ?></strong>
+                            <span style="font-size: 0.85rem; color: var(--color-text-muted);"><?php echo esc_html( $profesi ? $profesi : 'Peserta' ); ?> <?php echo $kota ? '(' . esc_html( $kota ) . ')' : ''; ?></span>
+                        </div>
+                    </div>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
+        </div>
+    </div>
+</section>
+
+<!-- 9. Promo Investasi Pelatihan (Program Section) -->
 <section id="program-unggulan" class="section" style="background-color: #11262d; color: #ffffff; padding: 4.5rem 0;">
     <div class="container" style="max-width: 1080px;">
         
