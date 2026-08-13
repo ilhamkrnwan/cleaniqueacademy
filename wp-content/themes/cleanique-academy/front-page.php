@@ -278,54 +278,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
     </div>
 </section>
 
-<!-- 6. Dokumentasi & Kegiatan Terbaru -->
-<section class="section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-subtitle">Dokumentasi & Event</span>
-            <h2 class="section-title">Kegiatan Pelatihan Terbaru</h2>
-            <p class="section-description">Bukti dokumentasi pelaksanaan kelas pelatihan di berbagai kota.</p>
-        </div>
-
-        <div class="grid grid-3">
-            <?php
-            $kegiatan_query = new WP_Query( array(
-                'post_type'      => 'kegiatan',
-                'posts_per_page' => 9,
-            ) );
-
-            if ( $kegiatan_query->have_posts() ) :
-                while ( $kegiatan_query->have_posts() ) : $kegiatan_query->the_post();
-                    $tanggal   = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
-                    $lokasi    = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
-                    $img_url   = cleanique_get_kegiatan_thumbnail_url( get_the_ID() );
-                    $title_txt = get_the_title();
-                    ?>
-                    <div class="gallery-overlay-card" data-img-src="<?php echo esc_url( $img_url ); ?>" data-title="<?php echo esc_attr( $title_txt ); ?>" onclick="cleaniqueOpenLightboxFromCard(this)" style="cursor: pointer;">
-                        <div class="gallery-card-image-wrap">
-                            <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $title_txt ); ?>">
-                            <div class="gallery-card-badge-top">
-                                <?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?>
-                            </div>
-                        </div>
-                        <div class="gallery-card-overlay">
-                            <div class="gallery-card-content">
-                                <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></span>
-                                <h3 class="gallery-card-title" style="color: #ffffff;"><?php the_title(); ?></h3>
-                                <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                endwhile;
-                wp_reset_postdata();
-            endif;
-            ?>
-        </div>
-    </div>
-</section>
-
-<!-- 7. FAQ Accordion Section -->
+<!-- 6. FAQ Accordion Section -->
 <section id="faq" class="section">
     <div class="container" style="max-width: 850px;">
         <div class="section-header">
@@ -373,7 +326,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
     </div>
 </section>
 
-<!-- 8. Testimonial Alumni Section (Directly Above Program Section) -->
+<!-- 7. Testimonial Alumni Section -->
 <section id="testimoni" class="section section-alt">
     <div class="container">
         <div class="section-header">
@@ -406,6 +359,53 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                         <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border);">
                             <strong style="display: block; color: var(--color-secondary);"><?php the_title(); ?></strong>
                             <span style="font-size: 0.85rem; color: var(--color-text-muted);"><?php echo esc_html( $profesi ? $profesi : 'Peserta' ); ?> <?php echo $kota ? '(' . esc_html( $kota ) . ')' : ''; ?></span>
+                        </div>
+                    </div>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
+        </div>
+    </div>
+</section>
+
+<!-- 8. Galeri Dokumentasi & Kegiatan Terbaru -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Dokumentasi & Event</span>
+            <h2 class="section-title">Kegiatan Pelatihan Terbaru</h2>
+            <p class="section-description">Bukti dokumentasi pelaksanaan kelas pelatihan di berbagai kota.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <?php
+            $kegiatan_query = new WP_Query( array(
+                'post_type'      => 'kegiatan',
+                'posts_per_page' => 9,
+            ) );
+
+            if ( $kegiatan_query->have_posts() ) :
+                while ( $kegiatan_query->have_posts() ) : $kegiatan_query->the_post();
+                    $tanggal   = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
+                    $lokasi    = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+                    $img_url   = cleanique_get_kegiatan_thumbnail_url( get_the_ID() );
+                    $title_txt = get_the_title();
+                    ?>
+                    <div class="gallery-overlay-card" data-img-src="<?php echo esc_url( $img_url ); ?>" data-title="<?php echo esc_attr( $title_txt ); ?>" onclick="cleaniqueOpenLightboxFromCard(this)" style="cursor: pointer;">
+                        <div class="gallery-card-image-wrap">
+                            <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $title_txt ); ?>">
+                            <div class="gallery-card-badge-top">
+                                <?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?>
+                            </div>
+                        </div>
+                        <div class="gallery-card-overlay">
+                            <div class="gallery-card-content">
+                                <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></span>
+                                <h3 class="gallery-card-title" style="color: #ffffff;"><?php the_title(); ?></h3>
+                                <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></p>
+                            </div>
                         </div>
                     </div>
                 <?php
