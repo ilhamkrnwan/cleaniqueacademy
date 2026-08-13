@@ -206,19 +206,18 @@
   inset: 0;
   background: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(4px);
-  z-index: 99999;
-  display: flex;
+  z-index: 999999;
+  display: none;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  pointer-events: none;
   transition: opacity 0.25s ease;
   padding: 1rem;
 }
 
 .wa-modal-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex !important;
+  opacity: 1 !important;
 }
 
 .wa-modal-card {
@@ -481,172 +480,171 @@
 
 <!-- JavaScript Logic for WA FAQ Modal -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var modalOverlay = document.getElementById('waFaqModalOverlay');
-    var closeBtn     = document.getElementById('waCloseBtn');
-    var backBtn      = document.getElementById('waBackBtn');
-    
-    var listView     = document.getElementById('waFaqListView');
-    var detailView   = document.getElementById('waFaqDetailView');
-    
-    var headerSubtitle   = document.getElementById('waHeaderSubtitle');
-    var detailTitle      = document.getElementById('waDetailTitle');
-    var detailIconBox    = document.getElementById('waDetailIconBox');
-    var typingBox        = document.getElementById('waTypingBox');
-    var answerBody       = document.getElementById('waAnswerBody');
-    var actionButton     = document.getElementById('waActionButton');
-    var actionButtonText = document.getElementById('waActionButtonText');
+(function() {
+    function initWaFaqModal() {
+        var modalOverlay = document.getElementById('waFaqModalOverlay');
+        var closeBtn     = document.getElementById('waCloseBtn');
+        var backBtn      = document.getElementById('waBackBtn');
+        
+        var listView     = document.getElementById('waFaqListView');
+        var detailView   = document.getElementById('waFaqDetailView');
+        
+        var headerSubtitle   = document.getElementById('waHeaderSubtitle');
+        var detailTitle      = document.getElementById('waDetailTitle');
+        var detailIconBox    = document.getElementById('waDetailIconBox');
+        var typingBox        = document.getElementById('waTypingBox');
+        var answerBody       = document.getElementById('waAnswerBody');
+        var actionButton     = document.getElementById('waActionButton');
+        var actionButtonText = document.getElementById('waActionButtonText');
 
-    var waTargetPhone = '6282215840088';
+        var waTargetPhone = '6282215840088';
 
-    // FAQ Data Dictionary matching screenshot content & guidelines
-    var faqData = {
-        'biaya-promo': {
-            title: 'Biaya & Promo Pelatihan',
-            iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>',
-            answer: '<p>Investasi pelatihan di Cleanique Academy berkisar antara <strong>Rp 1.850.000 hingga Rp 3.000.000</strong> sesuai jenis program praktikum yang dipilih.</p><p>Dapatkan promo potongan biaya spesial berlaku bagi yang melakukan registrasi bulan ini, terbatas hanya untuk 10 pendaftar pertama.</p>',
-            btnText: 'Tanya Biaya & Promo',
-            waMessage: 'Halo Cleanique Academy, saya ingin konsul rincian biaya dan promo pelatihan bulan ini.'
-        },
-        'jadwal-pelatihan': {
-            title: 'Jadwal Pelatihan',
-            iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
-            answer: '<p>Pelatihan praktikum tatap muka diselenggarakan secara berkala setiap bulan pada akhir pekan (Sabtu & Minggu) mulai pukul 08.00 - 16.00 WIB.</p><p>Hubungi tim admin kami untuk mendapatkan kalender jadwal terdekat serta informasi kuota peserta yang masih tersedia.</p>',
-            btnText: 'Cek Jadwal Terdekat',
-            waMessage: 'Halo Cleanique Academy, saya ingin tanya jadwal pelatihan terdekat yang masih tersedia.'
-        },
-        'lokasi-pelatihan': {
-            title: 'Lokasi Pelatihan',
-            iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
-            answer: '<p>Pelatihan tatap muka utama diselenggarakan di <strong>Laboratorium & Training Center Cleanique Academy (PT Indotech Berkah Abadi) di Yogyakarta</strong>.</p><p>Kami juga menyelenggarakan event roadshow pelatihan berkala di kota-kota besar Indonesia seperti Jakarta, Bandung, Surabaya, dan Pekanbaru.</p>',
-            btnText: 'Tanya Lokasi Pelatihan',
-            waMessage: 'Halo Cleanique Academy, saya ingin bertanya info lokasi pelatihan dan rekomendasi penginapan.'
-        },
-        'sertifikat-fasilitas': {
-            title: 'Sertifikat & Fasilitas',
-            iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>',
-            answer: '<p>Setiap peserta mendapatkan sertifikat pelatihan resmi, modul cetak eksklusif, pemahaman jenis bahan kimia (alkali, asam, netral) beserta cara pengencerannya, studi kasus lapangan, dan mystery box.</p><p>Peserta juga dibimbing langsung oleh mentor berpengalaman sejak 2011.</p>',
-            btnText: 'Tanya Fasilitas Lengkap',
-            waMessage: 'Halo Cleanique Academy, saya ingin konsultasi fasilitas dan modul sertifikat pelatihan.'
-        },
-        'bisa-online': {
-            title: 'Apakah Bisa Online?',
-            iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>',
-            answer: '<p>Pelatihan berfokus pada metode <strong>Tatap Muka (Offline)</strong> agar peserta dapat merasakan langsung tekstur, aroma, serta takaran bahan aktif kimia saat praktikum.</p><p>Namun untuk bimbingan awal dan sesi privat formulasi produk, kami juga menyediakan layanan konsultasi secara daring (online).</p>',
-            btnText: 'Konsultasi Kelas Online',
-            waMessage: 'Halo Cleanique Academy, saya ingin bertanya ketersediaan sesi online / privat.'
-        },
-        'cara-pendaftaran': {
-            title: 'Cara Pendaftaran',
-            iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>',
-            answer: '<p>Cara pendaftaran sangat mudah: cukup mendaftar via WhatsApp, memilih jadwal kelas yang diinginkan, dan mengisi form konfirmasi identitas peserta.</p><p>Kuota kelas dibatasi hanya 10-15 peserta per angkatan untuk menjamin efektivitas praktikum.</p>',
-            btnText: 'Daftar Pelatihan Sekarang',
-            waMessage: 'Halo Cleanique Academy, saya ingin mendaftar pelatihan, mohon panduan caranya.'
-        },
-        'pertanyaan-lainnya': {
-            title: 'Pertanyaan lainnya',
-            iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>',
-            answer: '<p>Memiliki pertanyaan khusus mengenai operasional laundry, bisnis produk pembersih rumah tangga (homecare), atau formulasi khusus?</p><p>Tim admin konsultan kami siap melayani dan memberikan jawaban langsung via WhatsApp.</p>',
-            btnText: 'Chat Admin WhatsApp',
-            waMessage: 'Halo Cleanique Academy, saya punya pertanyaan khusus seputar pelatihan.'
-        }
-    };
+        var faqData = {
+            'biaya-promo': {
+                title: 'Biaya & Promo Pelatihan',
+                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>',
+                answer: '<p>Investasi pelatihan di Cleanique Academy berkisar antara <strong>Rp 1.850.000 hingga Rp 3.000.000</strong> sesuai jenis program praktikum yang dipilih.</p><p>Dapatkan promo potongan biaya spesial berlaku bagi yang melakukan registrasi bulan ini, terbatas hanya untuk 10 pendaftar pertama.</p>',
+                btnText: 'Tanya Biaya & Promo',
+                waMessage: 'Halo Cleanique Academy, saya ingin konsul rincian biaya dan promo pelatihan bulan ini.'
+            },
+            'jadwal-pelatihan': {
+                title: 'Jadwal Pelatihan',
+                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
+                answer: '<p>Pelatihan praktikum tatap muka diselenggarakan secara berkala setiap bulan pada akhir pekan (Sabtu & Minggu) mulai pukul 08.00 - 16.00 WIB.</p><p>Hubungi tim admin kami untuk mendapatkan kalender jadwal terdekat serta informasi kuota peserta yang masih tersedia.</p>',
+                btnText: 'Cek Jadwal Terdekat',
+                waMessage: 'Halo Cleanique Academy, saya ingin tanya jadwal pelatihan terdekat yang masih tersedia.'
+            },
+            'lokasi-pelatihan': {
+                title: 'Lokasi Pelatihan',
+                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
+                answer: '<p>Pelatihan tatap muka utama diselenggarakan di <strong>Laboratorium & Training Center Cleanique Academy (PT Indotech Berkah Abadi) di Yogyakarta</strong>.</p><p>Kami juga menyelenggarakan event roadshow pelatihan berkala di kota-kota besar Indonesia seperti Jakarta, Bandung, Surabaya, dan Pekanbaru.</p>',
+                btnText: 'Tanya Lokasi Pelatihan',
+                waMessage: 'Halo Cleanique Academy, saya ingin bertanya info lokasi pelatihan dan rekomendasi penginapan.'
+            },
+            'sertifikat-fasilitas': {
+                title: 'Sertifikat & Fasilitas',
+                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>',
+                answer: '<p>Setiap peserta mendapatkan sertifikat pelatihan resmi, modul cetak eksklusif, pemahaman jenis bahan kimia (alkali, asam, netral) beserta cara pengencerannya, studi kasus lapangan, dan mystery box.</p><p>Peserta juga dibimbing langsung oleh mentor berpengalaman sejak 2011.</p>',
+                btnText: 'Tanya Fasilitas Lengkap',
+                waMessage: 'Halo Cleanique Academy, saya ingin konsultasi fasilitas dan modul sertifikat pelatihan.'
+            },
+            'bisa-online': {
+                title: 'Apakah Bisa Online?',
+                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>',
+                answer: '<p>Pelatihan berfokus pada metode <strong>Tatap Muka (Offline)</strong> agar peserta dapat merasakan langsung tekstur, aroma, serta takaran bahan aktif kimia saat praktikum.</p><p>Namun untuk bimbingan awal dan sesi privat formulasi produk, kami juga menyediakan layanan konsultasi secara daring (online).</p>',
+                btnText: 'Konsultasi Kelas Online',
+                waMessage: 'Halo Cleanique Academy, saya ingin bertanya ketersediaan sesi online / privat.'
+            },
+            'cara-pendaftaran': {
+                title: 'Cara Pendaftaran',
+                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>',
+                answer: '<p>Cara pendaftaran sangat mudah: cukup mendaftar via WhatsApp, memilih jadwal kelas yang diinginkan, dan mengisi form konfirmasi identitas peserta.</p><p>Kuota kelas dibatasi hanya 10-15 peserta per angkatan untuk menjamin efektivitas praktikum.</p>',
+                btnText: 'Daftar Pelatihan Sekarang',
+                waMessage: 'Halo Cleanique Academy, saya ingin mendaftar pelatihan, mohon panduan caranya.'
+            },
+            'pertanyaan-lainnya': {
+                title: 'Pertanyaan lainnya',
+                iconHtml: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>',
+                answer: '<p>Memiliki pertanyaan khusus mengenai operasional laundry, bisnis produk pembersih rumah tangga (homecare), atau formulasi khusus?</p><p>Tim admin konsultan kami siap melayani dan memberikan jawaban langsung via WhatsApp.</p>',
+                btnText: 'Chat Admin WhatsApp',
+                waMessage: 'Halo Cleanique Academy, saya punya pertanyaan khusus seputar pelatihan.'
+            }
+        };
 
-    function openModal() {
-        if (modalOverlay) {
-            modalOverlay.classList.add('active');
-            modalOverlay.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            showListView();
-        }
-    }
+        window.openWaFaqModal = function(specificFaqId) {
+            if (modalOverlay) {
+                modalOverlay.classList.add('active');
+                modalOverlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                if (specificFaqId && faqData[specificFaqId]) {
+                    showDetailView(specificFaqId);
+                } else {
+                    showListView();
+                }
+            }
+        };
 
-    function closeModal() {
-        if (modalOverlay) {
-            modalOverlay.classList.remove('active');
-            modalOverlay.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-        }
-    }
+        window.closeWaFaqModal = function() {
+            if (modalOverlay) {
+                modalOverlay.classList.remove('active');
+                modalOverlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        };
 
-    function showListView() {
-        if (listView && detailView && backBtn && headerSubtitle) {
-            listView.style.display = 'block';
-            detailView.style.display = 'none';
-            backBtn.style.display = 'none';
-            headerSubtitle.textContent = 'Asisten Pelatihan';
-        }
-    }
-
-    function showDetailView(faqId) {
-        var data = faqData[faqId];
-        if (!data) return;
-
-        if (listView && detailView && backBtn && headerSubtitle) {
-            listView.style.display = 'none';
-            detailView.style.display = 'block';
-            backBtn.style.display = 'flex';
-
-            // Set Header Subtitle to typing state
-            headerSubtitle.textContent = 'Sedang mengetik...';
-            
-            // Show Typing Box, Hide content
-            typingBox.style.display = 'flex';
-            answerBody.style.display = 'none';
-            actionButton.style.display = 'none';
-
-            detailTitle.textContent = data.title;
-            detailIconBox.innerHTML = data.iconHtml;
-
-            // Typing effect delay (700ms)
-            setTimeout(function() {
+        function showListView() {
+            if (listView && detailView && backBtn && headerSubtitle) {
+                listView.style.display = 'block';
+                detailView.style.display = 'none';
+                backBtn.style.display = 'none';
                 headerSubtitle.textContent = 'Asisten Pelatihan';
-                typingBox.style.display = 'none';
-
-                answerBody.innerHTML = data.answer;
-                answerBody.style.display = 'block';
-
-                actionButtonText.textContent = data.btnText;
-                actionButton.href = 'https://api.whatsapp.com/send/?phone=' + waTargetPhone + '&text=' + encodeURIComponent(data.waMessage) + '&type=phone_number&app_absent=0';
-                actionButton.style.display = 'flex';
-            }, 750);
+            }
         }
+
+        function showDetailView(faqId) {
+            var data = faqData[faqId];
+            if (!data) return;
+
+            if (listView && detailView && backBtn && headerSubtitle) {
+                listView.style.display = 'none';
+                detailView.style.display = 'block';
+                backBtn.style.display = 'flex';
+
+                headerSubtitle.textContent = 'Sedang mengetik...';
+                
+                typingBox.style.display = 'flex';
+                answerBody.style.display = 'none';
+                actionButton.style.display = 'none';
+
+                detailTitle.textContent = data.title;
+                detailIconBox.innerHTML = data.iconHtml;
+
+                setTimeout(function() {
+                    headerSubtitle.textContent = 'Asisten Pelatihan';
+                    typingBox.style.display = 'none';
+
+                    answerBody.innerHTML = data.answer;
+                    answerBody.style.display = 'block';
+
+                    actionButtonText.textContent = data.btnText;
+                    actionButton.href = 'https://api.whatsapp.com/send/?phone=' + waTargetPhone + '&text=' + encodeURIComponent(data.waMessage) + '&type=phone_number&app_absent=0';
+                    actionButton.style.display = 'flex';
+                }, 750);
+            }
+        }
+
+        // Bind FAQ item clicks
+        var faqItems = document.querySelectorAll('.wa-faq-item');
+        faqItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var faqId = this.getAttribute('data-faq-id');
+                showDetailView(faqId);
+            });
+        });
+
+        if (backBtn)  backBtn.addEventListener('click', showListView);
+        if (closeBtn) closeBtn.addEventListener('click', window.closeWaFaqModal);
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) window.closeWaFaqModal();
+            });
+        }
+
+        // Global Capture Event Listener for all WA buttons across the site
+        document.addEventListener('click', function(e) {
+            var waTrigger = e.target.closest('.btn-whatsapp, .btn-wa-float, .btn-header-wa, a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+            if (waTrigger && !waTrigger.classList.contains('wa-action-btn')) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.openWaFaqModal();
+            }
+        }, true);
     }
 
-    // Bind FAQ item clicks
-    var faqItems = document.querySelectorAll('.wa-faq-item');
-    faqItems.forEach(function(item) {
-        item.addEventListener('click', function() {
-            var faqId = this.getAttribute('data-faq-id');
-            showDetailView(faqId);
-        });
-    });
-
-    // Bind Back & Close buttons
-    if (backBtn)  backBtn.addEventListener('click', showListView);
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', function(e) {
-            if (e.target === modalOverlay) closeModal();
-        });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initWaFaqModal);
+    } else {
+        initWaFaqModal();
     }
-
-    // Intercept all WhatsApp CTA Buttons across the website to trigger the WA FAQ Assistant Modal
-    var waTriggerSelectors = [
-        '.btn-whatsapp',
-        '.btn-wa-float',
-        'a[href*="wa.me"]',
-        'a[href*="api.whatsapp.com"]'
-    ];
-
-    document.querySelectorAll(waTriggerSelectors.join(',')).forEach(function(btn) {
-        // Do not intercept the action button inside the modal itself
-        if (btn.classList.contains('wa-action-btn')) return;
-
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            openModal();
-        });
-    });
-});
+})();
 </script>
