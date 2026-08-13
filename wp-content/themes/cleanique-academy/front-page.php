@@ -397,46 +397,90 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
 </style>
 
 <!-- 5. Yang Anda Dapatkan Dari Pelatihan Ini -->
-<section id="yang-didapat" class="section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-subtitle">Fasilitas Peserta</span>
-            <h2 class="section-title">Yang Anda Dapatkan Dari Pelatihan Kimia Ini</h2>
+<section id="yang-didapat" class="section" style="background: #f8fafc; padding: 5rem 0;">
+    <div class="container" style="max-width: 1040px;">
+        
+        <!-- Section Header -->
+        <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+            <h2 class="section-title" style="font-size: 2.2rem; font-weight: 800; color: #0f172a; margin: 0; line-height: 1.3;">
+                Yang <span style="color: #1e3a8a;">Anda Dapatkan</span><br>
+                Dari Pelatihan Kimia ini
+            </h2>
         </div>
 
-        <div class="grid grid-3">
-            <div class="card">
-                <span class="card-number">A</span>
-                <h3 class="card-title">Modul Pelatihan Lengkap (Cetak)</h3>
-                <p class="card-text">Panduan praktis eksklusif berisi resep formula, petunjuk keselamatan, & operasional produksi yang bisa dijadikan referensi kerja selamanya.</p>
+        <!-- TOP HERO CARD: Modul Pelatihan Lengkap (Cetak) -->
+        <div class="get-item-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 1.5rem; margin-bottom: 2rem; transition: all 0.3s ease;">
+            <div style="width: 100%; height: 360px; border-radius: 16px; overflow: hidden; position: relative; margin-bottom: 1.5rem;">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-lab.png' ); ?>" alt="Modul Pelatihan Lengkap (Cetak)" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 0.5rem 1rem 1rem 1rem;">
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin-bottom: 0.65rem;">Modul Pelatihan Lengkap (Cetak)</h3>
+                <p style="font-size: 0.9rem; color: #64748b; line-height: 1.65; margin: 0;">Setiap peserta akan mendapatkan modul pelatihan cetak eksklusif yang disusun langsung oleh tim ahli dan praktisi di bidang chemical. Modul ini dirancang untuk menjadi panduan praktis, bukan hanya saat pelatihan, tapi juga bisa digunakan sebagai referensi kerja dan operasional di lapangan.</p>
+            </div>
+        </div>
+
+        <!-- 2x2 GRID CARDS -->
+        <div class="get-items-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+            
+            <!-- Card 2: Pemahaman Mendalam Tentang Chemical -->
+            <div class="get-item-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 1.25rem; display: flex; flex-direction: column; transition: all 0.3s ease;">
+                <div style="width: 100%; height: 220px; border-radius: 14px; overflow: hidden; margin-bottom: 1.25rem;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-2.webp' ); ?>" alt="Pemahaman Mendalam Tentang Chemical" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div style="text-align: center; padding: 0 0.5rem 0.75rem 0.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Pemahaman Mendalam Tentang Chemical</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Mengenal berbagai jenis bahan kimia (alkali, asam, netral), fungsi, cara pengenceran, serta standar penggunaannya di lapangan.</p>
+                </div>
             </div>
 
-            <div class="card">
-                <span class="card-number">B</span>
-                <h3 class="card-title">Pemahaman Mendalam Bahan Kimia</h3>
-                <p class="card-text">Mengenal jenis bahan kimia (alkali, asam, netral, surfactant), pengenceran tepat, & standar penggunaan profesional.</p>
+            <!-- Card 3: Studi Kasus & Solusi Lapangan -->
+            <div class="get-item-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 1.25rem; display: flex; flex-direction: column; transition: all 0.3s ease;">
+                <div style="width: 100%; height: 220px; border-radius: 14px; overflow: hidden; margin-bottom: 1.25rem;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-3.webp' ); ?>" alt="Studi Kasus & Solusi Lapangan" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div style="text-align: center; padding: 0 0.5rem 0.75rem 0.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Studi Kasus & Solusi Lapangan</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Belajar dari kasus nyata di dunia cleaning service dan laundry agar Anda tidak mengulangi kesalahan umum yang sering terjadi.</p>
+                </div>
             </div>
 
-            <div class="card">
-                <span class="card-number">C</span>
-                <h3 class="card-title">Studi Kasus & Solusi Lapangan</h3>
-                <p class="card-text">Studi kasus nyata dunia laundry & cleaning service agar Anda terhindar dari kesalahan mahal saat berproduksi.</p>
+            <!-- Card 4: Sertifikat Pelatihan Resmi -->
+            <div class="get-item-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 1.25rem; display: flex; flex-direction: column; transition: all 0.3s ease;">
+                <div style="width: 100%; height: 220px; border-radius: 14px; overflow: hidden; margin-bottom: 1.25rem;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-4.webp' ); ?>" alt="Sertifikat Pelatihan Resmi" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div style="text-align: center; padding: 0 0.5rem 0.75rem 0.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Sertifikat Pelatihan Resmi</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Bukti kompetensi resmi dari Cleanique Academy untuk meningkatkan kredibilitas usaha & portofolio Anda.</p>
+                </div>
             </div>
 
-            <div class="card">
-                <span class="card-number">D</span>
-                <h3 class="card-title">Sertifikat Pelatihan Resmi</h3>
-                <p class="card-text">Bukti kompetensi resmi dari Cleanique Academy untuk meningkatkan kredibilitas usaha & portofolio Anda.</p>
+            <!-- Card 5: Bonus Formula & Pendampingan -->
+            <div class="get-item-card" style="background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); padding: 1.25rem; display: flex; flex-direction: column; transition: all 0.3s ease;">
+                <div style="width: 100%; height: 220px; border-radius: 14px; overflow: hidden; margin-bottom: 1.25rem;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-6.webp' ); ?>" alt="Bonus Formula & Support Group" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div style="text-align: center; padding: 0 0.5rem 0.75rem 0.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Bonus Formula & Pendampingan</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6; margin: 0;">Akses ke grup alumni, konsultasi berkelanjutan pasca pelatihan, dan bonus resep formulasi tambahan siap pakai.</p>
+                </div>
             </div>
 
-            <div class="card">
-                <span class="card-number">E</span>
-                <h3 class="card-title">Bonus Formula & Pendampingan</h3>
-                <p class="card-text">Akses grup alumni, konsultasi pasca pelatihan, & bonus resep formulasi tambahan siap pakai.</p>
-            </div>
         </div>
     </div>
 </section>
+
+<style>
+.get-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.08) !important;
+}
+@media (max-width: 768px) {
+  .get-items-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
 
 <!-- 6. FAQ Accordion Section -->
 <section id="faq" class="section">
