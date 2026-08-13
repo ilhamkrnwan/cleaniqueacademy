@@ -803,6 +803,156 @@ img {
   font-style: italic;
 }
 
+/* Interactive Photo-Focused Overlay Gallery Cards */
+.gallery-overlay-card {
+  position: relative;
+  height: 340px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #0f172a;
+}
+
+.gallery-card-image-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.gallery-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.35s ease;
+  cursor: zoom-in;
+}
+
+.gallery-overlay-card:hover .gallery-card-image-wrap img {
+  transform: scale(1.08);
+  filter: brightness(0.85);
+}
+
+.gallery-card-badge-top {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 5;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  color: #38bdf8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.55) 55%, rgba(15, 23, 42, 0.1) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card-content {
+  color: #ffffff;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card-lokasi {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.gallery-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
+
+.gallery-card-title a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.gallery-card-title a:hover {
+  color: #38bdf8;
+}
+
+.gallery-card-desc {
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card-actions {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.gallery-card-btn:hover {
+  background: var(--color-primary-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.gallery-overlay-card:hover {
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+}
+
+.gallery-overlay-card:hover .gallery-card-overlay {
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.98) 0%, rgba(15, 23, 42, 0.85) 60%, rgba(15, 23, 42, 0.4) 100%);
+}
+
+.gallery-overlay-card:hover .gallery-card-desc {
+  max-height: 80px;
+  opacity: 1;
+}
+
+.gallery-overlay-card:hover .gallery-card-actions {
+  max-height: 50px;
+  opacity: 1;
+}
+
 /* Social Share Card Buttons (Matching Custom Circle & Tooltip Design) */
 .share-section-card {
   background: #ffffff;

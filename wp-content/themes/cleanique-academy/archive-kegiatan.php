@@ -19,15 +19,23 @@ get_header();
                     $tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
                     $lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
                     ?>
-                    <div class="card">
-                        <div style="margin: -2rem -2rem 1.25rem -2rem; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-                            <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" style="width:100%; height:200px; object-fit:cover; display:block;">
+                    <div class="gallery-overlay-card">
+                        <div class="gallery-card-image-wrap">
+                            <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                            <div class="gallery-card-badge-top">
+                                <?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?>
+                            </div>
                         </div>
-                        <span class="card-badge"><?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?></span>
-                        <h3 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <p style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; margin-bottom: 0.5rem;"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></p>
-                        <div class="card-text"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></div>
-                        <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="align-self: flex-start; padding: 0.4rem 0.9rem; font-size: 0.85rem;">Detail Kegiatan</a>
+                        <div class="gallery-card-overlay">
+                            <div class="gallery-card-content">
+                                <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></span>
+                                <h3 class="gallery-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></p>
+                                <div class="gallery-card-actions">
+                                    <a href="<?php the_permalink(); ?>" class="gallery-card-btn">Detail Kegiatan &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 <?php
                 endwhile;
