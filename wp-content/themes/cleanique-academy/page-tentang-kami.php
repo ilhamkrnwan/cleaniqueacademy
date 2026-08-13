@@ -47,7 +47,7 @@ cleanique_render_page_hero( array(
             <div class="card">
                 <span class="card-number">Misi</span>
                 <h3 class="card-title">Misi Utama Kami</h3>
-                <p class="card-text">1. Menyediakan materi praktikum formulasi kimia yang praktis & siap pakai.<br>2. Mengedukasi cara penggunaan chemical yang aman & efisien di lapangan.<br>3. Memberikan pendampingan jangka panjang bagi alumni pengusaha laundry & homecare.</p>
+                <p class="card-text">1. Menyediakan materi praktikum formulasi kimia yang praktis & siap pakai.<br>2. Mengedukasi cara penggunaan chemical yang aman & efisien di lapangan.<br>3. Memberikan pendampingan jangka panjang bagi mitra pengusaha laundry & homecare.</p>
             </div>
         </div>
 
@@ -234,7 +234,7 @@ cleanique_render_page_hero( array(
                     <span>Fasilitas apa saja yang didapatkan oleh setiap peserta pelatihan?</span>
                 </summary>
                 <div class="accordion-body">
-                    Setiap peserta akan mendapatkan modul praktikum fisik & digital, sampel bahan kimia untuk meracik langsung di kelas, sertifikat pelatihan resmi dari Cleanique Academy (PT Indotech Berkah Abadi), serta akses seumur hidup ke grup bimbingan alumni.
+                    Setiap peserta akan mendapatkan modul praktikum fisik & digital, sampel bahan kimia untuk meracik langsung di kelas, sertifikat pelatihan resmi dari Cleanique Academy (PT Indotech Berkah Abadi), serta akses seumur hidup ke grup bimbingan mitra.
                 </div>
             </details>
 
@@ -252,7 +252,7 @@ cleanique_render_page_hero( array(
                     <span>Apakah ada bimbingan atau konsultasi setelah pelatihan selesai?</span>
                 </summary>
                 <div class="accordion-body">
-                    Ya, tentu saja! Kami menyediakan grup bimbingan alumni WhatsApp dan saluran konsultasi langsung dengan tim instruktur/riset untuk membantu Anda jika mengalami kendala saat produksi mandiri di lapangan.
+                    Ya, tentu saja! Kami menyediakan grup bimbingan mitra WhatsApp dan saluran konsultasi langsung dengan tim instruktur/riset untuk membantu Anda jika mengalami kendala saat produksi mandiri di lapangan.
                 </div>
             </details>
 

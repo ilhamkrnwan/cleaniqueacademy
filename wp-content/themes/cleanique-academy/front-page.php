@@ -534,7 +534,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 </div>
                 <div style="text-align: center; padding: 0 0.4rem 0.5rem 0.4rem; display: flex; flex-direction: column; flex-grow: 1;">
                     <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Bonus Formula & Pendampingan</h3>
-                    <p style="font-size: 0.84rem; color: #64748b; line-height: 1.55; margin: 0;">Akses ke grup alumni, konsultasi berkelanjutan pasca pelatihan, dan bonus resep formulasi tambahan siap pakai.</p>
+                    <p style="font-size: 0.84rem; color: #64748b; line-height: 1.55; margin: 0;">Akses ke grup mitra, konsultasi berkelanjutan pasca pelatihan, dan bonus resep formulasi tambahan siap pakai.</p>
                 </div>
             </div>
 
@@ -554,12 +554,12 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
 }
 </style>
 
-<!-- 7. Testimonial Alumni Section -->
+<!-- 7. Testimonial Mitra Section -->
 <section id="testimoni" class="section section-alt" style="padding: 3.25rem 0;">
     <div class="container">
         <div class="section-header" style="margin-bottom: 2rem;">
             <span class="section-subtitle">Apa Kata Mereka</span>
-            <h2 class="section-title">Testimoni Alumni & Peserta Pelatihan</h2>
+            <h2 class="section-title">Testimoni Mitra & Peserta Pelatihan</h2>
             <p class="section-description">Kesan dan pengalaman nyata dari para pengusaha dan praktisi setelah mengikuti pelatihan.</p>
         </div>
 

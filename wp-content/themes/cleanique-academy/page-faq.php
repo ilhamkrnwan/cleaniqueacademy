@@ -30,7 +30,7 @@ cleanique_render_page_hero( array(
                     <span>Fasilitas apa saja yang didapatkan oleh peserta pelatihan?</span>
                 </div>
                 <div class="accordion-body">
-                    Setiap peserta akan mendapatkan modul praktikum fisik/digital, sampel bahan kimia untuk meracik langsung di kelas, sertifikat pelatihan resmi dari Cleanique Academy, serta akses ke grup konsultasi alumni.
+                    Setiap peserta akan mendapatkan modul praktikum fisik/digital, sampel bahan kimia untuk meracik langsung di kelas, sertifikat pelatihan resmi dari Cleanique Academy, serta akses ke grup konsultasi mitra.
                 </div>
             </div>
 
@@ -48,7 +48,7 @@ cleanique_render_page_hero( array(
                     <span>Apakah ada bimbingan atau konsultasi setelah pelatihan selesai?</span>
                 </div>
                 <div class="accordion-body">
-                    Ada. Kami menyediakan grup alumni WhatsApp dan saluran konsultasi langsung dengan mentor untuk membantu peserta apabila mengalami kendala produksi di lapangan.
+                    Ada. Kami menyediakan grup mitra WhatsApp dan saluran konsultasi langsung dengan mentor untuk membantu peserta apabila mengalami kendala produksi di lapangan.
                 </div>
             </div>
 

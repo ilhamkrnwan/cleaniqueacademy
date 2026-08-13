@@ -5,8 +5,8 @@
 get_header();
 
 cleanique_render_page_hero( array(
-    'title'    => 'Dokumentasi Event & Pelatihan Alumni',
-    'badge'    => 'Galeri Alumni',
+    'title'    => 'Dokumentasi Event & Pelatihan Mitra',
+    'badge'    => 'Galeri Mitra',
     'subtitle' => 'Rekam foto dan pelaksanaan kelas praktikum pelatihan kimia tatap muka di berbagai kota di Indonesia.',
     'theme'    => 'light',
 ) );

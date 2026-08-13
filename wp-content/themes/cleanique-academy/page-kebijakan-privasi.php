@@ -45,7 +45,7 @@ cleanique_render_page_hero( array(
                     <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
                         <li>Memproses pendaftaran, pengiriman jadwal, modul pelatihan, dan penerbitan sertifikat kepesertaan.</li>
                         <li>Menghubungi Anda terkait konfirmasi pembayaran, pengingat jadwal kelas, atau informasi teknis pelatihan.</li>
-                        <li>Memberikan dukungan konsultasi pasca-pelatihan melalui grup alumni WhatsApp.</li>
+                        <li>Memberikan dukungan konsultasi pasca-pelatihan melalui grup mitra WhatsApp.</li>
                         <li>Meningkatkan kualitas konten materi pelatihan dan kenyamanan navigasi situs web Cleanique Academy.</li>
                     </ul>
                 </div>

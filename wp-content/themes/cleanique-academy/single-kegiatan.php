@@ -167,7 +167,7 @@ while ( have_posts() ) : the_post();
             <div class="section-header" style="text-align: left; margin-bottom: 1.75rem;">
                 <span class="section-subtitle">Galeri Lainnya</span>
                 <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Dokumentasi Galeri Serupa</h2>
-                <p class="section-description" style="margin: 0; max-width: 100%;">Lihat foto pelaksanaan kelas praktikum dan pelatihan alumni Cleanique Academy di kota-kota lainnya.</p>
+                <p class="section-description" style="margin: 0; max-width: 100%;">Lihat foto pelaksanaan kelas praktikum dan pelatihan mitra Cleanique Academy di kota-kota lainnya.</p>
             </div>
 
             <div class="grid grid-3" style="gap: 1.25rem;">
