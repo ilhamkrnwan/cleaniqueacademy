@@ -28,7 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" alt="Cleanique Academy" style="height: 46px; width: auto; display: block;">
                     </a>
                     
-                    <h4 style="color: #ffffff; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">PT INDOTECH BERKAH ABADI</h4>
+                    <h4 style="color: #ffffff; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                        <a href="https://indotech.id/" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#ffffff'">PT INDOTECH BERKAH ABADI</a>
+                    </h4>
                     
                     <p style="font-size: 0.88rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1.5rem;">
                         Pusat pelatihan profesional dan bimbingan formulasi kimia kebersihan, laundry, dan homecare terpercaya di Indonesia. Melahirkan pengusaha mandiri dan wirausahawan sejak 2011.
@@ -64,16 +66,18 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </ul>
                 </div>
 
-                <!-- Col 3: BRAND KAMI -->
+                <!-- Col 3: BRAND & EKOSISTEM KAMI -->
                 <div>
-                    <h4 class="footer-heading" style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #cbd5e1;">BRAND KAMI</h4>
+                    <h4 class="footer-heading" style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #cbd5e1;">BRAND & EKOSISTEM KAMI</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Orchid Care</a></li>
-                        <li><a href="#">Depo Cleanique</a></li>
-                        <li><a href="#">Malabeez</a></li>
-                        <li><a href="#">Cleanique Lab</a></li>
+                        <li><a href="https://indotech.id/" target="_blank" rel="noopener">Indotech Berkah Abadi</a></li>
+                        <li><a href="https://orchidbrand.id/" target="_blank" rel="noopener">Orchid Brand</a></li>
+                        <li><a href="https://depocleanique.co.id/" target="_blank" rel="noopener">Depo Cleanique</a></li>
+                        <li><a href="http://malabeez.co.id/" target="_blank" rel="noopener">Malabeez</a></li>
+                        <li><a href="https://cleaniquelab.com/" target="_blank" rel="noopener">Cleanique Lab</a></li>
                         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color: #38bdf8; font-weight: 700;">Cleanique Academy</a></li>
-                        <li><a href="#">Cleanique Mart</a></li>
+                        <li><a href="https://cleaniquemart.com/" target="_blank" rel="noopener">Cleanique Mart</a></li>
+                        <li><a href="https://prokopi.id/" target="_blank" rel="noopener">Prokopi</a></li>
                     </ul>
                 </div>
 
