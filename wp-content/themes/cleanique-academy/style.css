@@ -1483,29 +1483,70 @@ img {
   margin-bottom: 1.25rem;
 }
 
-/* Accordions */
+/* Accordions (Dropdown FAQ) */
+details.accordion-item,
 .accordion-item {
-  background-color: var(--color-bg-surface);
+  background-color: #ffffff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   overflow: hidden;
   transition: all 0.25s ease;
 }
 
+details.accordion-item[open] {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
+}
+
+summary.accordion-header,
 .accordion-header {
-  padding: 1.25rem 1.75rem;
-  font-size: 1.15rem;
+  padding: 1.15rem 1.5rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--color-secondary);
   cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+summary.accordion-header::-webkit-details-marker {
+  display: none;
+}
+
+summary.accordion-header:hover {
+  background-color: #f8fafc;
+  color: var(--color-primary);
+}
+
+summary.accordion-header::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
+  transform: rotate(45deg);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+details.accordion-item[open] summary.accordion-header::after {
+  transform: rotate(-135deg);
+  border-color: var(--color-primary);
 }
 
 .accordion-body {
-  padding: 0 1.75rem 1.5rem 1.75rem;
+  padding: 0.85rem 1.5rem 1.35rem 1.5rem;
   color: var(--color-text-muted);
-  font-size: 0.98rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  border-top: 1px solid #f1f5f9;
 }
 
 /* ==========================================================================
