@@ -18,11 +18,24 @@ while ( have_posts() ) : the_post();
     $promo_text      = get_theme_mod( 'cleanique_promo_text', 'Dapatkan Promo Pelatihan Terbatas berlaku bagi yang melakukan registrasi bulan ini, terbatas hanya untuk 10 pendaftar pertama.' );
     $promo_btn_label = get_theme_mod( 'cleanique_promo_btn_label', 'Ambil Promo' );
 
+    $author_name = get_the_author();
+    if ( empty( $author_name ) ) {
+        $author_name = 'Tim Redaksi Cleanique';
+    }
+
+    $meta_subtitle  = '<div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 0.25rem;">';
+    $meta_subtitle .= '<span style="display: inline-flex; align-items: center; gap: 0.35rem; color: #475569; font-weight: 600; font-size: 0.92rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Oleh ' . esc_html( $author_name ) . '</span></span>';
+    $meta_subtitle .= '<span style="color: #cbd5e1;">•</span>';
+    $meta_subtitle .= '<span style="display: inline-flex; align-items: center; gap: 0.35rem; color: #475569; font-weight: 600; font-size: 0.92rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span>' . esc_html( get_the_date() ) . '</span></span>';
+    $meta_subtitle .= '<span style="color: #cbd5e1;">•</span>';
+    $meta_subtitle .= '<span style="display: inline-flex; align-items: center; gap: 0.35rem; color: #475569; font-weight: 600; font-size: 0.92rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>' . esc_html( $reading_time ) . '</span></span>';
+    $meta_subtitle .= '</div>';
+
     // Render Page Hero Component for Single Article
     cleanique_render_page_hero( array(
         'title'    => $post_title,
         'badge'    => $cat_name,
-        'subtitle' => 'Oleh ' . get_the_author() . ' • ' . get_the_date() . ' • ' . $reading_time,
+        'subtitle' => $meta_subtitle,
         'theme'    => 'light',
     ) );
 ?>

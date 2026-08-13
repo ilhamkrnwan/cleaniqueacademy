@@ -22,7 +22,7 @@ $hero_class = ( 'dark' === $theme ) ? 'page-hero page-hero-dark' : 'page-hero pa
         <h1 class="page-hero-title"><?php echo esc_html( $title ); ?></h1>
 
         <?php if ( ! empty( $subtitle ) ) : ?>
-            <p class="page-hero-subtitle"><?php echo esc_html( $subtitle ); ?></p>
+            <div class="page-hero-subtitle"><?php echo $subtitle; ?></div>
         <?php endif; ?>
 
         <!-- Breadcrumb Navigation -->
