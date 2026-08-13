@@ -104,71 +104,171 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
 </section>
 
 <!-- 3. Siapa yang Cocok Mengikuti Pelatihan Ini? -->
-<section id="siapa-cocok" class="section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-subtitle">Target Peserta</span>
-            <h2 class="section-title">Siapa yang Cocok Mengikuti Pelatihan Kimia Ini?</h2>
-            <p class="section-description">Pelatihan ini dirancang untuk berbagai latar belakang usaha dan profesi.</p>
+<section id="siapa-cocok" class="section" style="background-color: #f8fafc; padding: 4.5rem 0;">
+    <div class="container" style="max-width: 1140px;">
+        
+        <!-- Section Header -->
+        <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+            <h2 class="section-title" style="font-size: 2.1rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.3;">
+                Siapa yang Cocok<br>
+                <span style="color: #1e3a8a;">Mengikuti Pelatihan Kimia Ini?</span>
+            </h2>
         </div>
 
-        <div class="grid grid-3">
-            <div class="card">
-                <span class="card-number">01</span>
-                <h3 class="card-title">Facility Management</h3>
-                <p class="card-text">Pelatihan internal tim cleaning agar lebih efisien dan hemat dalam penggunaan chemical di gedung/instansi.</p>
+        <!-- 2-Column Section Layout -->
+        <div class="siapa-cocok-grid" style="display: grid; grid-template-columns: 280px 1fr; gap: 3rem; align-items: start;">
+            
+            <!-- LEFT COLUMN: Image Collage Illustration Card -->
+            <div style="background: #ffffff; border-radius: 24px; padding: 2rem 1.25rem; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; position: relative;">
+                <!-- Logo -->
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" alt="Cleanique Academy" style="height: 38px; width: auto; margin-bottom: 1.5rem; display: block;">
+                
+                <!-- Photo Collage Stack -->
+                <div style="display: flex; flex-direction: column; gap: 0.85rem; width: 100%; position: relative;">
+                    <div style="transform: rotate(-3deg); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 16px rgba(0,0,0,0.08); border: 3px solid #ffffff;">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-1.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 110px; object-fit: cover; display: block;">
+                    </div>
+                    <div style="transform: rotate(2deg); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 16px rgba(0,0,0,0.08); border: 3px solid #ffffff;">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-2.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 110px; object-fit: cover; display: block;">
+                    </div>
+                    <div style="transform: rotate(-2deg); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 16px rgba(0,0,0,0.08); border: 3px solid #ffffff;">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-3.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 110px; object-fit: cover; display: block;">
+                    </div>
+                    <div style="transform: rotate(3deg); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 16px rgba(0,0,0,0.08); border: 3px solid #ffffff;">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-4.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 110px; object-fit: cover; display: block;">
+                    </div>
+                </div>
             </div>
 
-            <div class="card">
-                <span class="card-number">02</span>
-                <h3 class="card-title">Owner Cleaning Service</h3>
-                <p class="card-text">Membekali tim agar lebih profesional & mengurangi risiko kerusakan permukaan akibat salah pakai chemical.</p>
+            <!-- RIGHT COLUMN: 2-Column Grid of Target Items with Blue Vector Icons -->
+            <div class="siapa-cocok-items" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem 1.75rem;">
+                
+                <!-- Item 1: Facility Management -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 48px; height: 48px; min-width: 48px; background: #e0f2fe; color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; line-height: 1.35;">Manajemen Fasilitas / Facility Management</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin: 0;">Untuk pelatihan internal tim cleaning agar lebih efisien dan hemat penggunaan chemical.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Owner Jasa Kebersihan -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 48px; height: 48px; min-width: 48px; background: #e0f2fe; color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; line-height: 1.35;">Owner Jasa Kebersihan / Cleaning Service</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin: 0;">Ingin membekali timnya agar lebih profesional dan mengurangi risiko kerusakan akibat salah pakai chemical.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Pelaku Usaha Laundry -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 48px; height: 48px; min-width: 48px; background: #e0f2fe; color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; line-height: 1.35;">Pelaku Usaha Laundry (Kiloan / Hotel / Industri)</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin: 0;">Perlu memahami perbedaan chemical dan cara pakainya agar hasil cucian maksimal dan peralatan awet.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Distributor / Reseller -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 48px; height: 48px; min-width: 48px; background: #e0f2fe; color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527l-5.32 8.512C4.108 19.011 4.793 20 5.967 20h12.066c1.174 0 1.859-.989 1.287-1.961L14 9.527V2h-4z"/><line x1="8.5" y1="2" x2="15.5" y2="2"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; line-height: 1.35;">Distributor / Reseller Produk Chemical</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin: 0;">Agar lebih paham produk yang dijual dan bisa memberikan edukasi ke klien.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Staf Housekeeping -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 48px; height: 48px; min-width: 48px; background: #e0f2fe; color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><line x1="9" y1="18" x2="15" y2="18"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; line-height: 1.35;">Staf Housekeeping Hotel / Apartemen / Gedung</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin: 0;">Butuh skill teknis dalam pembersihan dengan chemical di berbagai jenis permukaan.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6: UMKM Produk Homecare -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 48px; height: 48px; min-width: 48px; background: #e0f2fe; color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; line-height: 1.35;">UMKM Produk Homecare / Cleaning</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin: 0;">Ingin memahami bahan aktif dan cara meracik produk dengan aman dan legal.</p>
+                    </div>
+                </div>
+
+                <!-- Item 7: Tim Maintenance -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 48px; height: 48px; min-width: 48px; background: #e0f2fe; color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; line-height: 1.35;">Tim Maintenance Bangunan / Office Boy Perusahaan</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin: 0;">Kursus ini membantu tim internal seperti maintenance dan OB memahami cara penggunaan chemical yang benar, aman, dan hemat.</p>
+                    </div>
+                </div>
+
+                <!-- Item 8: Individu / Karir -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 48px; height: 48px; min-width: 48px; background: #e0f2fe; color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; line-height: 1.35;">Individu yang Ingin Berkarier di Bidang Cleaning atau Housekeeping</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin: 0;">Peluang kerja lebih terbuka jika memiliki skill dan sertifikat training chemical.</p>
+                    </div>
+                </div>
+
+                <!-- Item 9: Pensiunan & Wirausaha -->
+                <div class="siapa-cocok-item-full" style="display: flex; gap: 1rem; align-items: flex-start; grid-column: span 2;">
+                    <div style="width: 48px; height: 48px; min-width: 48px; background: #e0f2fe; color: #0284c7; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v10"/><path d="M8 11h8"/><path d="M10 22l2-5 2 5"/></svg>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 0.35rem; line-height: 1.35;">Pensiunan yang Ingin Membuka Usaha</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin: 0;">Pelatihan kimia ini bisa menjadi langkah awal memulai usaha laundry, cleaning service, industri atau distribusi chemical dengan pemahaman produk yang benar dan prospek usaha yang nyata.</p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="card">
-                <span class="card-number">03</span>
-                <h3 class="card-title">Pelaku Usaha Laundry</h3>
-                <p class="card-text">Memahami fungsi chemical & formulasi agar hasil cucian maksimal, wangi tahan lama, & mesin awet.</p>
-            </div>
-
-            <div class="card">
-                <span class="card-number">04</span>
-                <h3 class="card-title">Distributor & Reseller</h3>
-                <p class="card-text">Memahami spesifikasi produk yang dijual agar mampu memberikan konsutasi dan edukasi terbaik ke klien.</p>
-            </div>
-
-            <div class="card">
-                <span class="card-number">05</span>
-                <h3 class="card-title">Staf Housekeeping</h3>
-                <p class="card-text">Menguasai skill teknis pembersihan chemical untuk hotel, apartemen, atau gedung perkantoran.</p>
-            </div>
-
-            <div class="card">
-                <span class="card-number">06</span>
-                <h3 class="card-title">UMKM Produk Homecare</h3>
-                <p class="card-text">Memahami bahan aktif & cara meracik sabun cuci piring, karbol, & deterjen secara aman & legal.</p>
-            </div>
-
-            <div class="card">
-                <span class="card-number">07</span>
-                <h3 class="card-title">Maintenance & Office Boy</h3>
-                <p class="card-text">Memahami takaran dan cara penggunaan chemical yang benar, aman untuk kesehatan, & hemat biaya.</p>
-            </div>
-
-            <div class="card">
-                <span class="card-number">08</span>
-                <h3 class="card-title">Pencari Kerja / Karier</h3>
-                <p class="card-text">Peluang kerja di industri cleaning/housekeeping lebih terbuka dengan memiliki sertifikat pelatihan resmi.</p>
-            </div>
-
-            <div class="card">
-                <span class="card-number">09</span>
-                <h3 class="card-title">Pensiunan & Calon Wirausaha</h3>
-                <p class="card-text">Langkah awal memulai usaha produksi & distribusi chemical laundry/homecare dengan prospek usaha yang nyata.</p>
-            </div>
         </div>
+
+        <!-- Bottom Yellow CTA Button -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+            <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin konsultasi seputar pelatihan kimia.' ) ); ?>" target="_blank" style="display: inline-block; background: #ffd000; color: #0f172a; font-weight: 800; font-size: 1.05rem; padding: 0.9rem 3.5rem; border-radius: 9999px; text-decoration: none; box-shadow: 0 8px 20px rgba(255, 208, 0, 0.35); transition: all 0.2s ease;">
+                Hubungi Kami
+            </a>
+        </div>
+
     </div>
 </section>
+
+<style>
+@media (max-width: 900px) {
+  .siapa-cocok-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .siapa-cocok-items {
+    grid-template-columns: 1fr !important;
+  }
+  .siapa-cocok-item-full {
+    grid-column: span 1 !important;
+  }
+}
+</style>
 
 <!-- 4. 6 Alasan Mengapa Harus Memilih Cleanique Academy -->
 <section id="alasan-memilih" class="section section-alt">
