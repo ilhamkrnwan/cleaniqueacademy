@@ -56,7 +56,7 @@ cleanique_render_page_hero( array(
 
 <!-- 2. KATALOG KELAS FORMULASI PRODUCT KEBERSIHAN (SEO ENHANCED) -->
 <section id="katalog-kategori" class="section section-alt" style="padding: 3.25rem 0;">
-    <div class="container">
+    <div class="container" style="max-width: 1040px;">
         
         <div class="section-header">
             <span class="section-subtitle">Kategori Pelatihan Lengkap</span>
@@ -64,89 +64,89 @@ cleanique_render_page_hero( array(
             <p class="section-description">Kami menyediakan beragam varian kelas pembuatan chemical kebersihan skala industri & rumah tangga untuk meningkatkan daya saing usaha Anda.</p>
         </div>
 
-        <div class="grid grid-2" style="gap: 1.5rem; margin-bottom: 2rem;">
+        <div class="category-row-list">
             
-            <!-- Kategori 1: Laundry Chemical -->
-            <div class="card" style="padding: 0; overflow: hidden; border-radius: 12px; background: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.06);">
-                <div style="position: relative; width: 100%; height: 220px; overflow: hidden; background: #0f172a;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Pelatihan Chemical kategori laundry.png' ); ?>" alt="Pelatihan Chemical Kategori Laundry" style="width: 100%; height: 100%; object-fit: cover;">
-                    <span style="position: absolute; top: 12px; left: 12px; background: #0284c7; color: #ffffff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 6px;">Kategori Laundry</span>
+            <!-- Row 1: Laundry Chemical (Desktop: Kiri Penjelasan, Kanan Image | Mobile: Image dulu, baru Penjelasan) -->
+            <div class="category-row-card category-row-reverse">
+                <div class="category-img-col">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Pelatihan Chemical kategori laundry.png' ); ?>" alt="Pelatihan Chemical Kategori Laundry">
                 </div>
-                <div style="padding: 1.35rem 1.25rem;">
-                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.6rem;">Pelatihan Chemical Kategori Laundry</h3>
-                    <p style="font-size: 0.88rem; line-height: 1.55; color: #475569; margin-bottom: 1rem;">
-                        Pelajari standar pembuatan produk pembersih pakaian profesional untuk laundry koin, hotel, dan usaha laundry kiloan/satuan:
+                <div class="category-info-col">
+                    <span style="display: inline-block; background: #e0f2fe; color: #0284c7; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 6px; margin-bottom: 0.6rem;">Kategori Laundry</span>
+                    <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">Pelatihan Chemical Kategori Laundry</h3>
+                    <p style="font-size: 0.92rem; line-height: 1.6; color: #475569; margin-bottom: 1.15rem;">
+                        Pelajari standar pembuatan produk pembersih pakaian profesional untuk laundry koin, hotel, dan usaha laundry kiloan/satuan dengan biaya produksi efisien:
                     </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 1.25rem 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.84rem; color: #334155;">
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Deterjen Cair Pekat & Deterjen Matik</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Softener Parfum Tahan Lama & Pelicin Pakaian</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Alkali Booster & Emulsifier Lemak Pekat</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pemutih Serat Kain & Anti Noda Karat/Darah</li>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.35rem 0; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.88rem; color: #334155;">
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Deterjen Cair Pekat & Deterjen Matik</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Softener Parfum Tahan Lama & Pelicin Pakaian</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Alkali Booster & Emulsifier Lemak Pekat</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pemutih Serat Kain & Anti Noda Karat/Darah</li>
                     </ul>
-                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin tanya detail Pelatihan Kategori Laundry.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; padding: 0.65rem; font-size: 0.88rem; border-radius: 8px;">Konsultasi Kelas Laundry</a>
+                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin tanya detail Pelatihan Kategori Laundry.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 0.75rem 1.5rem; font-size: 0.9rem; border-radius: 8px;">Konsultasi Kelas Laundry</a>
                 </div>
             </div>
 
-            <!-- Kategori 2: Household Chemical -->
-            <div class="card" style="padding: 0; overflow: hidden; border-radius: 12px; background: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.06);">
-                <div style="position: relative; width: 100%; height: 220px; overflow: hidden; background: #0f172a;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Pelatihan Chemical kategori household.png' ); ?>" alt="Pelatihan Chemical Kategori Household" style="width: 100%; height: 100%; object-fit: cover;">
-                    <span style="position: absolute; top: 12px; left: 12px; background: #16a34a; color: #ffffff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 6px;">Kategori Household</span>
+            <!-- Row 2: Household Chemical (Desktop: Kiri Image, Kanan Penjelasan | Mobile: Image dulu, baru Penjelasan) -->
+            <div class="category-row-card">
+                <div class="category-img-col">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Pelatihan Chemical kategori household.png' ); ?>" alt="Pelatihan Chemical Kategori Household">
                 </div>
-                <div style="padding: 1.35rem 1.25rem;">
-                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.6rem;">Pelatihan Chemical Kategori Household</h3>
-                    <p style="font-size: 0.88rem; line-height: 1.55; color: #475569; margin-bottom: 1rem;">
-                        Formulasi produk kebersihan rumah tangga favorit konsumen dengan daya cuci tinggi dan biaya produksi hemat:
+                <div class="category-info-col">
+                    <span style="display: inline-block; background: #dcfce7; color: #16a34a; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 6px; margin-bottom: 0.6rem;">Kategori Household</span>
+                    <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">Pelatihan Chemical Kategori Household</h3>
+                    <p style="font-size: 0.92rem; line-height: 1.6; color: #475569; margin-bottom: 1.15rem;">
+                        Formulasi produk kebersihan rumah tangga favorit konsumen dengan daya cuci tinggi, hasil busa stabil, dan biaya produksi hemat:
                     </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 1.25rem 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.84rem; color: #334155;">
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Sabun Cuci Piring Pekat (Dishwashing Liquid)</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Sabun Cuci Tangan Anti-Bakteri (Handsoap)</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pembersih Lantai Aromatik & Karbol Wangi Pinus</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Glass Cleaner & Pembersih Stainless Steel</li>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.35rem 0; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.88rem; color: #334155;">
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Sabun Cuci Piring Pekat (Dishwashing Liquid)</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Sabun Cuci Tangan Anti-Bakteri (Handsoap)</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pembersih Lantai Aromatik & Karbol Wangi Pinus</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Glass Cleaner & Pembersih Stainless Steel</li>
                     </ul>
-                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin tanya detail Pelatihan Kategori Household.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; padding: 0.65rem; font-size: 0.88rem; border-radius: 8px;">Konsultasi Kelas Household</a>
+                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin tanya detail Pelatihan Kategori Household.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 0.75rem 1.5rem; font-size: 0.9rem; border-radius: 8px;">Konsultasi Kelas Household</a>
                 </div>
             </div>
 
-            <!-- Kategori 3: Autocare / Otomotif -->
-            <div class="card" style="padding: 0; overflow: hidden; border-radius: 12px; background: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.06);">
-                <div style="position: relative; width: 100%; height: 220px; overflow: hidden; background: #0f172a;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Pelatihan Chemical kategori autocare.png' ); ?>" alt="Pelatihan Chemical Kategori Autocare" style="width: 100%; height: 100%; object-fit: cover;">
-                    <span style="position: absolute; top: 12px; left: 12px; background: #d97706; color: #ffffff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 6px;">Kategori Autocare</span>
+            <!-- Row 3: Autocare / Otomotif (Desktop: Kiri Penjelasan, Kanan Image | Mobile: Image dulu, baru Penjelasan) -->
+            <div class="category-row-card category-row-reverse">
+                <div class="category-img-col">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Pelatihan Chemical kategori autocare.png' ); ?>" alt="Pelatihan Chemical Kategori Autocare">
                 </div>
-                <div style="padding: 1.35rem 1.25rem;">
-                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.6rem;">Pelatihan Chemical Kategori Autocare</h3>
-                    <p style="font-size: 0.88rem; line-height: 1.55; color: #475569; margin-bottom: 1rem;">
-                        Meracik formulasi kimia pembersih dan perawatan kendaraan bermotor untuk usaha cuci mobil/motor dan salon mobil:
+                <div class="category-info-col">
+                    <span style="display: inline-block; background: #fef3c7; color: #d97706; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 6px; margin-bottom: 0.6rem;">Kategori Autocare</span>
+                    <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">Pelatihan Chemical Kategori Autocare</h3>
+                    <p style="font-size: 0.92rem; line-height: 1.6; color: #475569; margin-bottom: 1.15rem;">
+                        Meracik formulasi kimia pembersih dan perawatan kendaraan bermotor untuk usaha cuci mobil/motor dan salon mobil profesional:
                     </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 1.25rem 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.84rem; color: #334155;">
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Shampoo Mobil & Motor Busa Melimpah</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Semir Ban Silikon Emulsi (Tire Polish)</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pengkilap Bodi (Wax/Silicone Polish)</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Engine Degreaser & Pembersih Jamur Kaca</li>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.35rem 0; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.88rem; color: #334155;">
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Shampoo Mobil & Motor Busa Melimpah</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Semir Ban Silikon Emulsi (Tire Gloss)</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pengkilap Bodi (Wax/Silicone Polish)</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Engine Degreaser & Pembersih Jamur Kaca</li>
                     </ul>
-                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin tanya detail Pelatihan Kategori Autocare.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; padding: 0.65rem; font-size: 0.88rem; border-radius: 8px;">Konsultasi Kelas Autocare</a>
+                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin tanya detail Pelatihan Kategori Autocare.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 0.75rem 1.5rem; font-size: 0.9rem; border-radius: 8px;">Konsultasi Kelas Autocare</a>
                 </div>
             </div>
 
-            <!-- Kategori 4: Sanitasi & Industri -->
-            <div class="card" style="padding: 0; overflow: hidden; border-radius: 12px; background: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.06);">
-                <div style="position: relative; width: 100%; height: 220px; overflow: hidden; background: #0f172a;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Pelatihan Chemical kategori sanitasi.png' ); ?>" alt="Pelatihan Chemical Kategori Sanitasi" style="width: 100%; height: 100%; object-fit: cover;">
-                    <span style="position: absolute; top: 12px; left: 12px; background: #9333ea; color: #ffffff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 6px;">Kategori Sanitasi</span>
+            <!-- Row 4: Sanitasi & Industri (Desktop: Kiri Image, Kanan Penjelasan | Mobile: Image dulu, baru Penjelasan) -->
+            <div class="category-row-card">
+                <div class="category-img-col">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Pelatihan Chemical kategori sanitasi.png' ); ?>" alt="Pelatihan Chemical Kategori Sanitasi">
                 </div>
-                <div style="padding: 1.35rem 1.25rem;">
-                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.6rem;">Pelatihan Chemical Kategori Sanitasi</h3>
-                    <p style="font-size: 0.88rem; line-height: 1.55; color: #475569; margin-bottom: 1rem;">
-                        Formulasi standar sanitasi dan pembasmi kuman untuk fasilitas kesehatan, rumah sakit, hotel, dan fasilitas umum:
+                <div class="category-info-col">
+                    <span style="display: inline-block; background: #f3e8ff; color: #9333ea; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 6px; margin-bottom: 0.6rem;">Kategori Sanitasi</span>
+                    <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">Pelatihan Chemical Kategori Sanitasi</h3>
+                    <p style="font-size: 0.92rem; line-height: 1.6; color: #475569; margin-bottom: 1.15rem;">
+                        Formulasi standar sanitasi dan pembasmi kuman untuk fasilitas kesehatan, rumah sakit, hotel, dan fasilitas publik:
                     </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 1.25rem 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.84rem; color: #334155;">
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Hand Sanitizer Liquid & Gel Antiseptik</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Disinfectant Spray & Liquid Fogging</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pembersih Kerak Keramik Berat (Heavy Duty Cleaner)</li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Chemical Housekeeping & Laundry Rumah Sakit</li>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.35rem 0; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.88rem; color: #334155;">
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Hand Sanitizer Liquid & Gel Antiseptik</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Disinfectant Spray & Liquid Fogging</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pembersih Kerak Keramik Berat (Heavy Duty Cleaner)</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Chemical Housekeeping & Laundry Rumah Sakit</li>
                     </ul>
-                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin tanya detail Pelatihan Kategori Sanitasi.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; padding: 0.65rem; font-size: 0.88rem; border-radius: 8px;">Konsultasi Kelas Sanitasi</a>
+                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin tanya detail Pelatihan Kategori Sanitasi.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 0.75rem 1.5rem; font-size: 0.9rem; border-radius: 8px;">Konsultasi Kelas Sanitasi</a>
                 </div>
             </div>
 
@@ -154,6 +154,59 @@ cleanique_render_page_hero( array(
 
     </div>
 </section>
+
+<style>
+.category-row-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.category-row-card {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.category-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.category-img-col {
+  flex: 1;
+  max-width: 480px;
+  width: 100%;
+}
+
+.category-img-col img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.category-info-col {
+  flex: 1.25;
+}
+
+@media (max-width: 768px) {
+  .category-row-card,
+  .category-row-reverse {
+    flex-direction: column !important;
+    padding: 1.35rem 1.15rem !important;
+    gap: 1.25rem !important;
+  }
+  .category-img-col {
+    max-width: 100% !important;
+  }
+}
+</style>
 
 <!-- 3. SEKSI FAQ (PERTANYAAN SERING DIAJUKAN - INTERACTIVE DROPDOWN) -->
 <section id="faq" class="section">
