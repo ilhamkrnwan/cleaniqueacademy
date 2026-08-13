@@ -110,6 +110,222 @@ if ( ! defined( 'ABSPATH' ) ) {
     </a>
 <?php get_template_part( 'template-parts/wa-faq-modal' ); ?>
 
+<!-- Universal Image Lightbox Modal for Articles, Home, and Gallery -->
+<div id="universalImageLightbox" class="univ-lightbox-modal" style="display: none;">
+    <div class="univ-lightbox-backdrop" onclick="cleaniqueCloseUnivLightbox()"></div>
+    <button type="button" class="univ-lightbox-close" onclick="cleaniqueCloseUnivLightbox()" aria-label="Tutup Lightbox">&times;</button>
+    <button type="button" class="univ-lightbox-nav univ-lightbox-prev" id="univLightboxPrev" onclick="cleaniqueNavUnivLightbox(-1)" aria-label="Gambar Sebelumnya">&lsaquo;</button>
+    <div class="univ-lightbox-container">
+        <img id="univLightboxImg" src="" alt="Enlarged view">
+        <div id="univLightboxCaption" class="univ-lightbox-caption"></div>
+    </div>
+    <button type="button" class="univ-lightbox-nav univ-lightbox-next" id="univLightboxNext" onclick="cleaniqueNavUnivLightbox(1)" aria-label="Gambar Selanjutnya">&rsaquo;</button>
+</div>
+
+<style>
+.univ-lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.univ-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(8px);
+}
+.univ-lightbox-container {
+  position: relative;
+  z-index: 2;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#univLightboxImg {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease;
+}
+.univ-lightbox-caption {
+  margin-top: 0.85rem;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  max-width: 600px;
+}
+.univ-lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+.univ-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.univ-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+.univ-lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.univ-lightbox-prev {
+  left: 1.5rem;
+}
+.univ-lightbox-next {
+  right: 1.5rem;
+}
+
+/* Hover Zoom Pointer on Site Images */
+.article-body img,
+.featured-image-wrapper img,
+.card img,
+.grid img,
+.hero img,
+.gallery-grid img,
+.promo-banner-image {
+  cursor: zoom-in;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+</style>
+
+<script>
+var univLightboxImages = [];
+var currentUnivIndex = 0;
+
+function cleaniqueInitGlobalLightbox() {
+    var images = document.querySelectorAll('img');
+    var eligibleImages = [];
+
+    images.forEach(function(img) {
+        // Exclude site logos, tiny icons, SVG or share button avatars
+        if (img.classList.contains('site-logo') || img.closest('.site-logo') || img.closest('.drawer-social-icons') || img.closest('.share-buttons-wrapper') || img.width < 50 || img.height < 50) {
+            return;
+        }
+
+        img.style.cursor = 'zoom-in';
+
+        var src = img.src;
+        if (!src) return;
+
+        var altText = img.alt || img.getAttribute('title') || '';
+        var idx = eligibleImages.length;
+        eligibleImages.push({ src: src, caption: altText });
+
+        img.addEventListener('click', function(e) {
+            // Check if user clicked on post title link wrapped around card text vs direct image
+            if (img.closest('a') && !img.closest('.gallery-item-link')) {
+                var parentLink = img.closest('a');
+                var href = parentLink.getAttribute('href');
+                if (href && (href.match(/\.(jpeg|jpg|gif|png|webp)$/i) || href.startsWith('javascript:'))) {
+                    e.preventDefault();
+                } else if (href && !href.startsWith('#')) {
+                    // If image is inside a post link, open lightbox on direct image click
+                    e.preventDefault();
+                }
+            } else {
+                e.preventDefault();
+            }
+            e.stopPropagation();
+            cleaniqueOpenUnivLightbox(idx, eligibleImages);
+        });
+    });
+}
+
+function cleaniqueOpenUnivLightbox(index, imagesList) {
+    if (imagesList && imagesList.length > 0) {
+        univLightboxImages = imagesList;
+    }
+    if (univLightboxImages[index]) {
+        currentUnivIndex = index;
+        var modal = document.getElementById('universalImageLightbox');
+        var imgEl = document.getElementById('univLightboxImg');
+        var capEl = document.getElementById('univLightboxCaption');
+
+        imgEl.src = univLightboxImages[currentUnivIndex].src;
+        capEl.textContent = univLightboxImages[currentUnivIndex].caption;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+
+        var prevBtn = document.getElementById('univLightboxPrev');
+        var nextBtn = document.getElementById('univLightboxNext');
+        if (univLightboxImages.length <= 1) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        } else {
+            prevBtn.style.display = 'flex';
+            nextBtn.style.display = 'flex';
+        }
+    }
+}
+
+function cleaniqueCloseUnivLightbox() {
+    var modal = document.getElementById('universalImageLightbox');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+function cleaniqueNavUnivLightbox(direction) {
+    if (univLightboxImages.length === 0) return;
+    currentUnivIndex = (currentUnivIndex + direction + univLightboxImages.length) % univLightboxImages.length;
+    var imgEl = document.getElementById('univLightboxImg');
+    var capEl = document.getElementById('univLightboxCaption');
+    imgEl.src = univLightboxImages[currentUnivIndex].src;
+    capEl.textContent = univLightboxImages[currentUnivIndex].caption;
+}
+
+document.addEventListener('keydown', function(e) {
+    var modal = document.getElementById('universalImageLightbox');
+    if (modal && modal.style.display === 'flex') {
+        if (e.key === 'Escape') cleaniqueCloseUnivLightbox();
+        if (e.key === 'ArrowLeft') cleaniqueNavUnivLightbox(-1);
+        if (e.key === 'ArrowRight') cleaniqueNavUnivLightbox(1);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    cleaniqueInitGlobalLightbox();
+});
+</script>
+
 <?php wp_footer(); ?>
 </body>
 </html>
