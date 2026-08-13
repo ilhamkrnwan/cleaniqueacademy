@@ -161,3 +161,42 @@ function cleanique_get_post_thumbnail_url( $post_id = null, $size = 'full' ) {
     return get_template_directory_uri() . '/assets/images/article-placeholder.png';
 }
 
+// Helper to get Kegiatan / Event Gallery Thumbnail with smart fallbacks
+function cleanique_get_kegiatan_thumbnail_url( $post_id = null, $size = 'medium_large' ) {
+    $post_id = $post_id ? $post_id : get_the_ID();
+    
+    // 1. Featured image
+    if ( has_post_thumbnail( $post_id ) ) {
+        $url = get_the_post_thumbnail_url( $post_id, $size );
+        if ( ! empty( $url ) ) {
+            return $url;
+        }
+    }
+
+    // 2. Custom gallery meta (_cac_gallery_urls)
+    $gallery_raw = get_post_meta( $post_id, '_cac_gallery_urls', true );
+    if ( ! empty( $gallery_raw ) ) {
+        $lines = explode( "\n", str_replace( "\r", "", $gallery_raw ) );
+        foreach ( $lines as $line ) {
+            $trimmed = trim( $line );
+            if ( ! empty( $trimmed ) ) {
+                return $trimmed;
+            }
+        }
+    }
+
+    // 3. Fallback gallery images based on post ID
+    $fallback_images = array(
+        '/assets/images/gallery-1.webp',
+        '/assets/images/gallery-2.webp',
+        '/assets/images/gallery-3.webp',
+        '/assets/images/gallery-4.webp',
+        '/assets/images/gallery-5.webp',
+        '/assets/images/gallery-6.webp',
+        '/assets/images/hero-lab.png',
+    );
+
+    $index = abs( intval( $post_id ) ) % count( $fallback_images );
+    return get_template_directory_uri() . $fallback_images[$index];
+}
+

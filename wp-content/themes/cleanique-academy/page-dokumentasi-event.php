@@ -28,11 +28,9 @@ cleanique_render_page_hero( array(
                     $lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
                     ?>
                     <div class="card">
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <div style="margin: -2rem -2rem 1.25rem -2rem; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-                                <?php the_post_thumbnail( 'medium_large', array( 'style' => 'width:100%; height:200px; object-fit:cover;' ) ); ?>
-                            </div>
-                        <?php endif; ?>
+                        <div style="margin: -2rem -2rem 1.25rem -2rem; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
+                            <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" style="width:100%; height:200px; object-fit:cover; display:block;">
+                        </div>
 
                         <span style="display:inline-block; padding:0.25rem 0.75rem; border-radius:var(--radius-full); background:var(--color-primary-light); color:var(--color-primary); font-size:0.8rem; font-weight:700; margin-bottom:0.75rem; width:fit-content;">
                             <?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?>
