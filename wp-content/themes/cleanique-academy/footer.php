@@ -91,9 +91,9 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 2rem; border-top: 1px solid #1e293b; font-size: 0.85rem;">
             <p style="color: #64748b;">&copy; <?php echo date( 'Y' ); ?> PT Indotech Berkah Abadi. Hak cipta dilindungi undang-undang.</p>
             <div style="display: flex; gap: 1.5rem;">
-                <a href="<?php echo esc_url( home_url( '/tentang-kami/#faq' ) ); ?>" style="color: #64748b;">Kebijakan Privasi</a>
-                <a href="<?php echo esc_url( home_url( '/tentang-kami/#faq' ) ); ?>" style="color: #64748b;">Syarat & Ketentuan</a>
-                <a href="<?php echo esc_url( home_url( '/tentang-kami/#faq' ) ); ?>" style="color: #64748b;">Kebijakan Cookie</a>
+                <a href="<?php echo esc_url( home_url( '/kebijakan-privasi/' ) ); ?>" style="color: #64748b;">Kebijakan Privasi</a>
+                <a href="<?php echo esc_url( home_url( '/syarat-ketentuan/' ) ); ?>" style="color: #64748b;">Syarat & Ketentuan</a>
+                <a href="<?php echo esc_url( home_url( '/kebijakan-cookie/' ) ); ?>" style="color: #64748b;">Kebijakan Cookie</a>
             </div>
         </div>
     </div>
