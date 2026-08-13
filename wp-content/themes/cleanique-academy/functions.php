@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', 'cleanique_academy_scripts' );
 
 // Helper for WhatsApp Link
 function cleanique_get_whatsapp_url( $message = 'Halo Cleanique Academy, saya ingin bertanya mengenai program pelatihan.' ) {
-    $phone = '6287885590088'; // Official Phone Number
+    $phone = '6282215840088'; // Official Phone Number
     return 'https://api.whatsapp.com/send/?phone=' . $phone . '&text=' . rawurlencode( $message ) . '&type=phone_number&app_absent=0';
 }
 
