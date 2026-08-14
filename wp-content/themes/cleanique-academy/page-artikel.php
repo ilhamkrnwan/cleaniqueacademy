@@ -172,6 +172,25 @@ cleanique_render_page_hero( array(
     </div>
 </section>
 
+<!-- Premium Call to Action Section -->
+<section style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 3.5rem 0; color: #ffffff;">
+    <div class="container" style="max-width: 900px; text-align: center;">
+        <span style="display: inline-block; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.82rem; font-weight: 700; padding: 0.3rem 0.85rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">
+            Konsultasi Gratis
+        </span>
+        <h2 style="font-size: 2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.85rem; line-height: 1.3;">
+            Ingin Menguasai Formulasi Kimia Kebersihan & Bisnis Laundry?
+        </h2>
+        <p style="font-size: 1.02rem; color: #94a3b8; max-width: 680px; margin: 0 auto 2rem auto; line-height: 1.6;">
+            Dapatkan bimbingan langsung dari tim konsultan profesional Cleanique Academy. Diskusi produk, resep formulasi, dan jadwal pelatihan tatap muka terdekat.
+        </p>
+        <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya membaca artikel edukasi dan ingin konsultasi program pelatihan.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="padding: 0.85rem 1.8rem; font-size: 1rem; border-radius: 12px; display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
+            Konsultasi via WhatsApp
+        </a>
+    </div>
+</section>
+
 <?php
 get_footer();
 

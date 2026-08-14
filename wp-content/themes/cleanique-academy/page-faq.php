@@ -201,5 +201,47 @@ cleanique_render_page_hero( array(
     </div>
 </section>
 
+<!-- Schema.org Data Structuring (JSON-LD) for FAQPage Rich Snippets -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah pemula tanpa latar belakang kimia bisa mengikuti pelatihan ini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sangat bisa! Seluruh materi pelatihan dirancang praktis dari dasar. Peserta diajarkan mengenal fungsi bahan aktif, takaran persentase aman, hingga cara meracik produk pembersih secara mandiri tanpa perlu rumus kimia yang rumit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa saja fasilitas yang akan didapatkan oleh setiap peserta pelatihan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Setiap peserta akan mendapatkan modul materi lengkap, seluruh bahan baku praktik, alat pelindung diri, sertifikat pelatihan resmi Cleanique Academy (PT Indotech Berkah Abadi), hasil racikan produk, dan akses grup bimbingan alumni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah diajarkan cara mengatasi produk gagal saat produksi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, kami memberikan modul troubleshooting produksi lengkap untuk mengatasi emulsi memisah, menyesuaikan pH ideal, dan menaikkan viskositas kekentalan secara tepat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah Cleanique Academy membantu arahan pendaftaran izin edar PKRT / BPOM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, kami memberikan arahan mengenai prosedur sertifikasi legalitas usaha dan pengurusan izin edar Perbekalan Kesehatan Rumah Tangga (PKRT) Kemenkes."
+      }
+    }
+  ]
+}
+</script>
+
 <?php
 get_footer();

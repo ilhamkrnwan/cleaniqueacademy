@@ -54,6 +54,55 @@ cleanique_render_page_hero( array(
     </div>
 </section>
 
+<!-- 2. ROADMAP MEMBANGUN PABRIK & USAHA CHEMICAL MANDIRI DARI NOL -->
+<section class="section section-alt" style="padding: 3.5rem 0;">
+    <div class="container" style="max-width: 1040px;">
+        
+        <div class="section-header">
+            <span class="section-subtitle">Panduan Wirausaha Kimia</span>
+            <h2 class="section-title">Roadmap Membangun Pabrik & Usaha Chemical Mandiri dari Nol</h2>
+            <p class="section-description">
+                Membangun industri pembuatan sabun cuci, pelembut pakaian, dan produk pembersih rumah tangga tidak memerlukan modal miliaran rupiah. Di Cleanique Academy, kami membimbing peserta dengan tahapan terstruktur:
+            </p>
+        </div>
+
+        <div class="grid grid-3">
+            
+            <div class="card">
+                <span class="card-number" style="font-size: 0.85rem; font-weight: 800; color: #0284c7; text-transform: uppercase;">Tahap 1</span>
+                <h3 class="card-title" style="font-size: 1.15rem; margin-top: 0.25rem;">Pemahaman Bahan Aktif & Surfaktan</h3>
+                <p class="card-text">Mengenali karakteristik bahan pembersih (LAS, SLES, Texapon), penstabil pH, agen pengental, serta fiksatif aroma parfum agar hasil racikan berkualitas tinggi.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-number" style="font-size: 0.85rem; font-weight: 800; color: #16a34a; text-transform: uppercase;">Tahap 2</span>
+                <h3 class="card-title" style="font-size: 1.15rem; margin-top: 0.25rem;">Praktikum Uji Stabilitas Formulasi</h3>
+                <p class="card-text">Praktik meracik langsung di laboratorium untuk memastikan emulsi tidak memisah, kekentalan pas, busa melimpah, dan produk tahan disimpan berbulan-bulan.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-number" style="font-size: 0.85rem; font-weight: 800; color: #d97706; text-transform: uppercase;">Tahap 3</span>
+                <h3 class="card-title" style="font-size: 1.15rem; margin-top: 0.25rem;">Perhitungan HPP & Profit Margin</h3>
+                <p class="card-text">Menganalisis Biaya Pokok Produksi per liter agar Anda bisa menentukan harga jual kompetitif dengan margin keuntungan hingga 200% - 300%.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-number" style="font-size: 0.85rem; font-weight: 800; color: #9333ea; text-transform: uppercase;">Tahap 4</span>
+                <h3 class="card-title" style="font-size: 1.15rem; margin-top: 0.25rem;">Legalitas Izin Edar PKRT & BPOM</h3>
+                <p class="card-text">Mendapatkan panduan tata cara pendaftaran perizinan komersial Perbekalan Kesehatan Rumah Tangga (PKRT) Kemenkes agar produk aman dipasarkan secara bebas.</p>
+            </div>
+
+            <div class="card" style="grid-column: span 2;">
+                <span class="card-number" style="font-size: 0.85rem; font-weight: 800; color: #be123c; text-transform: uppercase;">Tahap 5</span>
+                <h3 class="card-title" style="font-size: 1.15rem; margin-top: 0.25rem;">Penetrasi Pasar & Jaringan Mitra Distributor</h3>
+                <p class="card-text">Mengakses rekomendasi supplier bahan baku kimia skala pabrik serta strategi penetrasi pasar B2B (hotel, restoran, laundry) dan B2C (rumah tangga).</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
 <!-- 2. KATALOG KELAS FORMULASI PRODUCT KEBERSIHAN (SEO ENHANCED) -->
 <section id="katalog-kategori" class="section section-alt" style="padding: 3.25rem 0;">
     <div class="container" style="max-width: 1040px;">
@@ -293,6 +342,31 @@ cleanique_render_page_hero( array(
         </div>
     </div>
 </section>
+
+<!-- Schema.org Data Structuring (JSON-LD) for EducationalOrganization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Cleanique Academy - PT Indotech Berkah Abadi",
+  "url": "<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>",
+  "logo": "<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>",
+  "description": "Pusat Pelatihan Profesional & Bimbingan Formulasi Kimia Kebersihan Terpercaya Sejak 2011.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jongke Tengah No. 30, RT.01/RW.23, Sendangadi, Kec. Mlati",
+    "addressLocality": "Kabupaten Sleman",
+    "addressRegion": "D.I. Yogyakarta",
+    "postalCode": "55285",
+    "addressCountry": "ID"
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "PT Indotech Berkah Abadi",
+    "url": "https://indotech.id/"
+  }
+}
+</script>
 
 <?php
 get_footer();

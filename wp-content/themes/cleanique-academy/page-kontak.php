@@ -26,7 +26,7 @@ cleanique_render_page_hero( array(
                 
                 <p style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-main);">
                     <strong>Alamat Training Center:</strong><br>
-                    <a href="https://share.google/7QVmis9RdpoMHwldZ" target="_blank" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">
+                    <a href="https://maps.app.goo.gl/Z8CD9vQMsDzsax4L8" target="_blank" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">
                         Jongke Tengah No. 30, RT.01/RW.23, Sendangadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55285
                     </a>
                 </p>
@@ -38,7 +38,7 @@ cleanique_render_page_hero( array(
                 </p>
 
                 <div>
-                    <a href="https://share.google/7QVmis9RdpoMHwldZ" target="_blank" class="btn btn-outline" style="padding: 0.45rem 0.9rem; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 0.4rem; border-radius: 8px;">
+                    <a href="https://maps.app.goo.gl/Z8CD9vQMsDzsax4L8" target="_blank" class="btn btn-outline" style="padding: 0.45rem 0.9rem; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 0.4rem; border-radius: 8px;">
                         Petunjuk Arah Google Maps &rarr;
                     </a>
                 </div>
@@ -99,13 +99,13 @@ cleanique_render_page_hero( array(
             <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
                 <span class="section-subtitle">Lokasi Penyelenggaraan</span>
                 <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Peta Training Center Yogyakarta</h2>
-                <p class="section-description">Kunjungi Laboratorium & Pusat Pelatihan Tatap Muka Cleanique Academy.</p>
+                <p class="section-description">Kunjungi Laboratorium & Pusat Pelatihan Tatap Muka Cleanique Academy (PT Indotech Berkah Abadi).</p>
             </div>
 
             <div class="contact-map-iframe-wrap">
                 <iframe 
                     title="Peta Lokasi Cleanique Academy PT Indotech Berkah Abadi"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.279785023908!2d110.4244585!3d-7.7601142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5996f01c808f%3A0xb35a0f670732890!2sSleman%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.518385552378!2d110.4106629!3d-7.7025463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5f0ad78c46b5%3A0x117c05683828462c!2sPT.%20IndoTech%20Berkah%20Abadi!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
                     width="100%" 
                     height="100%" 
                     style="border:0;" 
@@ -116,7 +116,7 @@ cleanique_render_page_hero( array(
             </div>
 
             <div style="text-align: center; margin-top: 1.5rem;">
-                <a href="https://share.google/7QVmis9RdpoMHwldZ" target="_blank" class="btn btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.92rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <a href="https://maps.app.goo.gl/Z8CD9vQMsDzsax4L8" target="_blank" class="btn btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.92rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem;">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     <span>Buka Lokasi di Google Maps &rarr;</span>
                 </a>
@@ -125,6 +125,47 @@ cleanique_render_page_hero( array(
 
     </div>
 </section>
+
+<!-- Schema.org Data Structuring (JSON-LD) for LocalBusiness & ContactPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Cleanique Academy - PT Indotech Berkah Abadi",
+  "image": "<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>",
+  "@id": "<?php echo esc_url( home_url( '/kontak/' ) ); ?>",
+  "url": "<?php echo esc_url( home_url( '/kontak/' ) ); ?>",
+  "telephone": "+6282215840088",
+  "email": "indotechberkahabadi@gmail.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jongke Tengah No. 30, RT.01/RW.23, Sendangadi, Kec. Mlati",
+    "addressLocality": "Kabupaten Sleman",
+    "addressRegion": "D.I. Yogyakarta",
+    "postalCode": "55285",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -7.7025463,
+    "longitude": 110.4106629
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "08:00",
+    "closes": "17:00"
+  }
+}
+</script>
 
 <?php
 get_footer();

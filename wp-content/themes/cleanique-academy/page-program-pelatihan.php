@@ -241,7 +241,39 @@ cleanique_render_page_hero( array(
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
+}
 </style>
+
+<!-- Schema.org Data Structuring (JSON-LD) for Course -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Pelatihan Formulasi Kimia Kebersihan, Laundry & Homecare",
+  "description": "Kursus praktikum meracik deterjen cair, pelembut pakaian, sabun cuci piring, dan produk pembersih komersial skala pabrik.",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Cleanique Academy - PT Indotech Berkah Abadi",
+    "sameAs": "<?php echo esc_url( home_url( '/' ) ); ?>"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Kelas Kolektif (4 Formula)",
+      "price": "4300000",
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Kelas Privat (6 Formula)",
+      "price": "9700000",
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock"
+    }
+  ]
+}
+</script>
 
 <?php
 get_footer();

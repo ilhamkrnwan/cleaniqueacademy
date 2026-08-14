@@ -1641,7 +1641,7 @@ details.accordion-item[open] summary.accordion-header::after {
   z-index: 9997;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 0.65rem;
   pointer-events: none;
 }
@@ -1659,9 +1659,9 @@ details.accordion-item[open] summary.accordion-header::after {
 }
 
 .btn-top {
-  width: 40px;
-  height: 40px;
-  background-color: #0f172a;
+  width: 48px;
+  height: 48px;
+  background-color: #0284c7;
   color: #ffffff;
   opacity: 0;
   visibility: hidden;
@@ -1675,8 +1675,8 @@ details.accordion-item[open] summary.accordion-header::after {
 }
 
 .btn-top:hover {
-  background-color: #0284c7;
-  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.3);
+  background-color: #0369a1;
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.38);
 }
 
 .btn-wa-float {
@@ -1691,9 +1691,20 @@ details.accordion-item[open] summary.accordion-header::after {
   box-shadow: 0 8px 22px rgba(37, 211, 102, 0.38);
 }
 
+.wa-float-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
 /* Floating Chat Bubble Speech Tooltip */
 .wa-floating-bubble {
-  position: relative;
+  position: absolute;
+  right: calc(100% + 0.75rem);
+  top: 50%;
+  transform: translateY(-50%);
   background: #ffffff;
   color: #0f172a;
   border: 1px solid #cbd5e1;
@@ -1708,7 +1719,9 @@ details.accordion-item[open] summary.accordion-header::after {
   cursor: pointer;
   white-space: nowrap;
   pointer-events: auto;
+  max-width: calc(100vw - 5rem);
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  z-index: 10;
 }
 
 .wa-floating-bubble:hover {
@@ -1818,26 +1831,26 @@ details.accordion-item[open] summary.accordion-header::after {
     width: 14px !important;
     height: 14px !important;
   }
-  .floating-actions {
-    bottom: 0.85rem !important;
-    right: 0.85rem !important;
+  .floating-actions-wrap {
+    bottom: 1rem !important;
+    right: 1rem !important;
     gap: 0.5rem !important;
   }
   .btn-top {
-    width: 36px !important;
-    height: 36px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
   .btn-top svg {
-    width: 15px !important;
-    height: 15px !important;
+    width: 18px !important;
+    height: 18px !important;
   }
   .btn-wa-float {
-    width: 44px !important;
-    height: 44px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
   .btn-wa-float svg {
-    width: 20px !important;
-    height: 20px !important;
+    width: 22px !important;
+    height: 22px !important;
   }
   .hero-static-title {
     font-size: 2rem;

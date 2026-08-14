@@ -121,15 +121,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php endif; ?>
 
 <!-- Floating Back-To-Top and WhatsApp Action Buttons -->
-<div class="floating-actions-wrap" style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9997; display: flex; flex-direction: column; align-items: flex-end; gap: 0.65rem; pointer-events: none;">
+<div class="floating-actions-wrap" style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9997; display: flex; flex-direction: column; align-items: center; gap: 0.65rem; pointer-events: none;">
     
     <!-- Floating Back-To-Top (Visible only after scroll > 250px) -->
     <button type="button" id="btnScrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="floating-btn btn-top" aria-label="Kembali ke atas">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
     
     <!-- Floating WA Container with Tooltip Chat Bubble -->
-    <div class="wa-float-group" style="position: relative; display: flex; align-items: center; gap: 0.75rem; pointer-events: auto;">
+    <div class="wa-float-group" style="position: relative; display: flex; align-items: center; justify-content: center; pointer-events: auto;">
         
         <!-- Speech Bubble pointing to WhatsApp Button -->
         <div id="waFloatingBubble" class="wa-floating-bubble" onclick="if(window.openWaFaqModal){window.openWaFaqModal();}">
