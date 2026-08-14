@@ -497,10 +497,13 @@ img {
 }
 
 .page-hero-title {
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.25;
   margin-bottom: 1rem;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-hero-dark .page-hero-title {

@@ -12,7 +12,7 @@ cleanique_render_page_hero( array(
 ) );
 ?>
 
-<<!-- SECTION PROMO INVESTASI PELATIHAN -->
+<!-- SECTION PROMO INVESTASI PELATIHAN -->
 <section id="program-unggulan" class="section" style="background-color: #11262d; color: #ffffff; padding: 3.25rem 0; overflow: hidden; margin-bottom: 3rem;">
     <div class="container" style="max-width: 1080px;">
         
