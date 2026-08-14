@@ -20,9 +20,12 @@ cleanique_render_page_hero( array(
         $search_query = isset( $_GET['s'] ) ? sanitize_text_field( $_GET['s'] ) : '';
         $sort_by      = isset( $_GET['sort'] ) ? sanitize_text_field( $_GET['sort'] ) : 'date_desc';
 
+        // 7 posts on page 1 (1 featured + 6 grid items), 6 posts on page 2+
+        $posts_per_page = ( $paged == 1 ) ? 7 : 6;
+
         $args = array(
             'post_type'      => 'kegiatan',
-            'posts_per_page' => 9,
+            'posts_per_page' => $posts_per_page,
             'paged'          => $paged,
         );
 
@@ -81,39 +84,87 @@ cleanique_render_page_hero( array(
             </form>
         </div>
 
-        <div class="grid grid-3" style="margin-bottom: 3.5rem;">
-            <?php
-            if ( $kegiatan_query->have_posts() ) :
-                while ( $kegiatan_query->have_posts() ) : $kegiatan_query->the_post();
-                    $tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
-                    $lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
-                    ?>
-                    <div class="gallery-overlay-card">
-                        <div class="gallery-card-image-wrap">
-                            <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
-                            <div class="gallery-card-badge-top">
-                                <?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?>
-                            </div>
+        <?php
+        if ( $kegiatan_query->have_posts() ) :
+            if ( $paged == 1 ) :
+                // Render 1st post as Featured Gallery Highlight
+                $kegiatan_query->the_post();
+                $featured_tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
+                $featured_lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+                $featured_img     = cleanique_get_kegiatan_thumbnail_url( get_the_ID(), 'full' );
+                ?>
+                <!-- DOKUMENTASI SOROTAN UTAMA -->
+                <div class="featured-gallery-card">
+                    <div class="featured-gallery-image-wrap">
+                        <img src="<?php echo esc_url( $featured_img ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                        <div class="featured-gallery-badge-top">Dokumentasi Sorotan</div>
+                    </div>
+                    <div class="featured-gallery-content">
+                        <div class="featured-gallery-meta-top">
+                            <span class="featured-gallery-lokasi">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <span><?php echo $featured_lokasi ? esc_html( $featured_lokasi ) : 'Indonesia'; ?></span>
+                            </span>
+                            <span style="color: #475569;">•</span>
+                            <span class="featured-gallery-tanggal">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <span><?php echo $featured_tanggal ? esc_html( $featured_tanggal ) : 'Kegiatan Academy'; ?></span>
+                            </span>
                         </div>
-                        <div class="gallery-card-overlay">
-                            <div class="gallery-card-content">
-                                <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></span>
-                                <h3 class="gallery-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 16 ) ); ?></p>
-                                <div class="gallery-card-actions">
-                                    <a href="<?php the_permalink(); ?>" class="gallery-card-btn">Lihat Detail Event &rarr;</a>
+
+                        <h2 class="featured-gallery-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </h2>
+
+                        <p class="featured-gallery-desc">
+                            <?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 30 ) ); ?>
+                        </p>
+
+                        <div class="featured-gallery-actions">
+                            <a href="<?php the_permalink(); ?>" class="btn btn-primary" style="padding: 0.65rem 1.35rem; font-size: 0.92rem; border-radius: 10px;">
+                                Lihat Detail Event Utama &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php if ( $kegiatan_query->have_posts() ) : ?>
+                <div class="grid grid-3" style="margin-bottom: 3.5rem;">
+                    <?php
+                    while ( $kegiatan_query->have_posts() ) : $kegiatan_query->the_post();
+                        $tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
+                        $lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+                        ?>
+                        <div class="gallery-overlay-card">
+                            <div class="gallery-card-image-wrap">
+                                <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                                <div class="gallery-card-badge-top">
+                                    <?php echo $tanggal ? esc_html( $tanggal ) : 'Kegiatan Academy'; ?>
+                                </div>
+                            </div>
+                            <div class="gallery-card-overlay">
+                                <div class="gallery-card-content">
+                                    <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Indonesia'; ?></span>
+                                    <h3 class="gallery-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                    <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 16 ) ); ?></p>
+                                    <div class="gallery-card-actions">
+                                        <a href="<?php the_permalink(); ?>" class="gallery-card-btn">Lihat Detail Event &rarr;</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php
-                endwhile;
-                wp_reset_postdata();
-            else :
-                echo '<div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background: #ffffff; border-radius: 12px; border: 1px solid var(--color-border);"><p style="color: var(--color-text-muted); font-size: 1.05rem; margin: 0;">Tidak ditemukan dokumentasi galeri yang sesuai dengan pencarian Anda.</p></div>';
-            endif;
-            ?>
-        </div>
+                    <?php
+                    endwhile;
+                    ?>
+                </div>
+            <?php endif; ?>
+            <?php
+            wp_reset_postdata();
+        else :
+            echo '<div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background: #ffffff; border-radius: 12px; border: 1px solid var(--color-border);"><p style="color: var(--color-text-muted); font-size: 1.05rem; margin: 0;">Tidak ditemukan dokumentasi galeri yang sesuai dengan pencarian Anda.</p></div>';
+        endif;
+        ?>
 
         <!-- PAGINATION NUMERIK -->
         <?php if ( $kegiatan_query->max_num_pages > 1 ) : ?>
