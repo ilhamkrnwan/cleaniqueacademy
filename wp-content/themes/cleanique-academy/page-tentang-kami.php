@@ -28,7 +28,7 @@ cleanique_render_page_hero( array(
         </div>
 
         <!-- VIDEO PENJELASAN CLEANIQUE ACADEMY (YOUTUBE SHORTS) -->
-        <div style="margin-bottom: 3rem; background: #ffffff; border: 1px solid var(--color-border); border-radius: 12px; padding: 1.75rem 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center;">
+        <div class="video-profile-card">
             <div style="margin-bottom: 1.25rem;">
                 <span style="display: inline-block; background: #e0f2fe; color: #0284c7; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 6px; margin-bottom: 0.35rem;">Video Profil Academy</span>
                 <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0;">Pengenalan & Suasana Pelatihan Cleanique Academy</h3>
@@ -92,7 +92,7 @@ cleanique_render_page_hero( array(
                 <p class="card-text">Mendapatkan panduan tata cara pendaftaran perizinan komersial Perbekalan Kesehatan Rumah Tangga (PKRT) Kemenkes agar produk aman dipasarkan secara bebas.</p>
             </div>
 
-            <div class="card" style="grid-column: span 2;">
+            <div class="card card-span-2">
                 <span class="card-number" style="font-size: 0.85rem; font-weight: 800; color: #be123c; text-transform: uppercase;">Tahap 5</span>
                 <h3 class="card-title" style="font-size: 1.15rem; margin-top: 0.25rem;">Penetrasi Pasar & Jaringan Mitra Distributor</h3>
                 <p class="card-text">Mengakses rekomendasi supplier bahan baku kimia skala pabrik serta strategi penetrasi pasar B2B (hotel, restoran, laundry) dan B2C (rumah tangga).</p>
@@ -331,7 +331,7 @@ cleanique_render_page_hero( array(
 <!-- 4. SEKSI KONTAK KANTOR PUSAT & CALL TO ACTION -->
 <section id="kontak" class="section section-alt" style="padding: 3.25rem 0;">
     <div class="container" style="max-width: 850px;">
-        <div style="background: linear-gradient(135deg, var(--color-secondary) 0%, #1e293b 100%); color: #ffffff; border-radius: 12px; padding: 2.5rem 1.5rem; text-align: center;">
+        <div class="contact-cta-box">
             <span style="display: inline-block; background: rgba(2, 132, 199, 0.25); color: #7dd3fc; padding: 0.3rem 0.9rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.85rem;">KONTAK KANTOR PUSAT</span>
             <h3 style="color:#ffffff; font-size: 1.7rem; margin-bottom: 0.85rem;">Konsultasikan Pendaftaran Pelatihan Anda</h3>
             <p style="color: #cbd5e1; font-size: 0.98rem; margin-bottom: 1.5rem; max-width: 650px; margin-left: auto; margin-right: auto;">Tim customer service & konsultan Cleanique Academy (PT Indotech Berkah Abadi) siap melayani pertanyaan Anda.</p>
