@@ -170,40 +170,42 @@ cleanique_render_page_hero( array(
                         $author_name  = get_the_author() ? get_the_author() : 'Tim Cleanique';
                         $reading_time = cleanique_get_reading_time( get_the_content() );
                         ?>
-                        <div class="card" style="display: flex; flex-direction: column;">
-                            <div style="margin: -2rem -2rem 1.25rem -2rem; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-                                <img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" style="width:100%; height:180px; object-fit:cover;">
+                        <div class="card article-card">
+                            <div class="article-card-image-wrap">
+                                <img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
                             </div>
 
-                            <!-- Category Badge & Reading Time Icon -->
-                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem;">
-                                <span style="display:inline-block; padding:0.25rem 0.65rem; border-radius:var(--radius-full); background:var(--color-primary-light); color:var(--color-primary); font-size:0.75rem; font-weight:700;">
-                                    <?php echo esc_html( $card_cat_name ); ?>
-                                </span>
-                                <span style="display:inline-flex; align-items:center; gap:0.3rem; color:#64748b; font-size:0.78rem; font-weight:600;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                    <span><?php echo esc_html( $reading_time ); ?></span>
-                                </span>
+                            <div class="article-card-body">
+                                <!-- Category Badge & Reading Time Icon -->
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem;">
+                                    <span style="display:inline-block; padding:0.25rem 0.65rem; border-radius:var(--radius-full); background:var(--color-primary-light); color:var(--color-primary); font-size:0.75rem; font-weight:700;">
+                                        <?php echo esc_html( $card_cat_name ); ?>
+                                    </span>
+                                    <span style="display:inline-flex; align-items:center; gap:0.3rem; color:#64748b; font-size:0.78rem; font-weight:600;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        <span><?php echo esc_html( $reading_time ); ?></span>
+                                    </span>
+                                </div>
+
+                                <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.5rem;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+                                <!-- Author & Date Metadata with SVG Icons -->
+                                <div style="display: flex; align-items: center; gap: 0.75rem; color: #64748b; font-size: 0.8rem; margin-bottom: 0.85rem;">
+                                    <span style="display: inline-flex; align-items: center; gap: 0.3rem;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span><?php echo esc_html( $author_name ); ?></span>
+                                    </span>
+                                    <span style="color: #cbd5e1;">•</span>
+                                    <span style="display: inline-flex; align-items: center; gap: 0.3rem;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                        <span><?php echo get_the_date(); ?></span>
+                                    </span>
+                                </div>
+
+                                <div class="card-text" style="font-size: 0.88rem; line-height: 1.55; margin-bottom: 1.25rem; flex: 1;"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 16 ) ); ?></div>
+                                
+                                <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="align-self: flex-start; padding: 0.4rem 0.9rem; font-size: 0.85rem; margin-top: auto;">Baca Artikel &rarr;</a>
                             </div>
-
-                            <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.5rem;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-
-                            <!-- Author & Date Metadata with SVG Icons -->
-                            <div style="display: flex; align-items: center; gap: 0.75rem; color: #64748b; font-size: 0.8rem; margin-bottom: 0.85rem;">
-                                <span style="display: inline-flex; align-items: center; gap: 0.3rem;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                    <span><?php echo esc_html( $author_name ); ?></span>
-                                </span>
-                                <span style="color: #cbd5e1;">•</span>
-                                <span style="display: inline-flex; align-items: center; gap: 0.3rem;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                                    <span><?php echo get_the_date(); ?></span>
-                                </span>
-                            </div>
-
-                            <div class="card-text" style="font-size: 0.88rem; line-height: 1.55; margin-bottom: 1.25rem; flex: 1;"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 16 ) ); ?></div>
-                            
-                            <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="align-self: flex-start; padding: 0.4rem 0.9rem; font-size: 0.85rem; margin-top: auto;">Baca Artikel &rarr;</a>
                         </div>
                     <?php
                     endwhile;

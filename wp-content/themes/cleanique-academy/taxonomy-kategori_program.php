@@ -50,21 +50,23 @@ cleanique_render_page_hero( array(
                     $harga  = get_post_meta( get_the_ID(), '_cac_harga_program', true );
                     $target = get_post_meta( get_the_ID(), '_cac_target_peserta', true );
                     ?>
-                    <div class="card">
+                    <div class="card article-card">
                         <?php if ( has_post_thumbnail() ) : ?>
-                            <div style="margin: -2rem -2rem 1.25rem -2rem; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-                                <?php the_post_thumbnail( 'medium_large', array( 'style' => 'width:100%; height:200px; object-fit:cover;' ) ); ?>
+                            <div class="article-card-image-wrap" style="height: 200px;">
+                                <?php the_post_thumbnail( 'medium_large' ); ?>
                             </div>
                         <?php endif; ?>
-                        <span class="card-badge"><?php echo $durasi ? esc_html( $durasi ) : 'Program Pelatihan'; ?></span>
-                        <h3 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <?php if ( $target ) : ?>
-                            <p style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; margin-bottom: 0.5rem;">Target: <?php echo esc_html( $target ); ?></p>
-                        <?php endif; ?>
-                        <div class="card-text"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ); ?></div>
-                        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
-                            <span style="font-weight: 700; color: var(--color-secondary);"><?php echo $harga ? esc_html( $harga ) : 'Hubungi Kami'; ?></span>
-                            <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;">Detail Program</a>
+                        <div class="article-card-body">
+                            <span class="card-badge" style="margin-bottom: 0.75rem; width: fit-content;"><?php echo $durasi ? esc_html( $durasi ) : 'Program Pelatihan'; ?></span>
+                            <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.5rem;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <?php if ( $target ) : ?>
+                                <p style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; margin-bottom: 0.5rem;">Target: <?php echo esc_html( $target ); ?></p>
+                            <?php endif; ?>
+                            <div class="card-text" style="font-size: 0.88rem; margin-bottom: 1.25rem; flex: 1;"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ); ?></div>
+                            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
+                                <span style="font-weight: 700; color: var(--color-secondary);"><?php echo $harga ? esc_html( $harga ) : 'Hubungi Kami'; ?></span>
+                                <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;">Detail Program &rarr;</a>
+                            </div>
                         </div>
                     </div>
                 <?php
