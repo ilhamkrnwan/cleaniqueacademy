@@ -141,11 +141,11 @@ foreach ($pages as $p) {
 }
 
 // Update Reading Settings & Permalinks
-if ($home_id && $blog_id) {
+if ($home_id) {
     update_option('show_on_front', 'page');
     update_option('page_on_front', $home_id);
-    update_option('page_for_posts', $blog_id);
-    echo "[✓] Reading Settings set: Homepage -> Beranda, Posts -> Artikel\n";
+    update_option('page_for_posts', 0);
+    echo "[✓] Reading Settings set: Homepage -> Beranda (Artikel uses page-artikel.php)\n";
 }
 
 update_option('permalink_structure', '/%postname%/');
