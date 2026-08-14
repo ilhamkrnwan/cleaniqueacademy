@@ -4,6 +4,13 @@
  * Usage CLI: php seed_all_data.php
  */
 
+if ( ! defined( 'FS_METHOD' ) ) {
+    define( 'FS_METHOD', 'direct' );
+}
+if ( ! defined( 'WP_USE_THEMES' ) ) {
+    define( 'WP_USE_THEMES', false );
+}
+
 // Find wp-load.php dynamically
 $possible_paths = array(
     __DIR__ . '/../../../../wp-load.php',
@@ -22,6 +29,12 @@ foreach ($possible_paths as $path) {
 
 if (!$loaded) {
     die("Error: wp-load.php not found.\n");
+}
+
+// Prevent FTP filesystem errors and suspend cache invalidation during CLI seeding
+add_filter( 'filesystem_method', function() { return 'direct'; } );
+if ( function_exists( 'wp_suspend_cache_invalidation' ) ) {
+    wp_suspend_cache_invalidation( true );
 }
 
 require_once ABSPATH . 'wp-admin/includes/taxonomy.php';
