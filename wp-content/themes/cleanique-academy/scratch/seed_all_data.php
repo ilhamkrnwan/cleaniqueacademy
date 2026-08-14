@@ -101,6 +101,12 @@ $pages = array(
         'template' => 'page-syarat-ketentuan.php',
         'content'  => 'Ketentuan pendaftaran, kepemilikan resep formulasi, dan aturan pelatihan.',
     ),
+    array(
+        'title'    => 'Kebijakan Cookie',
+        'slug'     => 'kebijakan-cookie',
+        'template' => 'page-kebijakan-cookie.php',
+        'content'  => 'Penjelasan mengenai penggunaan cookie dan penyimpanan lokal peramban.',
+    ),
 );
 
 $home_id = 0;
