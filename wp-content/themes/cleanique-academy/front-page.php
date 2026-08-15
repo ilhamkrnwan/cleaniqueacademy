@@ -126,16 +126,16 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 <!-- Photo Collage Stack -->
                 <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; position: relative;">
                     <div style="transform: rotate(-2deg); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); border: 2px solid #ffffff;">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-1.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 100px; object-fit: cover; display: block;">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/siapa-yg-cocok-ikut/siapa-yang-cocok-mengikuti-pelatihan-kimia-ini.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 100px; object-fit: cover; display: block;">
                     </div>
                     <div style="transform: rotate(2deg); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); border: 2px solid #ffffff;">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-2.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 100px; object-fit: cover; display: block;">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/siapa-yg-cocok-ikut/siapa-yang-cocok-mengikuti-pelatihan-kimia-ini-2.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 100px; object-fit: cover; display: block;">
                     </div>
                     <div style="transform: rotate(-2deg); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); border: 2px solid #ffffff;">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-3.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 100px; object-fit: cover; display: block;">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/siapa-yg-cocok-ikut/siapa-yang-cocok-mengikuti-pelatihan-kimia-ini-3.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 100px; object-fit: cover; display: block;">
                     </div>
                     <div style="transform: rotate(2deg); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.06); border: 2px solid #ffffff;">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-4.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 100px; object-fit: cover; display: block;">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/siapa-yg-cocok-ikut/siapa-yang-cocok-mengikuti-pelatihan-kimia-ini-4.webp' ); ?>" alt="Praktikum Pelatihan" style="width: 100%; height: 100px; object-fit: cover; display: block;">
                     </div>
                 </div>
             </div>
@@ -297,7 +297,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 <div class="accordion-content reason-accordion-content" style="padding: 1.25rem 1.35rem; border-top: 1px solid #f1f5f9; background: #fafafa;">
                     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
                         <div style="width: 190px; min-width: 170px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-1.webp' ); ?>" alt="Belajar dari Produsen Berpengalaman" style="width: 100%; height: 135px; object-fit: cover; display: block;">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/6-alasan/belajar-langsung-dari-produsen-berpengalaman.webp' ); ?>" alt="Belajar dari Produsen Berpengalaman" style="width: 100%; height: 135px; object-fit: cover; display: block;">
                         </div>
                         <div style="flex: 1; min-width: 240px;">
                             <p style="font-size: 0.92rem; color: #475569; line-height: 1.65; margin: 0;">Kami Perusahaan Chemical yang berdiri sejak 2011, dan dari awal berdiri sampai saat ini kami telah melewati banyak sekali trial and error, dan sekarang kamu ngga perlu lagi mengalami masa-masa itu, jika kamu mengikuti pelatihan dari kami. Jadi masa sulit kami telah lewat, kini kamu tinggal menikmati hasilnya dengan ikut pelatihan dari kami.</p>
@@ -321,7 +321,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 <div class="accordion-content reason-accordion-content" style="padding: 1.25rem 1.35rem; border-top: 1px solid #f1f5f9; background: #fafafa;">
                     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
                         <div style="width: 190px; min-width: 170px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-2.webp' ); ?>" alt="Lengkap Teori dan Praktek" style="width: 100%; height: 135px; object-fit: cover; display: block;">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/6-alasan/lengkap-pelatihan-meliputi-praktek-dan-teori.webp' ); ?>" alt="Lengkap Teori dan Praktek" style="width: 100%; height: 135px; object-fit: cover; display: block;">
                         </div>
                         <div style="flex: 1; min-width: 240px;">
                             <p style="font-size: 0.92rem; color: #475569; line-height: 1.65; margin: 0;">Teori itu biasa dilakukan oleh si pembuat pelatihan bahkan sampai panjang lebar sampai pada akhirnya yang diajarkan hanya mendapatkan teori banyak minim praktek. Kami mengedepankan training dengan metode Praktek diperbanyak ketimbang teori, saat teori yang didapat itu kurang, kamu bisa bertanya sampai kamu bisa memahaminya.</p>
@@ -345,7 +345,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 <div class="accordion-content reason-accordion-content" style="padding: 1.25rem 1.35rem; border-top: 1px solid #f1f5f9; background: #fafafa;">
                     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
                         <div style="width: 190px; min-width: 170px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-3.webp' ); ?>" alt="Produk Terjual 1 Juta Unit" style="width: 100%; height: 135px; object-fit: cover; display: block;">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/6-alasan/produk-chemical-kami-sudah-terjual-lebih-dari-1-juta-unit.webp' ); ?>" alt="Produk Terjual 1 Juta Unit" style="width: 100%; height: 135px; object-fit: cover; display: block;">
                         </div>
                         <div style="flex: 1; min-width: 240px;">
                             <p style="font-size: 0.92rem; color: #475569; line-height: 1.65; margin: 0;">Banyak kursus yang menawarkan produk chemical, dengan penawaran menggiurkan yang biasanya lebih murah. Tapi Cek dulu sebelum mengambil penawaran itu, punyakah produk yang dijual di pasaran atau hanya sekelompok orang yang hanya tahu-tahu saja tanpa ada bukti produk yang dia jual atau dipasarkan. Buktikan dulu INGAT!!! Kami bukan distributor parfum, deterjen, pelembut dan pembersih lain.</p>
@@ -369,7 +369,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 <div class="accordion-content reason-accordion-content" style="padding: 1.25rem 1.35rem; border-top: 1px solid #f1f5f9; background: #fafafa;">
                     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
                         <div style="width: 190px; min-width: 170px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-4.webp' ); ?>" alt="Tim Ahli Berpengalaman" style="width: 100%; height: 135px; object-fit: cover; display: block;">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/6-alasan/tim-ahli-trainer-sudah-berpengalaman.webp' ); ?>" alt="Tim Ahli Berpengalaman" style="width: 100%; height: 135px; object-fit: cover; display: block;">
                         </div>
                         <div style="flex: 1; min-width: 240px;">
                             <div style="font-size: 0.9rem; color: #475569; line-height: 1.6;">
@@ -397,7 +397,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 <div class="accordion-content reason-accordion-content" style="padding: 1.25rem 1.35rem; border-top: 1px solid #f1f5f9; background: #fafafa;">
                     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
                         <div style="width: 190px; min-width: 170px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-5.webp' ); ?>" alt="Efisien Tanpa Kuliah Kimia" style="width: 100%; height: 135px; object-fit: cover; display: block;">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/6-alasan/efisien-tidak-harus-kuliah-jurusan-kimia.webp' ); ?>" alt="Efisien Tanpa Kuliah Kimia" style="width: 100%; height: 135px; object-fit: cover; display: block;">
                         </div>
                         <div style="flex: 1; min-width: 240px;">
                             <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin: 0 0 0.5rem 0;">Sadar nggak sih? Banyak orang mengira harus kuliah jurusan kimia dulu untuk bisa membuat produk chemical sendiri. Padahal, untuk kebutuhan usaha laundry, Anda bisa mempelajari dasar-dasar formulasi, fungsi bahan, hingga cara pembuatannya hanya dalam waktu 1–2 hari melalui pelatihan ini.</p>
@@ -428,7 +428,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 <div class="accordion-content reason-accordion-content" style="padding: 1.25rem 1.35rem; border-top: 1px solid #f1f5f9; background: #fafafa;">
                     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
                         <div style="width: 190px; min-width: 170px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-6.webp' ); ?>" alt="Ekosistem Bisnis dan Bimbingan Jangka Panjang" style="width: 100%; height: 135px; object-fit: cover; display: block;">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/6-alasan/ekosistem-bisnis-dan-bimbingan-jangka-panjang.webp' ); ?>" alt="Ekosistem Bisnis dan Bimbingan Jangka Panjang" style="width: 100%; height: 135px; object-fit: cover; display: block;">
                         </div>
                         <div style="flex: 1; min-width: 240px;">
                             <p style="font-size: 0.92rem; color: #475569; line-height: 1.65; margin: 0;">Kami tidak membiarkan Anda berjuang sendirian setelah kelas selesai. Kami menyediakan akses jaringan ke sesama pengusaha dan mitra yang sudah berhasil di lapangan. Anda langsung masuk ke dalam ekosistem di mana Anda bisa scale up, mencari partner distribusi, dan merancang strategi komersial. Fokusnya bukan sekadar produksi, tapi percepatan meraih keuntungan bisnis berkelanjutan.</p>
@@ -483,7 +483,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
         <!-- TOP HERO CARD: Modul Pelatihan Lengkap (Cetak) -->
         <div class="get-item-card" style="background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 6px 18px rgba(0,0,0,0.04); padding: 1.25rem; margin-bottom: 1.25rem; transition: all 0.3s ease;">
             <div style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden; position: relative; margin-bottom: 1.25rem;">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-lab.png' ); ?>" alt="Modul Pelatihan Lengkap (Cetak)" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/yang-didapatkan/modul-pelatihan.webp' ); ?>" alt="Modul Pelatihan Lengkap (Cetak)" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
             <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 0.25rem 0.5rem 0.5rem 0.5rem;">
                 <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Modul Pelatihan Lengkap (Cetak)</h3>
@@ -497,7 +497,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             <!-- Card 2: Pemahaman Mendalam Tentang Chemical -->
             <div class="get-item-card" style="background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 6px 18px rgba(0,0,0,0.04); padding: 1rem; display: flex; flex-direction: column; transition: all 0.3s ease;">
                 <div style="width: 100%; height: 190px; border-radius: 8px; overflow: hidden; margin-bottom: 1rem;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-2.webp' ); ?>" alt="Pemahaman Mendalam Tentang Chemical" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/yang-didapatkan/pemahaman-mendalam-tentang-chemical.webp' ); ?>" alt="Pemahaman Mendalam Tentang Chemical" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="text-align: center; padding: 0 0.4rem 0.5rem 0.4rem; display: flex; flex-direction: column; flex-grow: 1;">
                     <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Pemahaman Mendalam Tentang Chemical</h3>
@@ -508,7 +508,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             <!-- Card 3: Studi Kasus & Solusi Lapangan -->
             <div class="get-item-card" style="background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 6px 18px rgba(0,0,0,0.04); padding: 1rem; display: flex; flex-direction: column; transition: all 0.3s ease;">
                 <div style="width: 100%; height: 190px; border-radius: 8px; overflow: hidden; margin-bottom: 1rem;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-3.webp' ); ?>" alt="Studi Kasus & Solusi Lapangan" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/yang-didapatkan/studi-kasus-solusi-lapangan.webp' ); ?>" alt="Studi Kasus & Solusi Lapangan" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="text-align: center; padding: 0 0.4rem 0.5rem 0.4rem; display: flex; flex-direction: column; flex-grow: 1;">
                     <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Studi Kasus & Solusi Lapangan</h3>
@@ -519,7 +519,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             <!-- Card 4: Sertifikat Pelatihan Resmi -->
             <div class="get-item-card" style="background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 6px 18px rgba(0,0,0,0.04); padding: 1rem; display: flex; flex-direction: column; transition: all 0.3s ease;">
                 <div style="width: 100%; height: 190px; border-radius: 8px; overflow: hidden; margin-bottom: 1rem;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-4.webp' ); ?>" alt="Sertifikat Pelatihan Resmi" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/yang-didapatkan/sertifikat-pelatihan-resmi.webp' ); ?>" alt="Sertifikat Pelatihan Resmi" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="text-align: center; padding: 0 0.4rem 0.5rem 0.4rem; display: flex; flex-direction: column; flex-grow: 1;">
                     <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Sertifikat Pelatihan Resmi</h3>
@@ -530,7 +530,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             <!-- Card 5: Bonus Formula & Pendampingan -->
             <div class="get-item-card" style="background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 6px 18px rgba(0,0,0,0.04); padding: 1rem; display: flex; flex-direction: column; transition: all 0.3s ease;">
                 <div style="width: 100%; height: 190px; border-radius: 8px; overflow: hidden; margin-bottom: 1rem;">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gallery-6.webp' ); ?>" alt="Bonus Formula & Support Group" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/yang-didapatkan/bonus-formula-dan-pendampingan.webp' ); ?>" alt="Bonus Formula & Support Group" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
                 <div style="text-align: center; padding: 0 0.4rem 0.5rem 0.4rem; display: flex; flex-direction: column; flex-grow: 1;">
                     <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Bonus Formula & Pendampingan</h3>
