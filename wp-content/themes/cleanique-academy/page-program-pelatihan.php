@@ -203,6 +203,134 @@ cleanique_render_page_hero( array(
     </div>
 </section>
 
+<!-- SECTION PRODUCT SHOWCASE & HPP COMPARISON TABLE -->
+<section class="section" style="padding: 3.5rem 0; background: #ffffff;">
+    <div class="container" style="max-width: 1080px;">
+        
+        <div class="grid grid-2" style="gap: 2.5rem; align-items: center; margin-bottom: 3rem;">
+            <div>
+                <span class="section-subtitle">Hasil Formulasi Siap Jual</span>
+                <h2 class="section-title" style="text-align: left; font-size: 1.85rem; margin-bottom: 1rem;">Formulasi Produk Standar Industri Komersial</h2>
+                <p style="font-size: 0.98rem; line-height: 1.7; color: var(--color-text-main); margin-bottom: 1rem;">
+                    Seluruh produk yang dipraktikkan di Cleanique Academy telah melalui pengujian stabilitas emulsi, pengujian derajat keasaman (pH), dan ketahanan aroma parfum.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: #334155;">
+                    <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Deterjen Cair Pekat Matik &amp; Manual</li>
+                    <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Softener Pakaian Fiksatif Parfum Tahan Lama</li>
+                    <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Sabun Cuci Piring Kesat Busa Pekat</li>
+                    <li style="display: flex; align-items: center; gap: 0.6rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pembersih Kaca, Lantai &amp; Antiseptik Sanitasi</li>
+                </ul>
+            </div>
+            <div>
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/chemical-product-showcase.jpg' ); ?>" alt="Hasil Racikan Produk Chemical Kebersihan Siap Pakai Alumni Cleanique Academy" style="width: 100%; height: auto; border-radius: 14px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;" loading="lazy">
+            </div>
+        </div>
+
+        <!-- TABEL COMPARISON EFISIENSI HPP PRODUKSI MANDIRI -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.03);">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <span class="section-subtitle">Analisis Keuangan</span>
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0;">Studi Efisiensi HPP: Produksi Mandiri vs Beli Siap Pakai</h3>
+            </div>
+            
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem;">
+                    <thead>
+                        <tr style="background: #0f172a; color: #ffffff;">
+                            <th style="padding: 0.85rem 1rem; border-radius: 8px 0 0 0;">Item Komparasi</th>
+                            <th style="padding: 0.85rem 1rem;">Membeli Produk Jadi (Pasaran)</th>
+                            <th style="padding: 0.85rem 1rem; border-radius: 0 8px 0 0; background: #0284c7;">Produksi Mandiri Pasca Pelatihan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 0.85rem 1rem; font-weight: 700; color: #334155;">HPP Deterjen Cair / Liter</td>
+                            <td style="padding: 0.85rem 1rem; color: #dc2626; font-weight: 700;">Rp 10.000 - Rp 15.000</td>
+                            <td style="padding: 0.85rem 1rem; color: #16a34a; font-weight: 800; background: #f0fdf4;">Rp 3.500 - Rp 4.500</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 0.85rem 1rem; font-weight: 700; color: #334155;">Biaya Produksi 1.000 Liter</td>
+                            <td style="padding: 0.85rem 1rem; color: #dc2626; font-weight: 700;">Rp 10.000.000,-</td>
+                            <td style="padding: 0.85rem 1rem; color: #16a34a; font-weight: 800; background: #f0fdf4;">Rp 4.000.000,-</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 0.85rem 1rem; font-weight: 700; color: #334155;">Potensi Penghematan / Profit Margin</td>
+                            <td style="padding: 0.85rem 1rem; color: #64748b;">Terbatas pada diskon reseller</td>
+                            <td style="padding: 0.85rem 1rem; color: #0284c7; font-weight: 800; background: #f0fdf4;">Hemat hingga 60% (Profit 150-200%)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.85rem 1rem; font-weight: 700; color: #334155;">Kontrol Formula &amp; Aroma</td>
+                            <td style="padding: 0.85rem 1rem; color: #64748b;">Bergantung pabrikan</td>
+                            <td style="padding: 0.85rem 1rem; color: #16a34a; font-weight: 800; background: #f0fdf4;">100% Bebas Custom Sesuai Selera Pasar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 4 TAHAP ALUR PENDAFTARAN & PELAKSANAAN -->
+<section class="section section-alt section-decorated" style="padding: 3.5rem 0;">
+    <div class="container" style="max-width: 1080px;">
+        <div class="section-header">
+            <span class="section-subtitle">Alur Kemudahan Pendaftaran</span>
+            <h2 class="section-title">4 Langkah Mudah Mengikuti Pelatihan</h2>
+            <div class="section-accent-bar"></div>
+            <p class="section-description">Proses pendaftaran cepat, fleksibel, dan langsung dibantu oleh konsultan akademik Cleanique Academy.</p>
+        </div>
+
+        <div class="grid grid-4" style="grid-template-columns: repeat(4, 1fr); gap: 1.25rem;">
+            <div class="card" style="text-align: center; position: relative;">
+                <div style="width: 44px; height: 44px; background: #0284c7; color: #ffffff; font-weight: 800; font-size: 1.2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto;">1</div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: #0f172a;">Konsultasi CS</h4>
+                <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Hubungi CS WhatsApp untuk konsultasi pemilihan paket kelas &amp; cek ketersediaan jadwal.</p>
+            </div>
+            <div class="card" style="text-align: center; position: relative;">
+                <div style="width: 44px; height: 44px; background: #16a34a; color: #ffffff; font-weight: 800; font-size: 1.2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto;">2</div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: #0f172a;">Pilih Formula</h4>
+                <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Pilih resep formulasi produk kimia yang ingin diajarkan sesuai target pasar bisnis Anda.</p>
+            </div>
+            <div class="card" style="text-align: center; position: relative;">
+                <div style="width: 44px; height: 44px; background: #d97706; color: #ffffff; font-weight: 800; font-size: 1.2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto;">3</div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: #0f172a;">Konfirmasi DP</h4>
+                <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Lakukan pembayaran uang muka (DP) untuk mengamankan slot kelas &amp; penginapan di Jogja.</p>
+            </div>
+            <div class="card" style="text-align: center; position: relative;">
+                <div style="width: 44px; height: 44px; background: #9333ea; color: #ffffff; font-weight: 800; font-size: 1.2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto;">4</div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: #0f172a;">Hadir Praktikum</h4>
+                <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Datang ke Training Center Yogyakarta, praktik meracik langsung &amp; terima sertifikat resmi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INTERNAL NAVIGATION LINKS GRID -->
+<section class="section" style="padding: 3rem 0; background: #ffffff;">
+    <div class="container" style="max-width: 1080px;">
+        <div class="section-header">
+            <span class="section-subtitle">Informasi Terkait</span>
+            <h2 class="section-title">Pelajari Lebih Lanjut</h2>
+            <div class="section-accent-bar"></div>
+        </div>
+        <div class="internal-links-grid">
+            <a href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>" class="internal-link-card">
+                <div class="internal-link-title">Tentang PT Indotech &rarr;</div>
+                <div class="internal-link-desc">Profil perusahaan, legatitas resmi, dan sejarah 13+ tahun Cleanique Academy.</div>
+            </a>
+            <a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>" class="internal-link-card">
+                <div class="internal-link-title">FAQ Pelatihan &rarr;</div>
+                <div class="internal-link-desc">Jawaban lengkap pertanyaan seputar fasilitas, akomodasi, dan grup bimbingan.</div>
+            </a>
+            <a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>" class="internal-link-card">
+                <div class="internal-link-title">Hubungi Customer Care &rarr;</div>
+                <div class="internal-link-desc">Kontak alamat training center, lokasi Google Maps, dan WhatsApp official.</div>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- BANNER KONSULTASI PENDAFTARAN -->
 <section class="section" style="padding: 2.5rem 0 3.5rem 0;">
     <div class="container" style="max-width: 1080px;">

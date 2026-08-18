@@ -12,9 +12,14 @@ cleanique_render_page_hero( array(
 ) );
 ?>
 
-<section class="section" style="padding-top: 2.5rem;">
+<section class="section section-decorated" style="padding-top: 2.5rem;">
     <div class="container" style="max-width: 900px;">
         
+        <!-- VISUAL BANNER CLEANIQUE FAQ CONSULTATION -->
+        <div style="margin-bottom: 2.5rem; text-align: center; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.08); border: 1px solid #cbd5e1;">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/faq-consultation.jpg' ); ?>" alt="Konsultasi Formulasi Kimia Cleanique Academy" style="width: 100%; height: auto; display: block;" loading="lazy">
+        </div>
+
         <!-- CATEGORY 1: INFORMASI UMUM & PENDAFTARAN -->
         <div class="faq-category-block" style="margin-bottom: 3rem;">
             <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 2px solid #e0f2fe;">
@@ -185,6 +190,80 @@ cleanique_render_page_hero( array(
                     </div>
                 </details>
 
+            </div>
+        </div>
+
+        <!-- FEATURE CARDS: 3 KEUNGGULAN CLEANIQUE -->
+        <div style="margin-bottom: 3.5rem;">
+            <div class="section-header">
+                <span class="section-subtitle">Jaminan Kualitas</span>
+                <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">3 Keunggulan Pelatihan di Cleanique Academy</h3>
+                <div class="section-accent-bar"></div>
+            </div>
+
+            <div class="grid grid-3" style="gap: 1.25rem;">
+                <div class="feature-icon-card">
+                    <div class="feature-card-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    </div>
+                    <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Praktikum Langsung 100%</h4>
+                    <p style="font-size: 0.86rem; color: #64748b; margin: 0; line-height: 1.55;">Bukan hanya teori slide presentation, Anda meracik sendiri bahan kimia aktif dari nol hingga jadi produk.</p>
+                </div>
+                <div class="feature-icon-card">
+                    <div class="feature-card-icon-box accent-green-bg">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </div>
+                    <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Konsultasi Tanpa Batas</h4>
+                    <p style="font-size: 0.86rem; color: #64748b; margin: 0; line-height: 1.55;">Akses seumur hidup ke grup WA alumni dan tim riset kami untuk bertanya kapan pun saat produksi mandiri.</p>
+                </div>
+                <div class="feature-icon-card">
+                    <div class="feature-card-icon-box accent-amber-bg">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                    <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Jaringan Supplier Pabrik</h4>
+                    <p style="font-size: 0.86rem; color: #64748b; margin: 0; line-height: 1.55;">Mendapatkan akses rekomendasi supplier bahan baku kimia tangan pertama dengan harga terbaik.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTERNAL NAVIGATION LINKS GRID -->
+        <div style="margin-bottom: 3rem;">
+            <div class="section-header">
+                <span class="section-subtitle">Tautan Penting</span>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: #0f172a;">Jelajahi Informasi Lainnya</h3>
+                <div class="section-accent-bar"></div>
+            </div>
+            <div class="internal-links-grid">
+                <a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>" class="internal-link-card">
+                    <div class="internal-link-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    </div>
+                    <div class="internal-link-title">
+                        <span>Katalog Program Pelatihan</span>
+                        <span class="internal-link-arrow">&rarr;</span>
+                    </div>
+                    <p class="internal-link-desc">Pilihan paket kelas kolektif, kelas privat, dan investasi promo pelatihan.</p>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>" class="internal-link-card">
+                    <div class="internal-link-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <div class="internal-link-title">
+                        <span>Profil PT Indotech</span>
+                        <span class="internal-link-arrow">&rarr;</span>
+                    </div>
+                    <p class="internal-link-desc">Legalitas resmi, sejarah 13+ tahun, dan rekam jejak tim pengajar.</p>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>" class="internal-link-card">
+                    <div class="internal-link-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div class="internal-link-title">
+                        <span>Hubungi Kami via WA</span>
+                        <span class="internal-link-arrow">&rarr;</span>
+                    </div>
+                    <p class="internal-link-desc">Konsultasi gratis pendaftaran dan alamat lokasi Training Center Jogja.</p>
+                </a>
             </div>
         </div>
 

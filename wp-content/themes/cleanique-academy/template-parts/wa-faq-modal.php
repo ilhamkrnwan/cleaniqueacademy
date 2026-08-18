@@ -45,7 +45,7 @@
                     <h4 class="wa-welcome-title">Selamat datang di Cleanique Academy</h4>
                     <p class="wa-welcome-desc">Kami dapat membantu menjawab pertanyaan seputar pelatihan pembuatan produk kimia laundry & homecare sebelum Anda terhubung dengan admin.</p>
                     <div class="wa-welcome-footer">
-                        Produsen chemical sejak 2011 &middot; 1.000.000+ produk terjual
+                        Produsen &amp; Pusat Riset Chemical Sejak 2011
                     </div>
                 </div>
 
@@ -268,10 +268,7 @@
 /* Welcome Card Above Questions */
 .wa-welcome-card {
   background: #ffffff;
-  border-left: 4px solid #16a34a;
-  border-top: 1px solid #e2e8f0;
-  border-right: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   padding: 1.15rem;
   margin-bottom: 1.25rem;

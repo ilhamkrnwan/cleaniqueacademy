@@ -30,8 +30,7 @@ while ( have_posts() ) : the_post();
             $theme_dir . '/assets/images/gallery-4.webp',
             $theme_dir . '/assets/images/gallery-5.webp',
             $theme_dir . '/assets/images/gallery-6.webp',
-            $theme_dir . '/assets/images/hero-lab.png',
-            $theme_dir . '/assets/images/promo-banner.jpeg',
+            $theme_dir . '/assets/images/hero-lab-practical.jpg',
         );
     }
 ?>
@@ -148,17 +147,19 @@ while ( have_posts() ) : the_post();
             $next_kegiatan = get_next_post();
             ?>
             <?php if ( ! empty( $prev_kegiatan ) ) : ?>
-                <div class="nav-card">
-                    <div class="nav-card-label">&larr; Galeri Sebelumnya</div>
-                    <div class="nav-card-title"><a href="<?php echo esc_url( get_permalink( $prev_kegiatan->ID ) ); ?>"><?php echo esc_html( get_the_title( $prev_kegiatan->ID ) ); ?></a></div>
-                </div>
+                <a href="<?php echo esc_url( get_permalink( $prev_kegiatan->ID ) ); ?>" class="nav-card nav-card-prev">
+                    <span class="nav-card-label">&larr; Galeri Sebelumnya</span>
+                    <h4 class="nav-card-title"><?php echo esc_html( get_the_title( $prev_kegiatan->ID ) ); ?></h4>
+                </a>
+            <?php else : ?>
+                <div></div>
             <?php endif; ?>
 
             <?php if ( ! empty( $next_kegiatan ) ) : ?>
-                <div class="nav-card" style="margin-left: auto; text-align: right;">
-                    <div class="nav-card-label">Galeri Selanjutnya &rarr;</div>
-                    <div class="nav-card-title"><a href="<?php echo esc_url( get_permalink( $next_kegiatan->ID ) ); ?>"><?php echo esc_html( get_the_title( $next_kegiatan->ID ) ); ?></a></div>
-                </div>
+                <a href="<?php echo esc_url( get_permalink( $next_kegiatan->ID ) ); ?>" class="nav-card nav-card-next" style="text-align: right;">
+                    <span class="nav-card-label">Galeri Selanjutnya &rarr;</span>
+                    <h4 class="nav-card-title"><?php echo esc_html( get_the_title( $next_kegiatan->ID ) ); ?></h4>
+                </a>
             <?php endif; ?>
         </div>
 

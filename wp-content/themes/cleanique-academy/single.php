@@ -127,10 +127,10 @@ while ( have_posts() ) : the_post();
                         $prev_post = get_previous_post();
                         if ( ! empty( $prev_post ) ) :
                         ?>
-                            <div class="nav-card">
-                                <div class="nav-card-label">Artikel Sebelumnya</div>
-                                <div class="nav-card-title"><a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>"><?php echo esc_html( get_the_title( $prev_post->ID ) ); ?></a></div>
-                            </div>
+                            <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" class="nav-card nav-card-prev">
+                                <span class="nav-card-label">&larr; Artikel Sebelumnya</span>
+                                <h4 class="nav-card-title"><?php echo esc_html( get_the_title( $prev_post->ID ) ); ?></h4>
+                            </a>
                         <?php else : ?>
                             <div></div>
                         <?php endif; ?>
@@ -139,10 +139,10 @@ while ( have_posts() ) : the_post();
                         $next_post = get_next_post();
                         if ( ! empty( $next_post ) ) :
                         ?>
-                            <div class="nav-card" style="text-align: right;">
-                                <div class="nav-card-label">Artikel Selanjutnya</div>
-                                <div class="nav-card-title"><a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>"><?php echo esc_html( get_the_title( $next_post->ID ) ); ?></a></div>
-                            </div>
+                            <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" class="nav-card nav-card-next" style="text-align: right;">
+                                <span class="nav-card-label">Artikel Selanjutnya &rarr;</span>
+                                <h4 class="nav-card-title"><?php echo esc_html( get_the_title( $next_post->ID ) ); ?></h4>
+                            </a>
                         <?php endif; ?>
                     </div>
 

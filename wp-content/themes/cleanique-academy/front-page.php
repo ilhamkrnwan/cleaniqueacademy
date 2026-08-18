@@ -47,7 +47,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 Digunakan kebutuhan harian di rumah, laundry, hotel resto dll.
             </div>
             <div class="highlight-card highlight-card-yellow">
-                Lebih dari <strong>1.000.000 produk terjual</strong>, baik online maupun offline
+                Formulasi teruji dan <strong>digunakan secara luas</strong> oleh para pengusaha
             </div>
             <div class="highlight-card highlight-card-green">
                 Disusun berdasarkan <strong>pengalaman lapangan & standar industri</strong> sejak tahun 2011
@@ -334,8 +334,8 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
             <details class="accordion-item reason-accordion-item">
                 <summary class="accordion-header reason-accordion-header" style="padding: 1.15rem 1.35rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; list-style: none; user-select: none;">
                     <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; flex: 1;">
-                        <span style="display: inline-block; background: #fef3c7; color: #b45309; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 6px;">Terbukti Laku di Pasar</span>
-                        <span style="font-size: 1.05rem; font-weight: 800; color: #0f172a;">3. Produk Chemical Kami Sudah Terjual Lebih dari 1 Juta Unit</span>
+                        <span style="display: inline-block; background: #fef3c7; color: #b45309; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 6px;">Terbukti di Pasaran</span>
+                        <span style="font-size: 1.05rem; font-weight: 800; color: #0f172a;">3. Produk Chemical Kami Telah Terbukti di Pasaran</span>
                     </div>
                     <div class="toggle-plus-minus" style="width: 28px; height: 28px; border-radius: 50%; background: #f0f9ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s ease;">
                         <svg class="plus-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
@@ -345,7 +345,7 @@ $video_url        = get_theme_mod( 'cleanique_youtube_video_url', 'https://www.y
                 <div class="accordion-content reason-accordion-content" style="padding: 1.25rem 1.35rem; border-top: 1px solid #f1f5f9; background: #fafafa;">
                     <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
                         <div style="width: 190px; min-width: 170px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/6-alasan/produk-chemical-kami-sudah-terjual-lebih-dari-1-juta-unit.webp' ); ?>" alt="Produk Terjual 1 Juta Unit" style="width: 100%; height: 135px; object-fit: cover; display: block;">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/references/6-alasan/produk-chemical-kami-sudah-terjual-lebih-dari-1-juta-unit.webp' ); ?>" alt="Produk Chemical Terbukti di Pasaran" style="width: 100%; height: 135px; object-fit: cover; display: block;">
                         </div>
                         <div style="flex: 1; min-width: 240px;">
                             <p style="font-size: 0.92rem; color: #475569; line-height: 1.65; margin: 0;">Banyak kursus yang menawarkan produk chemical, dengan penawaran menggiurkan yang biasanya lebih murah. Tapi Cek dulu sebelum mengambil penawaran itu, punyakah produk yang dijual di pasaran atau hanya sekelompok orang yang hanya tahu-tahu saja tanpa ada bukti produk yang dia jual atau dipasarkan. Buktikan dulu INGAT!!! Kami bukan distributor parfum, deterjen, pelembut dan pembersih lain.</p>

@@ -12,7 +12,7 @@ cleanique_render_page_hero( array(
 ) );
 ?>
 
-<section class="section">
+<section class="section section-decorated">
     <div class="container">
         
         <?php
@@ -181,6 +181,29 @@ cleanique_render_page_hero( array(
             </div>
         <?php endif; ?>
 
+        <!-- INTERNAL NAVIGATION LINKS GRID -->
+        <div style="margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid #e2e8f0;">
+            <div class="section-header">
+                <span class="section-subtitle">Tautan Penting</span>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: #0f172a;">Jelajahi Informasi Lainnya</h3>
+                <div class="section-accent-bar"></div>
+            </div>
+            <div class="internal-links-grid">
+                <a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>" class="internal-link-card">
+                    <div class="internal-link-title">Katalog Program Pelatihan &rarr;</div>
+                    <div class="internal-link-desc">Pilihan paket kelas kolektif, kelas privat, dan investasi promo pelatihan.</div>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>" class="internal-link-card">
+                    <div class="internal-link-title">Profil PT Indotech &rarr;</div>
+                    <div class="internal-link-desc">Legalitas resmi, sejarah 13+ tahun, dan rekam jejak tim pengajar.</div>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>" class="internal-link-card">
+                    <div class="internal-link-title">Pertanyaan Sering Diajukan (FAQ) &rarr;</div>
+                    <div class="internal-link-desc">Jawaban lengkap pertanyaan seputar fasilitas, akomodasi, dan grup bimbingan.</div>
+                </a>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -202,6 +225,22 @@ cleanique_render_page_hero( array(
         </a>
     </div>
 </section>
+
+<!-- Schema.org Data Structuring (JSON-LD) for Gallery & Events -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Dokumentasi Event Pelatihan Cleanique Academy",
+  "url": "<?php echo esc_url( get_permalink() ); ?>",
+  "description": "Galeri foto dan rekaman pelaksanaan kelas praktikum formulasi kimia kebersihan tatap muka di berbagai kota.",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "PT Indotech Berkah Abadi",
+    "url": "https://indotech.id/"
+  }
+}
+</script>
 
 <?php
 get_footer();

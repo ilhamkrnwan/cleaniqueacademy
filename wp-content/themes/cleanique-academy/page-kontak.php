@@ -14,7 +14,7 @@ cleanique_render_page_hero( array(
 ?>
 
 <!-- 1. KARTU INFORMASI KONTAK 3 KOLOM -->
-<section class="section">
+<section class="section section-decorated">
     <div class="container">
         
         <div class="grid grid-3" style="margin-bottom: 3.5rem;">
@@ -34,7 +34,7 @@ cleanique_render_page_hero( array(
                 <p style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-main);">
                     <strong>Jam Operasional Kantor:</strong><br>
                     <span style="color: var(--color-text-muted);">Senin - Sabtu | 08.00 - 17.00 WIB</span><br>
-                    <span style="font-size: 0.82rem; color: #94a3b8;">(Minggu & Hari Libur Nasional Tutup)</span>
+                    <span style="font-size: 0.82rem; color: #94a3b8;">(Minggu &amp; Hari Libur Nasional Tutup)</span>
                 </p>
 
                 <div>
@@ -65,8 +65,8 @@ cleanique_render_page_hero( array(
 
             <!-- Kartu 3: Email & Media Sosial -->
             <div class="card" style="height: 100%;">
-                <span class="section-subtitle" style="font-size: 0.75rem; margin-bottom: 1rem; width: fit-content;">EMAIL & SOSMED</span>
-                <h3 class="card-title" style="font-size: 1.3rem; margin-bottom: 1rem;">Surat Elektronik & Komunitas</h3>
+                <span class="section-subtitle" style="font-size: 0.75rem; margin-bottom: 1rem; width: fit-content;">EMAIL &amp; SOSMED</span>
+                <h3 class="card-title" style="font-size: 1.3rem; margin-bottom: 1rem;">Surat Elektronik &amp; Komunitas</h3>
                 
                 <p style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">
                     <strong>Email Resmi:</strong><br>
@@ -94,12 +94,86 @@ cleanique_render_page_hero( array(
 
         </div>
 
-        <!-- 2. PETA LOKASI TRAINING CENTER YOGYAKARTA -->
+        <!-- 2. FEATURE CARDS KEUNGGULAN SERVICE -->
+        <div style="margin-bottom: 3.5rem;">
+            <div class="section-header">
+                <span class="section-subtitle">Layanan Pelanggan</span>
+                <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a;">Mengapa Menghubungi Cleanique Academy?</h3>
+                <div class="section-accent-bar"></div>
+            </div>
+            <div class="grid grid-3" style="gap: 1.25rem;">
+                <div class="feature-icon-card">
+                    <div class="feature-card-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </div>
+                    <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Respon WhatsApp Cepat</h4>
+                    <p style="font-size: 0.86rem; color: #64748b; margin: 0; line-height: 1.55;">Tim customer care kami siap merespon pertanyaan Anda seputar silabus materi dan jadwal kelas terdekat.</p>
+                </div>
+                <div class="feature-icon-card">
+                    <div class="feature-card-icon-box accent-green-bg">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </div>
+                    <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Konsultasi Kelas Gratis</h4>
+                    <p style="font-size: 0.86rem; color: #64748b; margin: 0; line-height: 1.55;">Diskusikan kebutuhan produk bisnis Anda agar dapat memilih paket kelas yang paling efisien.</p>
+                </div>
+                <div class="feature-icon-card">
+                    <div class="feature-card-icon-box accent-amber-bg">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem;">Kunjungan Langsung Jogja</h4>
+                    <p style="font-size: 0.86rem; color: #64748b; margin: 0; line-height: 1.55;">Anda diperbolehkan berkunjung ke Training Center Sleman Yogyakarta sesuai jam kerja operasional.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. INTERNAL NAVIGATION LINKS GRID -->
+        <div style="margin-bottom: 3.5rem;">
+            <div class="section-header">
+                <span class="section-subtitle">Tautan Penting</span>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: #0f172a;">Jelajahi Informasi Lainnya</h3>
+                <div class="section-accent-bar"></div>
+            </div>
+            <div class="internal-links-grid">
+                <a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>" class="internal-link-card">
+                    <div class="internal-link-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    </div>
+                    <div class="internal-link-title">
+                        <span>Katalog Program Pelatihan</span>
+                        <span class="internal-link-arrow">&rarr;</span>
+                    </div>
+                    <p class="internal-link-desc">Pilihan paket kelas kolektif, kelas privat, dan investasi promo pelatihan.</p>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>" class="internal-link-card">
+                    <div class="internal-link-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <div class="internal-link-title">
+                        <span>Profil PT Indotech</span>
+                        <span class="internal-link-arrow">&rarr;</span>
+                    </div>
+                    <p class="internal-link-desc">Legalitas resmi, sejarah 13+ tahun, dan rekam jejak tim pengajar.</p>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>" class="internal-link-card">
+                    <div class="internal-link-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </div>
+                    <div class="internal-link-title">
+                        <span>Pertanyaan Sering Diajukan</span>
+                        <span class="internal-link-arrow">&rarr;</span>
+                    </div>
+                    <p class="internal-link-desc">Jawaban lengkap pertanyaan seputar fasilitas, akomodasi, dan grup bimbingan.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 4. PETA LOKASI TRAINING CENTER YOGYAKARTA (DITARUH DI PALING BAWAH) -->
         <div class="contact-map-card">
             <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
                 <span class="section-subtitle">Lokasi Penyelenggaraan</span>
                 <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Peta Training Center Yogyakarta</h2>
-                <p class="section-description">Kunjungi Laboratorium & Pusat Pelatihan Tatap Muka Cleanique Academy (PT Indotech Berkah Abadi).</p>
+                <div class="section-accent-bar"></div>
+                <p class="section-description">Kunjungi Laboratorium &amp; Pusat Pelatihan Tatap Muka Cleanique Academy (PT Indotech Berkah Abadi).</p>
             </div>
 
             <div class="contact-map-iframe-wrap">
@@ -169,3 +243,4 @@ cleanique_render_page_hero( array(
 
 <?php
 get_footer();
+?>
