@@ -492,7 +492,7 @@
             },
             'lokasi-pelatihan': {
                 title: 'Lokasi Pelatihan',
-                answer: '<p>Pelatihan tatap muka utama diselenggarakan di <strong>Laboratorium & Training Center Cleanique Academy (PT Indotech Berkah Abadi) di Yogyakarta</strong>.</p><p>Kami juga menyelenggarakan event roadshow pelatihan berkala di kota-kota besar Indonesia seperti Jakarta, Bandung, Surabaya, dan Pekanbaru.</p>',
+                answer: '<p>Pelatihan tatap muka utama diselenggarakan di <strong>Training Center Cleanique Academy (PT Indotech Berkah Abadi) di Yogyakarta</strong>.</p><p>Kami juga menyelenggarakan event roadshow pelatihan berkala di kota-kota besar Indonesia seperti Jakarta, Bandung, Surabaya, dan Pekanbaru.</p>',
                 btnText: 'Tanya Lokasi Pelatihan',
                 waMessage: 'Halo Cleanique Academy, saya ingin bertanya info lokasi pelatihan dan rekomendasi penginapan.'
             },

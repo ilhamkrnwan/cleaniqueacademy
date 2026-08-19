@@ -1,4 +1,9 @@
 <?php
+/**
+ * Single Post Template (Detail Artikel & Edukasi)
+ *
+ * Follows DESAIN.md: Modern Professional Academy x Luxury Editorial Corporate
+ */
 get_header();
 
 while ( have_posts() ) : the_post();
@@ -20,35 +25,60 @@ while ( have_posts() ) : the_post();
 
     $author_name = get_the_author();
     if ( empty( $author_name ) ) {
-        $author_name = 'Tim Redaksi Cleanique';
+        $author_name = 'Tim Riset Cleanique';
     }
-
-    $meta_subtitle  = '<div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 0.25rem;">';
-    $meta_subtitle .= '<span style="display: inline-flex; align-items: center; gap: 0.35rem; color: #475569; font-weight: 600; font-size: 0.92rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Oleh ' . esc_html( $author_name ) . '</span></span>';
-    $meta_subtitle .= '<span style="color: #cbd5e1;">•</span>';
-    $meta_subtitle .= '<span style="display: inline-flex; align-items: center; gap: 0.35rem; color: #475569; font-weight: 600; font-size: 0.92rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span>' . esc_html( get_the_date() ) . '</span></span>';
-    $meta_subtitle .= '<span style="color: #cbd5e1;">•</span>';
-    $meta_subtitle .= '<span style="display: inline-flex; align-items: center; gap: 0.35rem; color: #475569; font-weight: 600; font-size: 0.92rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>' . esc_html( $reading_time ) . '</span></span>';
-    $meta_subtitle .= '</div>';
-
-    // Render Page Hero Component for Single Article
-    cleanique_render_page_hero( array(
-        'title'    => $post_title,
-        'badge'    => $cat_name,
-        'subtitle' => $meta_subtitle,
-        'theme'    => 'light',
-    ) );
 ?>
 
+<!-- 1. BESPOKE LUXURY EDITORIAL HERO SECTION -->
+<section class="about-hero-section" style="background-image: linear-gradient(145deg, rgba(7, 35, 56, 0.94) 0%, rgba(11, 93, 143, 0.90) 60%, rgba(8, 127, 193, 0.86) 100%), url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-lab-practical.jpg' ); ?>');">
+    <div class="container about-hero-container">
+        <div class="hero-editorial-pill">
+            <span class="pill-pulse-dot"></span>
+            <span><?php echo esc_html( strtoupper( $cat_name ) ); ?></span>
+        </div>
+
+        <h1 class="about-hero-title" style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); max-width: 900px; margin: 0 auto 1.25rem auto;">
+            <?php the_title(); ?>
+        </h1>
+
+        <!-- Metadata Strip -->
+        <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1.5rem; color: #bae6fd; font-weight: 600; font-size: 0.92rem;">
+            <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Oleh <?php echo esc_html( $author_name ); ?></span>
+            </span>
+            <span style="color: rgba(255,255,255,0.4);">&bull;</span>
+            <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span><?php echo esc_html( get_the_date() ); ?></span>
+            </span>
+            <span style="color: rgba(255,255,255,0.4);">&bull;</span>
+            <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span><?php echo esc_html( $reading_time ); ?></span>
+            </span>
+        </div>
+
+        <nav class="about-hero-breadcrumbs" aria-label="Breadcrumb">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Beranda</a>
+            <span class="breadcrumb-separator">&rsaquo;</span>
+            <a href="<?php echo esc_url( home_url( '/artikel/' ) ); ?>">Artikel</a>
+            <span class="breadcrumb-separator">&rsaquo;</span>
+            <span><?php echo esc_html( wp_trim_words( get_the_title(), 5 ) ); ?></span>
+        </nav>
+    </div>
+</section>
+
+<!-- 2. ARTICLE CONTENT LAYOUT -->
 <section class="section" style="padding-top: 3.5rem;">
-    <div class="container">
+    <div class="container" style="max-width: 1100px;">
         <div class="article-layout">
             
             <!-- MAIN ARTICLE COLUMN -->
             <main class="article-main">
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     
-                    <!-- Featured Image / Placeholder Image -->
+                    <!-- Featured Image -->
                     <div class="featured-image-wrapper">
                         <img src="<?php echo esc_url( $featured_img ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
                     </div>
@@ -148,8 +178,17 @@ while ( have_posts() ) : the_post();
 
                     <!-- 6. Artikel Terkait Grid -->
                     <div class="related-articles-section">
-                        <h3 class="related-title">Artikel Terkait</h3>
-                        <div class="grid grid-3">
+                        <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+                            <div class="editorial-badge">
+                                <span class="badge-dot"></span>
+                                <span>REKOMENDASI</span>
+                                <span class="badge-code">TOPIK SERUPA</span>
+                            </div>
+                            <h3 class="section-title" style="font-size: 1.6rem; margin-bottom: 0.25rem;">Artikel Terkait Lainnya</h3>
+                            <div class="section-accent-bar" style="margin: 0 0 1rem 0;"></div>
+                        </div>
+
+                        <div class="grid grid-3" style="gap: 1.25rem;">
                             <?php
                             $related_query = new WP_Query( array(
                                 'post_type'      => 'post',
@@ -160,16 +199,21 @@ while ( have_posts() ) : the_post();
 
                             if ( $related_query->have_posts() ) :
                                 while ( $related_query->have_posts() ) : $related_query->the_post();
-                                    $rel_thumb = cleanique_get_post_thumbnail_url( get_the_ID(), 'medium' );
+                                    $rel_thumb = cleanique_get_post_thumbnail_url( get_the_ID(), 'medium_large' );
+                                    $rel_cats  = get_the_category();
+                                    $rel_cat   = ! empty( $rel_cats ) ? $rel_cats[0]->name : 'Edukasi';
                                     ?>
-                                    <div class="card" style="padding: 1.25rem;">
-                                        <div style="margin: -1.25rem -1.25rem 1rem -1.25rem; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-                                            <img src="<?php echo esc_url( $rel_thumb ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" style="width:100%; height:140px; object-fit:cover;">
+                                    <article class="card article-card" style="padding: 0; overflow: hidden;">
+                                        <div class="article-card-image-wrap" style="height: 140px;">
+                                            <img src="<?php echo esc_url( $rel_thumb ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
                                         </div>
-                                        <h4 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                                        <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;"><?php echo get_the_date(); ?></p>
-                                        <a href="<?php the_permalink(); ?>" style="font-size: 0.85rem; font-weight: 700;">Baca Selengkapnya</a>
-                                    </div>
+                                        <div class="article-card-body" style="padding: 1.15rem;">
+                                            <span class="article-card-cat" style="margin-bottom: 0.4rem;"><?php echo esc_html( $rel_cat ); ?></span>
+                                            <h4 style="font-size: 1.02rem; line-height: 1.35; margin-bottom: 0.5rem;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                            <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 0.75rem;"><?php echo get_the_date(); ?></p>
+                                            <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="padding: 0.35rem 0.8rem; font-size: 0.8rem;">Baca Selengkapnya &rarr;</a>
+                                        </div>
+                                    </article>
                                 <?php
                                 endwhile;
                                 wp_reset_postdata();
@@ -205,24 +249,24 @@ while ( have_posts() ) : the_post();
                 </div>
 
                 <!-- CARD CTA PROMO WIDGET -->
-                <div class="sidebar-widget" style="background: linear-gradient(135deg, var(--color-secondary) 0%, #1e293b 100%); color: #ffffff; padding: 1.5rem; text-align: center;">
-                    <span style="display: inline-block; background: rgba(2, 132, 199, 0.25); color: #7dd3fc; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem;">PROMO PELATIHAN</span>
+                <div class="sidebar-widget" style="background: linear-gradient(145deg, #072338 0%, #0B5D8F 100%); color: #ffffff; padding: 1.5rem; text-align: center; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.15);">
+                    <span style="display: inline-block; background: rgba(255, 255, 255, 0.15); color: #bae6fd; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.2);">PROMO BULAN INI</span>
                     
-                    <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 0.75rem; line-height: 1.3;">Pelatihan Kimia Cleanique Academy</h3>
+                    <h3 style="color: #ffffff; font-size: 1.18rem; margin-bottom: 0.75rem; line-height: 1.3;">Pelatihan Formulasi Cleanique Academy</h3>
                     
                     <?php if ( $promo_image_url ) : ?>
-                        <div style="margin-bottom: 1rem; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-sm);">
-                            <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya berminat dengan promo di sidebar.' ) ); ?>" target="_blank">
+                        <div style="margin-bottom: 1rem; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid rgba(255,255,255,0.2);">
+                            <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya berminat dengan promo di sidebar artikel.' ) ); ?>" target="_blank">
                                 <img src="<?php echo esc_url( $promo_image_url ); ?>" alt="Promo Cleanique Academy" style="width: 100%; height: auto; display: block;">
                             </a>
                         </div>
                     <?php endif; ?>
 
-                    <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 1.25rem; line-height: 1.5;">
+                    <p style="color: #e2e8f0; font-size: 0.88rem; margin-bottom: 1.25rem; line-height: 1.5;">
                         <?php echo esc_html( wp_strip_all_tags( $promo_text ) ); ?>
                     </p>
                     
-                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya melihat Card CTA di sidebar artikel dan mau tanya promo.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="width: 100%; font-size: 0.9rem; padding: 0.75rem 1rem;">
+                    <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya membaca artikel dan mau konsultasi promo pelatihan.' ) ); ?>" target="_blank" class="btn btn-whatsapp" style="width: 100%; font-size: 0.9rem; padding: 0.75rem 1rem;">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
                         <span><?php echo esc_html( $promo_btn_label ); ?></span>
                     </a>

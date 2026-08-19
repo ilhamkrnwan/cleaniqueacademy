@@ -1,4 +1,9 @@
 <?php
+/**
+ * Single Kegiatan Template (Detail Galeri & Dokumentasi Event)
+ *
+ * Follows DESAIN.md: Modern Professional Academy x Luxury Editorial Corporate
+ */
 get_header();
 
 while ( have_posts() ) : the_post();
@@ -35,66 +40,112 @@ while ( have_posts() ) : the_post();
     }
 ?>
 
-<div class="hero" style="padding: 3.5rem 0 2.5rem 0;">
-    <div class="container" style="max-width: 950px;">
-        
-        <!-- BREADCRUMBS NAVIGASI -->
-        <div class="breadcrumbs-nav" style="margin-bottom: 1.25rem; font-size: 0.88rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color: #64748b; font-weight: 600; text-decoration: none;">Beranda</a>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            <a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>" style="color: #64748b; font-weight: 600; text-decoration: none;">Galeri Kegiatan</a>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            <span style="color: #0f172a; font-weight: 700; max-width: 320px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><?php the_title(); ?></span>
+<!-- 1. BESPOKE LUXURY EDITORIAL HERO SECTION -->
+<section class="about-hero-section" style="background-image: linear-gradient(145deg, rgba(7, 35, 56, 0.94) 0%, rgba(11, 93, 143, 0.90) 60%, rgba(8, 127, 193, 0.86) 100%), url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-lab-practical.jpg' ); ?>');">
+    <div class="container about-hero-container">
+        <div class="hero-editorial-pill">
+            <span class="pill-pulse-dot"></span>
+            <span>DOKUMENTASI PELATIHAN MITRA</span>
         </div>
 
-        <span class="section-subtitle">Dokumentasi & Galeri Kegiatan</span>
-        <h1 class="hero-title" style="margin-bottom: 1rem; font-size: 2.2rem;"><?php the_title(); ?></h1>
-        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; color: var(--color-text-muted); font-weight: 600; font-size: 0.92rem;">
-            <?php if ( $tanggal ) : ?><span>Tanggal: <?php echo esc_html( $tanggal ); ?></span><?php endif; ?>
-            <?php if ( $lokasi ) : ?><span>Lokasi: <?php echo esc_html( $lokasi ); ?></span><?php endif; ?>
-            <?php if ( $peserta ) : ?><span>Peserta: <?php echo esc_html( $peserta ); ?></span><?php endif; ?>
-            <span>Dokumentasi: <?php echo count( $gallery_urls ); ?> Foto</span>
+        <h1 class="about-hero-title" style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); max-width: 900px; margin: 0 auto 1.25rem auto;">
+            <?php the_title(); ?>
+        </h1>
+
+        <!-- Metadata Strip -->
+        <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1.5rem; color: #bae6fd; font-weight: 600; font-size: 0.92rem;">
+            <?php if ( $lokasi ) : ?>
+                <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span><?php echo esc_html( $lokasi ); ?></span>
+                </span>
+                <span style="color: rgba(255,255,255,0.4);">&bull;</span>
+            <?php endif; ?>
+
+            <?php if ( $tanggal ) : ?>
+                <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span><?php echo esc_html( $tanggal ); ?></span>
+                </span>
+                <span style="color: rgba(255,255,255,0.4);">&bull;</span>
+            <?php endif; ?>
+
+            <?php if ( $peserta ) : ?>
+                <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span><?php echo esc_html( $peserta ); ?> Peserta</span>
+                </span>
+                <span style="color: rgba(255,255,255,0.4);">&bull;</span>
+            <?php endif; ?>
+
+            <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                <span><?php echo count( $gallery_urls ); ?> Foto Dokumentasi</span>
+            </span>
         </div>
+
+        <nav class="about-hero-breadcrumbs" aria-label="Breadcrumb">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Beranda</a>
+            <span class="breadcrumb-separator">&rsaquo;</span>
+            <a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>">Galeri Kegiatan</a>
+            <span class="breadcrumb-separator">&rsaquo;</span>
+            <span><?php echo esc_html( wp_trim_words( get_the_title(), 5 ) ); ?></span>
+        </nav>
     </div>
-</div>
+</section>
 
-<section class="section" style="padding-top: 2.5rem;">
-    <div class="container" style="max-width: 950px;">
+<!-- 2. DETAIL DOKUMENTASI CONTENT -->
+<section class="section" style="padding-top: 3.5rem;">
+    <div class="container" style="max-width: 980px;">
         
         <!-- Main Featured Image -->
         <?php if ( has_post_thumbnail() ) : ?>
-            <div style="margin-bottom: 2.5rem; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+            <div style="margin-bottom: 2.75rem; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border);">
                 <?php the_post_thumbnail( 'full', array( 'style' => 'width:100%; height:auto; display:block;' ) ); ?>
             </div>
         <?php endif; ?>
 
         <!-- Brief Material Section -->
         <?php if ( $materi ) : ?>
-            <div class="card" style="margin-bottom: 2.5rem; background-color: var(--color-primary-light); border-color: #bae6fd;">
-                <h3 style="font-size: 1.2rem; color: var(--color-primary-hover); margin-bottom: 0.5rem;">Materi & Pokok Bahasan Praktikum</h3>
-                <p style="margin: 0; line-height: 1.7;"><?php echo nl2br( esc_html( $materi ) ); ?></p>
+            <div class="editorial-quote-box" style="margin-bottom: 2.5rem; background: var(--color-primary-light); border-color: #bae6fd;">
+                <div class="editorial-badge" style="margin-bottom: 0.75rem;">
+                    <span class="badge-dot"></span>
+                    <span>POKOK MATERI</span>
+                    <span class="badge-code">PRAKTIKUM FORMULASI</span>
+                </div>
+                <p class="editorial-quote-text" style="color: var(--color-primary-dark); font-size: 1.05rem; font-style: normal; font-weight: 500; line-height: 1.65;">
+                    <?php echo nl2br( esc_html( $materi ) ); ?>
+                </p>
             </div>
         <?php endif; ?>
 
         <!-- Post Content -->
-        <div class="entry-content" style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 3rem;">
+        <div class="entry-content" style="font-size: 1.05rem; line-height: 1.85; margin-bottom: 3.5rem; color: #334155;">
             <?php the_content(); ?>
         </div>
 
         <!-- MULTI-IMAGE GALLERY GRID SECTION -->
         <div style="margin-top: 3.5rem; margin-bottom: 3.5rem;">
-            <div class="section-header" style="text-align: left; margin-bottom: 1.75rem;">
-                <span class="section-subtitle">Galeri Dokumentasi Praktikum</span>
-                <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Foto Suasana & Aktivitas Peserta</h2>
-                <p class="section-description" style="margin: 0; max-width: 100%;">Dokumentasi foto kegiatan praktikum formulasi kimia dan peragaan langsung di lapangan.</p>
+            <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                <div class="editorial-badge">
+                    <span class="badge-dot"></span>
+                    <span>FOTO DOKUMENTASI</span>
+                    <span class="badge-code">ALBUM KEGIATAN</span>
+                </div>
+                <h2 class="section-title" style="font-size: 1.85rem; margin-bottom: 0.5rem;">Foto Suasana &amp; Aktivitas Peserta</h2>
+                <div class="section-accent-bar" style="margin: 0 0 1rem 0;"></div>
+                <p class="section-description" style="margin: 0; max-width: 100%;">Klik pada foto untuk memperbesar tampilan dan melihat album lengkap.</p>
             </div>
 
             <div class="grid grid-3" style="gap: 1.25rem;">
                 <?php foreach ( $gallery_urls as $index => $img_url ) : ?>
-                    <div class="gallery-item-card" onclick="openGalleryLightbox(<?php echo $index; ?>)" style="position: relative; border-radius: var(--radius-md); overflow: hidden; height: 210px; cursor: pointer; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: transform 0.25s ease, box-shadow 0.25s ease;">
+                    <div class="gallery-item-card" onclick="openGalleryLightbox(<?php echo $index; ?>)" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; height: 220px; cursor: pointer; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: transform 0.25s ease, box-shadow 0.25s ease;">
                         <img src="<?php echo esc_url( $img_url ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease;">
-                        <div class="gallery-overlay-hover" style="position: absolute; inset: 0; background: rgba(15, 23, 42, 0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease;">
-                            <span style="background: rgba(255, 255, 255, 0.95); color: var(--color-secondary); padding: 0.4rem 0.9rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700;">Perbesar Foto</span>
+                        <div class="gallery-overlay-hover" style="position: absolute; inset: 0; background: rgba(7, 35, 56, 0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease;">
+                            <span style="background: #ffffff; color: var(--color-primary-dark); padding: 0.45rem 1rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem; box-shadow: var(--shadow-md);">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                <span>Perbesar Foto</span>
+                            </span>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -109,7 +160,7 @@ while ( have_posts() ) : the_post();
                     <polyline points="16 6 12 2 8 6"></polyline>
                     <line x1="12" y1="2" x2="12" y2="15"></line>
                 </svg>
-                <span class="share-title-text">Bagikan Galeri Event Ini:</span>
+                <span class="share-title-text">Bagikan Dokumentasi Ini:</span>
             </div>
 
             <div class="share-buttons-wrapper">
@@ -166,8 +217,13 @@ while ( have_posts() ) : the_post();
         <!-- GALERI SERUPA (RELATED GALLERY POSTS) -->
         <div class="related-kegiatan-section" style="margin-top: 3.5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
             <div class="section-header" style="text-align: left; margin-bottom: 1.75rem;">
-                <span class="section-subtitle">Galeri Lainnya</span>
-                <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Dokumentasi Galeri Serupa</h2>
+                <div class="editorial-badge">
+                    <span class="badge-dot"></span>
+                    <span>DOKUMENTASI LAINNYA</span>
+                    <span class="badge-code">ALBUM SERUPA</span>
+                </div>
+                <h2 class="section-title" style="font-size: 1.65rem; margin-bottom: 0.5rem;">Dokumentasi Pelatihan Lainnya</h2>
+                <div class="section-accent-bar" style="margin: 0 0 1rem 0;"></div>
                 <p class="section-description" style="margin: 0; max-width: 100%;">Lihat foto pelaksanaan kelas praktikum dan pelatihan mitra Cleanique Academy di kota-kota lainnya.</p>
             </div>
 
@@ -193,7 +249,7 @@ while ( have_posts() ) : the_post();
                             </div>
                             <div class="gallery-card-overlay">
                                 <div class="gallery-card-content">
-                                    <span class="gallery-card-lokasi"><?php echo $r_lokasi ? esc_html( $r_lokasi ) : 'Indonesia'; ?></span>
+                                    <span class="gallery-card-lokasi"><?php echo $r_lokasi ? esc_html( $r_lokasi ) : 'Training Center Sleman'; ?></span>
                                     <h3 class="gallery-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                     <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 14 ) ); ?></p>
                                     <div class="gallery-card-actions">
@@ -210,24 +266,30 @@ while ( have_posts() ) : the_post();
             </div>
         </div>
 
-        <!-- Call to Action Box -->
-        <div style="margin-top: 3.5rem; padding: 2.5rem; background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); text-align: center;">
-            <h3 style="margin-bottom: 0.75rem;">Tertarik Mengikuti Kegiatan Pelatihan Serupa?</h3>
-            <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">Dapatkan informasi jadwal terdekat dan penawaran pelatihan berikutnya.</p>
-            <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo, saya tertarik dengan kegiatan: ' . get_the_title() ) ); ?>" target="_blank" class="btn btn-whatsapp">
-                Tanya Jadwal via WhatsApp
+    </div>
+</section>
+
+<!-- SEKSI KONTAK KANTOR PUSAT & CALL TO ACTION (DEEP BLUE) -->
+<section id="kontak" class="section section-dark-cta">
+    <div class="container" style="max-width: 880px;">
+        <div class="contact-cta-box">
+            <span class="contact-cta-subtitle">KONSULTASI &amp; JADWAL BATCH</span>
+            <h2 class="contact-cta-title">Tertarik Mengikuti Kegiatan Praktikum Pelatihan Serupa?</h2>
+            <p class="contact-cta-desc">Dapatkan informasi jadwal terdekat kelas tatap muka Sleman Yogyakarta atau konsultasi kelas in-house training bersama instruktur profesional.</p>
+            <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya tertarik mengikuti pelatihan seperti pada dokumentasi: ' . get_the_title() ) ); ?>" target="_blank" class="btn btn-whatsapp btn-cta-large">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
+                <span>Konsultasi via WhatsApp</span>
             </a>
         </div>
-
     </div>
 </section>
 
 <!-- Lightbox Modal for Gallery Photos -->
-<div id="galleryLightbox" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); z-index: 999999; align-items: center; justify-content: center; padding: 1.5rem;">
-    <button onclick="closeGalleryLightbox()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.2); border: none; color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;">&times;</button>
-    <button onclick="prevGalleryImage()" style="position: absolute; left: 1.5rem; background: rgba(255,255,255,0.2); border: none; color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.5rem;">&lsaquo;</button>
-    <img id="lightboxImage" src="" style="max-width: 90vw; max-height: 85vh; border-radius: 12px; object-fit: contain; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
-    <button onclick="nextGalleryImage()" style="position: absolute; right: 1.5rem; background: rgba(255,255,255,0.2); border: none; color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.5rem;">&rsaquo;</button>
+<div id="galleryLightbox" style="display: none; position: fixed; inset: 0; background: rgba(7, 35, 56, 0.95); backdrop-filter: blur(8px); z-index: 999999; align-items: center; justify-content: center; padding: 1.5rem;">
+    <button onclick="closeGalleryLightbox()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;">&times;</button>
+    <button onclick="prevGalleryImage()" style="position: absolute; left: 1.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;">&lsaquo;</button>
+    <img id="lightboxImage" src="" style="max-width: 90vw; max-height: 85vh; border-radius: var(--radius-lg); object-fit: contain; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2);">
+    <button onclick="nextGalleryImage()" style="position: absolute; right: 1.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;">&rsaquo;</button>
 </div>
 
 <style>
@@ -279,6 +341,32 @@ document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowRight') nextGalleryImage();
     }
 });
+
+function cleaniqueCopyArticleLink(btn, url) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function() {
+            btn.setAttribute('data-tooltip', 'Berhasil Disalin!');
+            btn.classList.add('tooltip-active');
+            setTimeout(function() {
+                btn.setAttribute('data-tooltip', 'Salin Link');
+                btn.classList.remove('tooltip-active');
+            }, 2200);
+        });
+    } else {
+        var tempInput = document.createElement('input');
+        tempInput.value = url;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        btn.setAttribute('data-tooltip', 'Berhasil Disalin!');
+        btn.classList.add('tooltip-active');
+        setTimeout(function() {
+            btn.setAttribute('data-tooltip', 'Salin Link');
+            btn.classList.remove('tooltip-active');
+        }, 2200);
+    }
+}
 </script>
 
 <?php
