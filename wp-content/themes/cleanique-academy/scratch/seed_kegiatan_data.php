@@ -1,4 +1,8 @@
 <?php
+if (!defined('FS_METHOD')) {
+    define('FS_METHOD', 'direct');
+}
+
 require_once __DIR__ . '/../../../../wp-load.php';
 
 /**
@@ -6,14 +10,14 @@ require_once __DIR__ . '/../../../../wp-load.php';
  * Bersih tanpa foto mockup/dummy.
  */
 
-// Hapus data kegiatan yang ada terlebih dahulu agar bersih
-$existing_posts = get_posts(array(
-    'post_type'      => 'kegiatan',
-    'numberposts'    => -1,
-    'post_status'    => 'any',
-));
-foreach ($existing_posts as $ep) {
-    wp_delete_post($ep->ID, true);
+// Hapus data kegiatan yang ada terlebih dahulu via WPDB agar bersih dan tanpa error CLI/FTP
+global $wpdb;
+$kegiatan_ids = $wpdb->get_col( "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'kegiatan'" );
+if ( ! empty( $kegiatan_ids ) ) {
+    $ids_imploded = implode( ',', array_map( 'intval', $kegiatan_ids ) );
+    $wpdb->query( "DELETE FROM {$wpdb->postmeta} WHERE post_id IN ({$ids_imploded})" );
+    $wpdb->query( "DELETE FROM {$wpdb->term_relationships} WHERE object_id IN ({$ids_imploded})" );
+    $wpdb->query( "DELETE FROM {$wpdb->posts} WHERE ID IN ({$ids_imploded})" );
 }
 
 $data_kegiatan = array(
