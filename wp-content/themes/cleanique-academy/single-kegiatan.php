@@ -88,54 +88,33 @@ while ( have_posts() ) : the_post();
 <section class="section" style="padding-top: 3.5rem;">
     <div class="container" style="max-width: 980px;">
         
-        <!-- VIDEO DOKUMENTASI & TESTIMONI (ATAS) -->
-        <?php if ( ! empty( $video_url ) || ! empty( $testimoni_url ) ) : ?>
-            <div style="margin-bottom: 2.75rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
-                <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
-                    <div class="editorial-badge">
+        <!-- 1. VIDEO PELATIHANS / PRAKTIKUM (DI ATAS KONTEN) -->
+        <?php if ( ! empty( $video_url ) ) : 
+            $embed_video = cleanique_get_youtube_embed_url( $video_url );
+        ?>
+            <div style="margin-bottom: 2.75rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.75rem; box-shadow: var(--shadow-sm);">
+                <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+                    <div class="editorial-badge" style="margin-bottom: 0.5rem;">
                         <span class="badge-dot"></span>
-                        <span>DOKUMENTASI VIDEO</span>
-                        <span class="badge-code">YOUTUBE MEDIA</span>
+                        <span>VIDEO PELATIHAN &amp; PRAKTIKUM</span>
+                        <span class="badge-code">PRAKTIK LANGSUNG</span>
                     </div>
-                    <h2 class="section-title" style="font-size: 1.65rem; margin-bottom: 0.5rem;">Rekaman Praktikum &amp; Testimoni Peserta</h2>
-                    <div class="section-accent-bar" style="margin: 0 0 0.75rem 0;"></div>
-                    <p class="section-description" style="margin: 0; max-width: 100%;">Tonton langsung proses praktik pembuatan formula kimia dan tanggapan peserta selama pelatihan berlangsung.</p>
+                    <h2 class="section-title" style="font-size: 1.45rem; margin-bottom: 0.35rem;">Rekaman Praktikum Formulasi Kimia</h2>
+                    <div class="section-accent-bar" style="margin: 0 0 0.5rem 0;"></div>
+                    <p class="section-description" style="margin: 0; max-width: 100%; font-size: 0.9rem;">Tonton langsung proses praktik pembuatan formula kimia kebersihan selama pelatihan berlangsung.</p>
                 </div>
 
-                <div class="grid <?php echo ( ! empty( $video_url ) && ! empty( $testimoni_url ) ) ? 'grid-2' : 'grid-1'; ?>" style="gap: 1.5rem; align-items: start;">
-                    <?php if ( ! empty( $video_url ) ) : 
-                        $embed_video = cleanique_get_youtube_embed_url( $video_url );
-                    ?>
-                        <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
-                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                <iframe src="<?php echo esc_url( $embed_video ); ?>" title="Video Dokumentasi Praktikum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
-                            </div>
-                            <div style="padding: 0.9rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
-                                <span style="font-weight: 700; font-size: 0.95rem; color: var(--color-primary-dark);">Video Praktikum Formulasi</span>
-                                <a href="<?php echo esc_url( $video_url ); ?>" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 600; color: var(--color-primary); display: inline-flex; align-items: center; gap: 0.35rem;">
-                                    <span>Buka di YouTube</span>
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                </a>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-
-                    <?php if ( ! empty( $testimoni_url ) ) : 
-                        $embed_testi = cleanique_get_youtube_embed_url( $testimoni_url );
-                    ?>
-                        <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
-                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                <iframe src="<?php echo esc_url( $embed_testi ); ?>" title="Video Testimoni Peserta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
-                            </div>
-                            <div style="padding: 0.9rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
-                                <span style="font-weight: 700; font-size: 0.95rem; color: var(--color-primary-dark);">Video Testimoni Peserta</span>
-                                <a href="<?php echo esc_url( $testimoni_url ); ?>" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 600; color: var(--color-primary); display: inline-flex; align-items: center; gap: 0.35rem;">
-                                    <span>Buka di YouTube</span>
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                </a>
-                            </div>
-                        </div>
-                    <?php endif; ?>
+                <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000;">
+                        <iframe src="<?php echo esc_url( $embed_video ); ?>" title="Video Dokumentasi Praktikum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                    <div style="padding: 0.85rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
+                        <span style="font-weight: 700; font-size: 0.92rem; color: var(--color-primary-dark);">Video Praktikum Formulasi</span>
+                        <a href="<?php echo esc_url( $video_url ); ?>" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 600; color: var(--color-primary); display: inline-flex; align-items: center; gap: 0.35rem;">
+                            <span>Buka di YouTube</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         <?php endif; ?>
@@ -175,6 +154,37 @@ while ( have_posts() ) : the_post();
         <div class="entry-content" style="font-size: 1.05rem; line-height: 1.85; margin-bottom: 3.5rem; color: #334155;">
             <?php the_content(); ?>
         </div>
+
+        <!-- 2. VIDEO TESTIMONI PESERTA (DI BAWAH KONTEN) -->
+        <?php if ( ! empty( $testimoni_url ) ) : 
+            $embed_testi = cleanique_get_youtube_embed_url( $testimoni_url );
+        ?>
+            <div style="margin-top: 3rem; margin-bottom: 3.5rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.75rem; box-shadow: var(--shadow-sm);">
+                <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+                    <div class="editorial-badge" style="margin-bottom: 0.5rem;">
+                        <span class="badge-dot"></span>
+                        <span>TESTIMONI MITRA</span>
+                        <span class="badge-code">ULASAN PESERTA</span>
+                    </div>
+                    <h2 class="section-title" style="font-size: 1.45rem; margin-bottom: 0.35rem;">Video Kesan &amp; Pengalaman Peserta</h2>
+                    <div class="section-accent-bar" style="margin: 0 0 0.5rem 0;"></div>
+                    <p class="section-description" style="margin: 0; max-width: 100%; font-size: 0.9rem;">Tanggapan langsung dari peserta mengenai bimbingan, materi, dan pendampingan di Cleanique Academy.</p>
+                </div>
+
+                <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000;">
+                        <iframe src="<?php echo esc_url( $embed_testi ); ?>" title="Video Testimoni Peserta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                    <div style="padding: 0.85rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
+                        <span style="font-weight: 700; font-size: 0.92rem; color: var(--color-primary-dark);">Video Testimoni Peserta</span>
+                        <a href="<?php echo esc_url( $testimoni_url ); ?>" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 600; color: var(--color-primary); display: inline-flex; align-items: center; gap: 0.35rem;">
+                            <span>Buka di YouTube</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
 
         <!-- MULTI-IMAGE GALLERY GRID SECTION (ONLY IF REAL PHOTOS EXIST) -->
         <?php if ( ! empty( $gallery_urls ) ) : ?>
