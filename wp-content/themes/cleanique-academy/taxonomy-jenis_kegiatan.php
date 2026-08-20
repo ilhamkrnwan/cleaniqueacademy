@@ -67,23 +67,54 @@ $term_desc  = term_description() ? wp_strip_all_tags( term_description() ) : spr
             <?php
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
-                    $tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
-                    $lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+                    $tanggal      = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
+                    $lokasi       = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+                    $video_raw    = get_post_meta( get_the_ID(), '_cac_video_url', true );
+                    $testi_video  = get_post_meta( get_the_ID(), '_cac_testimoni_video_url', true );
+                    $video_url    = ! empty( $video_raw ) ? $video_raw : $testi_video;
+                    $embed_video  = cleanique_get_youtube_embed_url( $video_url );
+                    $img_url      = cleanique_get_kegiatan_thumbnail_url( get_the_ID() );
+                    $title_txt    = get_the_title();
+                    $permalink    = get_permalink();
+                    $excerpt_txt  = wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 20 );
                     ?>
-                    <div class="gallery-overlay-card">
-                        <div class="gallery-card-image-wrap">
-                            <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                    <div class="gallery-overlay-card"
+                         data-img-src="<?php echo esc_url( $img_url ); ?>"
+                         data-title="<?php echo esc_attr( $title_txt ); ?>"
+                         data-video-embed="<?php echo esc_url( $embed_video ); ?>"
+                         data-tanggal="<?php echo esc_attr( $tanggal ? $tanggal : 'Workshop Pelatihan' ); ?>"
+                         data-lokasi="<?php echo esc_attr( $lokasi ? $lokasi : 'Training Center Sleman' ); ?>"
+                         data-excerpt="<?php echo esc_attr( $excerpt_txt ); ?>"
+                         data-permalink="<?php echo esc_url( $permalink ); ?>"
+                         onclick="cleaniqueOpenKegiatanModal(this)"
+                         style="cursor: pointer; border-radius: 12px; overflow: hidden; position: relative;">
+                        <div class="gallery-card-image-wrap" style="position: relative;">
+                            <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $title_txt ); ?>">
                             <div class="gallery-card-badge-top">
                                 <?php echo $tanggal ? esc_html( $tanggal ) : 'Workshop Pelatihan'; ?>
                             </div>
+                            <?php if ( ! empty( $embed_video ) ) : ?>
+                                <div class="kegiatan-card-play-btn" title="Putar Video Dokumentasi">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff" style="margin-left: 2px;">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            <?php endif; ?>
                         </div>
                         <div class="gallery-card-overlay">
                             <div class="gallery-card-content">
-                                <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Training Center Sleman'; ?></span>
-                                <h3 class="gallery-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                <p class="gallery-card-desc"><?php echo esc_html( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 15 ) ); ?></p>
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                    <span class="gallery-card-lokasi"><?php echo $lokasi ? esc_html( $lokasi ) : 'Training Center Sleman'; ?></span>
+                                    <?php if ( ! empty( $embed_video ) ) : ?>
+                                        <span class="video-pill-tag">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> VIDEO
+                                        </span>
+                                    <?php endif; ?>
+                                </div>
+                                <h3 class="gallery-card-title"><a href="<?php the_permalink(); ?>" onclick="event.stopPropagation();"><?php the_title(); ?></a></h3>
+                                <p class="gallery-card-desc"><?php echo esc_html( $excerpt_txt ); ?></p>
                                 <div class="gallery-card-actions">
-                                    <a href="<?php the_permalink(); ?>" class="gallery-card-btn">Lihat Detail Event &rarr;</a>
+                                    <a href="<?php the_permalink(); ?>" onclick="event.stopPropagation();" class="gallery-card-btn">Lihat Detail Event &rarr;</a>
                                 </div>
                             </div>
                         </div>

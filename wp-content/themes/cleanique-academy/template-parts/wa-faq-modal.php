@@ -486,7 +486,7 @@
             },
             'jadwal-pelatihan': {
                 title: 'Jadwal Pelatihan',
-                answer: '<p>Pelatihan praktikum tatap muka diselenggarakan secara berkala setiap bulan pada akhir pekan (Sabtu & Minggu) mulai pukul 08.00 - 16.00 WIB.</p><p>Hubungi tim admin kami untuk mendapatkan kalender jadwal terdekat serta informasi kuota peserta yang masih tersedia.</p>',
+                answer: '<p>Pelatihan tatap muka berbayar diselenggarakan sesuai jadwal batch terkonfirmasi di Training Center Sleman, Yogyakarta setelah pendaftaran.</p><p>Hubungi tim admin kami via WhatsApp untuk konfirmasi registrasi, informasi kuota batch terdekat, serta detail pembayaran.</p>',
                 btnText: 'Cek Jadwal Terdekat',
                 waMessage: 'Halo Cleanique Academy, saya ingin tanya jadwal pelatihan terdekat yang masih tersedia.'
             },

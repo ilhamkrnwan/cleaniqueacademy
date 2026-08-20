@@ -55,7 +55,7 @@ get_header();
                 Promo Investasi Pelatihan Bulan <?php echo date_i18n('F Y'); ?>
             </h2>
             <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1; margin: 0;">
-                Training diadakan di Training Center Sleman Yogyakarta setiap akhir pekan, <strong>Sabtu - Minggu</strong>. Materi pelatihan mengacu pada standar formula industri komersial siap jual yang efisien dan telah teruji.
+                Pelatihan tatap muka berbayar diselenggarakan sesuai jadwal batch terkonfirmasi di Training Center Sleman, Yogyakarta setelah pendaftaran. Materi pelatihan mengacu pada standar formula industri komersial siap jual yang efisien dan telah teruji.
             </p>
         </div>
 

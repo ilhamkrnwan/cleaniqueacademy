@@ -164,7 +164,24 @@ function cleanique_get_post_thumbnail_url( $post_id = null, $size = 'full' ) {
     return get_template_directory_uri() . '/assets/images/article-placeholder.png';
 }
 
-// Helper to get Kegiatan / Event Gallery Thumbnail with smart fallbacks
+// Helper to get YouTube video ID
+function cleanique_get_youtube_id( $url = '' ) {
+    if ( empty( $url ) ) {
+        return '';
+    }
+    if ( preg_match( '/youtube\.com\/shorts\/([a-zA-Z0-9_-]+)/i', $url, $matches ) ) {
+        return $matches[1];
+    }
+    if ( preg_match( '/[?&]v=([a-zA-Z0-9_-]+)/i', $url, $matches ) ) {
+        return $matches[1];
+    }
+    if ( preg_match( '/youtu\.be\/([a-zA-Z0-9_-]+)/i', $url, $matches ) ) {
+        return $matches[1];
+    }
+    return '';
+}
+
+// Helper to get Kegiatan / Event Gallery Thumbnail
 function cleanique_get_kegiatan_thumbnail_url( $post_id = null, $size = 'medium_large' ) {
     $post_id = $post_id ? $post_id : get_the_ID();
     
@@ -188,18 +205,43 @@ function cleanique_get_kegiatan_thumbnail_url( $post_id = null, $size = 'medium_
         }
     }
 
-    // 3. Fallback gallery images based on post ID
-    $fallback_images = array(
-        '/assets/images/gallery-1.webp',
-        '/assets/images/gallery-2.webp',
-        '/assets/images/gallery-3.webp',
-        '/assets/images/gallery-4.webp',
-        '/assets/images/gallery-5.webp',
-        '/assets/images/gallery-6.webp',
-        '/assets/images/hero-lab.png',
-    );
+    // 3. YouTube Video Thumbnail from video meta if present
+    $video_url = get_post_meta( $post_id, '_cac_video_url', true );
+    if ( empty( $video_url ) ) {
+        $video_url = get_post_meta( $post_id, '_cac_testimoni_video_url', true );
+    }
+    if ( ! empty( $video_url ) ) {
+        $yt_id = cleanique_get_youtube_id( $video_url );
+        if ( ! empty( $yt_id ) ) {
+            return 'https://img.youtube.com/vi/' . $yt_id . '/hqdefault.jpg';
+        }
+    }
 
-    $index = abs( intval( $post_id ) ) % count( $fallback_images );
-    return get_template_directory_uri() . $fallback_images[$index];
+    // 4. Default Cleanique Academy Brand Placeholder
+    return get_template_directory_uri() . '/assets/images/hero-lab-practical.jpg';
+}
+
+// Helper to convert YouTube / Shorts / Standard URL to Embed URL
+function cleanique_get_youtube_embed_url( $url = '' ) {
+    if ( empty( $url ) ) {
+        return '';
+    }
+    // YouTube Shorts: https://youtube.com/shorts/VIDEO_ID or with params
+    if ( preg_match( '/youtube\.com\/shorts\/([a-zA-Z0-9_-]+)/i', $url, $matches ) ) {
+        return 'https://www.youtube.com/embed/' . $matches[1];
+    }
+    // YouTube Standard: https://www.youtube.com/watch?v=VIDEO_ID
+    if ( preg_match( '/[?&]v=([a-zA-Z0-9_-]+)/i', $url, $matches ) ) {
+        return 'https://www.youtube.com/embed/' . $matches[1];
+    }
+    // YouTube Shortened: https://youtu.be/VIDEO_ID
+    if ( preg_match( '/youtu\.be\/([a-zA-Z0-9_-]+)/i', $url, $matches ) ) {
+        return 'https://www.youtube.com/embed/' . $matches[1];
+    }
+    // Already an embed URL
+    if ( strpos( $url, 'youtube.com/embed/' ) !== false ) {
+        return $url;
+    }
+    return $url;
 }
 

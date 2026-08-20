@@ -12,8 +12,10 @@ while ( have_posts() ) : the_post();
     $peserta      = get_post_meta( get_the_ID(), '_cac_jumlah_peserta', true );
     $materi       = get_post_meta( get_the_ID(), '_cac_materi_singkat', true );
     $gallery_raw  = get_post_meta( get_the_ID(), '_cac_gallery_urls', true );
+    $video_url    = get_post_meta( get_the_ID(), '_cac_video_url', true );
+    $testimoni_url = get_post_meta( get_the_ID(), '_cac_testimoni_video_url', true );
 
-    // Parse gallery URLs from meta or provide rich fallback gallery images
+    // Parse gallery URLs from meta (no mockups, only real photos if provided)
     $gallery_urls = array();
     if ( ! empty( $gallery_raw ) ) {
         $lines = explode( "\n", str_replace( "\r", "", $gallery_raw ) );
@@ -23,20 +25,6 @@ while ( have_posts() ) : the_post();
                 $gallery_urls[] = $trimmed;
             }
         }
-    }
-
-    // Fallback default gallery images if custom meta is not set yet
-    if ( empty( $gallery_urls ) ) {
-        $theme_dir = get_template_directory_uri();
-        $gallery_urls = array(
-            $theme_dir . '/assets/images/gallery-1.webp',
-            $theme_dir . '/assets/images/gallery-2.webp',
-            $theme_dir . '/assets/images/gallery-3.webp',
-            $theme_dir . '/assets/images/gallery-4.webp',
-            $theme_dir . '/assets/images/gallery-5.webp',
-            $theme_dir . '/assets/images/gallery-6.webp',
-            $theme_dir . '/assets/images/hero-lab-practical.jpg',
-        );
     }
 ?>
 
@@ -73,15 +61,17 @@ while ( have_posts() ) : the_post();
             <?php if ( $peserta ) : ?>
                 <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    <span><?php echo esc_html( $peserta ); ?> Peserta</span>
+                    <span><?php echo esc_html( ( stripos( $peserta, 'peserta' ) !== false ) ? $peserta : $peserta . ' Peserta' ); ?></span>
                 </span>
                 <span style="color: rgba(255,255,255,0.4);">&bull;</span>
             <?php endif; ?>
 
-            <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                <span><?php echo count( $gallery_urls ); ?> Foto Dokumentasi</span>
-            </span>
+            <?php if ( ! empty( $gallery_urls ) ) : ?>
+                <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span><?php echo count( $gallery_urls ); ?> Foto Dokumentasi</span>
+                </span>
+            <?php endif; ?>
         </div>
 
         <nav class="about-hero-breadcrumbs" aria-label="Breadcrumb">
@@ -98,6 +88,58 @@ while ( have_posts() ) : the_post();
 <section class="section" style="padding-top: 3.5rem;">
     <div class="container" style="max-width: 980px;">
         
+        <!-- VIDEO DOKUMENTASI & TESTIMONI (ATAS) -->
+        <?php if ( ! empty( $video_url ) || ! empty( $testimoni_url ) ) : ?>
+            <div style="margin-bottom: 2.75rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
+                <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+                    <div class="editorial-badge">
+                        <span class="badge-dot"></span>
+                        <span>DOKUMENTASI VIDEO</span>
+                        <span class="badge-code">YOUTUBE MEDIA</span>
+                    </div>
+                    <h2 class="section-title" style="font-size: 1.65rem; margin-bottom: 0.5rem;">Rekaman Praktikum &amp; Testimoni Peserta</h2>
+                    <div class="section-accent-bar" style="margin: 0 0 0.75rem 0;"></div>
+                    <p class="section-description" style="margin: 0; max-width: 100%;">Tonton langsung proses praktik pembuatan formula kimia dan tanggapan peserta selama pelatihan berlangsung.</p>
+                </div>
+
+                <div class="grid <?php echo ( ! empty( $video_url ) && ! empty( $testimoni_url ) ) ? 'grid-2' : 'grid-1'; ?>" style="gap: 1.5rem; align-items: start;">
+                    <?php if ( ! empty( $video_url ) ) : 
+                        $embed_video = cleanique_get_youtube_embed_url( $video_url );
+                    ?>
+                        <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe src="<?php echo esc_url( $embed_video ); ?>" title="Video Dokumentasi Praktikum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                            </div>
+                            <div style="padding: 0.9rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
+                                <span style="font-weight: 700; font-size: 0.95rem; color: var(--color-primary-dark);">Video Praktikum Formulasi</span>
+                                <a href="<?php echo esc_url( $video_url ); ?>" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 600; color: var(--color-primary); display: inline-flex; align-items: center; gap: 0.35rem;">
+                                    <span>Buka di YouTube</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ( ! empty( $testimoni_url ) ) : 
+                        $embed_testi = cleanique_get_youtube_embed_url( $testimoni_url );
+                    ?>
+                        <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe src="<?php echo esc_url( $embed_testi ); ?>" title="Video Testimoni Peserta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                            </div>
+                            <div style="padding: 0.9rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
+                                <span style="font-weight: 700; font-size: 0.95rem; color: var(--color-primary-dark);">Video Testimoni Peserta</span>
+                                <a href="<?php echo esc_url( $testimoni_url ); ?>" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 600; color: var(--color-primary); display: inline-flex; align-items: center; gap: 0.35rem;">
+                                    <span>Buka di YouTube</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+
         <!-- Main Featured Image -->
         <?php if ( has_post_thumbnail() ) : ?>
             <div style="margin-bottom: 2.75rem; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border);">
@@ -105,52 +147,64 @@ while ( have_posts() ) : the_post();
             </div>
         <?php endif; ?>
 
-        <!-- Brief Material Section -->
-        <?php if ( $materi ) : ?>
-            <div class="editorial-quote-box" style="margin-bottom: 2.5rem; background: var(--color-primary-light); border-color: #bae6fd;">
-                <div class="editorial-badge" style="margin-bottom: 0.75rem;">
-                    <span class="badge-dot"></span>
-                    <span>POKOK MATERI</span>
-                    <span class="badge-code">PRAKTIKUM FORMULASI</span>
+        <!-- Pokok Materi Formulasi (Pill Badges Bersih & Modern) -->
+        <?php if ( $materi ) : 
+            $materi_items = array_filter( array_map( 'trim', explode( "\n", str_replace( "\r", "", $materi ) ) ) );
+            if ( ! empty( $materi_items ) ) :
+        ?>
+            <div style="margin-bottom: 2.75rem; padding: 1.25rem 1.5rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#087fc1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    <span>Materi &amp; Formulasi Praktikum:</span>
                 </div>
-                <p class="editorial-quote-text" style="color: var(--color-primary-dark); font-size: 1.05rem; font-style: normal; font-weight: 500; line-height: 1.65;">
-                    <?php echo nl2br( esc_html( $materi ) ); ?>
-                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <?php foreach ( $materi_items as $item ) : ?>
+                        <span style="display: inline-flex; align-items: center; gap: 0.4rem; background: #ffffff; color: var(--color-primary-dark); padding: 0.4rem 0.9rem; border-radius: var(--radius-full); font-size: 0.9rem; font-weight: 600; border: 1px solid var(--color-border); box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#087fc1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><?php echo esc_html( $item ); ?></span>
+                        </span>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        <?php endif; ?>
+        <?php 
+            endif;
+        endif; 
+        ?>
 
         <!-- Post Content -->
         <div class="entry-content" style="font-size: 1.05rem; line-height: 1.85; margin-bottom: 3.5rem; color: #334155;">
             <?php the_content(); ?>
         </div>
 
-        <!-- MULTI-IMAGE GALLERY GRID SECTION -->
-        <div style="margin-top: 3.5rem; margin-bottom: 3.5rem;">
-            <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
-                <div class="editorial-badge">
-                    <span class="badge-dot"></span>
-                    <span>FOTO DOKUMENTASI</span>
-                    <span class="badge-code">ALBUM KEGIATAN</span>
-                </div>
-                <h2 class="section-title" style="font-size: 1.85rem; margin-bottom: 0.5rem;">Foto Suasana &amp; Aktivitas Peserta</h2>
-                <div class="section-accent-bar" style="margin: 0 0 1rem 0;"></div>
-                <p class="section-description" style="margin: 0; max-width: 100%;">Klik pada foto untuk memperbesar tampilan dan melihat album lengkap.</p>
-            </div>
-
-            <div class="grid grid-3" style="gap: 1.25rem;">
-                <?php foreach ( $gallery_urls as $index => $img_url ) : ?>
-                    <div class="gallery-item-card" onclick="openGalleryLightbox(<?php echo $index; ?>)" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; height: 220px; cursor: pointer; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: transform 0.25s ease, box-shadow 0.25s ease;">
-                        <img src="<?php echo esc_url( $img_url ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease;">
-                        <div class="gallery-overlay-hover" style="position: absolute; inset: 0; background: rgba(7, 35, 56, 0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease;">
-                            <span style="background: #ffffff; color: var(--color-primary-dark); padding: 0.45rem 1rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem; box-shadow: var(--shadow-md);">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                                <span>Perbesar Foto</span>
-                            </span>
-                        </div>
+        <!-- MULTI-IMAGE GALLERY GRID SECTION (ONLY IF REAL PHOTOS EXIST) -->
+        <?php if ( ! empty( $gallery_urls ) ) : ?>
+            <div style="margin-top: 3.5rem; margin-bottom: 3.5rem;">
+                <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                    <div class="editorial-badge">
+                        <span class="badge-dot"></span>
+                        <span>FOTO DOKUMENTASI</span>
+                        <span class="badge-code">ALBUM KEGIATAN</span>
                     </div>
-                <?php endforeach; ?>
+                    <h2 class="section-title" style="font-size: 1.85rem; margin-bottom: 0.5rem;">Foto Suasana &amp; Aktivitas Peserta</h2>
+                    <div class="section-accent-bar" style="margin: 0 0 1rem 0;"></div>
+                    <p class="section-description" style="margin: 0; max-width: 100%;">Klik pada foto untuk memperbesar tampilan dan melihat album lengkap.</p>
+                </div>
+
+                <div class="grid grid-3" style="gap: 1.25rem;">
+                    <?php foreach ( $gallery_urls as $index => $img_url ) : ?>
+                        <div class="gallery-item-card" onclick="openGalleryLightbox(<?php echo $index; ?>)" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; height: 220px; cursor: pointer; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: transform 0.25s ease, box-shadow 0.25s ease;">
+                            <img src="<?php echo esc_url( $img_url ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease;">
+                            <div class="gallery-overlay-hover" style="position: absolute; inset: 0; background: rgba(7, 35, 56, 0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease;">
+                                <span style="background: #ffffff; color: var(--color-primary-dark); padding: 0.45rem 1rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem; box-shadow: var(--shadow-md);">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    <span>Perbesar Foto</span>
+                                </span>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
 
         <!-- SHARE BUTTONS SOSIAL MEDIA RESMI -->
         <div class="share-section-card" style="margin-top: 3.5rem; margin-bottom: 3rem;">
@@ -284,6 +338,7 @@ while ( have_posts() ) : the_post();
     </div>
 </section>
 
+<?php if ( ! empty( $gallery_urls ) ) : ?>
 <!-- Lightbox Modal for Gallery Photos -->
 <div id="galleryLightbox" style="display: none; position: fixed; inset: 0; background: rgba(7, 35, 56, 0.95); backdrop-filter: blur(8px); z-index: 999999; align-items: center; justify-content: center; padding: 1.5rem;">
     <button onclick="closeGalleryLightbox()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;">&times;</button>
@@ -341,7 +396,10 @@ document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowRight') nextGalleryImage();
     }
 });
+</script>
+<?php endif; ?>
 
+<script>
 function cleaniqueCopyArticleLink(btn, url) {
     if (navigator.clipboard) {
         navigator.clipboard.writeText(url).then(function() {

@@ -158,6 +158,7 @@ window.addEventListener('scroll', function() {
 </script>
 
 <?php get_template_part( 'template-parts/wa-faq-modal' ); ?>
+<?php get_template_part( 'template-parts/kegiatan-modal' ); ?>
 
 <!-- Universal Image Lightbox Modal for Articles, Home, and Gallery -->
 <div id="universalImageLightbox" class="univ-lightbox-modal" style="display: none;">

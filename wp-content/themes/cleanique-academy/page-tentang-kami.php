@@ -569,7 +569,7 @@ get_header();
                     <span>Bagaimana cara mendaftar dan menentukan jadwal kelas?</span>
                 </summary>
                 <div class="accordion-body">
-                    Anda dapat menghubungi CS kami via WhatsApp. Kami akan membantu mencocokkan jadwal pelatihan akhir pekan (Sabtu - Minggu) atau mengatur jadwal kelas privat sesuai fleksibilitas waktu Anda.
+                    Anda dapat menghubungi CS kami via WhatsApp. Kami akan membantu mengonfirmasi jadwal batch pelatihan terdekat atau mengatur jadwal kelas privat berbayar sesuai kesepakatan dan fleksibilitas waktu Anda.
                 </div>
             </details>
 

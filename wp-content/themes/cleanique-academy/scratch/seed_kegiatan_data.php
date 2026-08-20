@@ -1,0 +1,250 @@
+<?php
+require_once __DIR__ . '/../../../../wp-load.php';
+
+/**
+ * Script untuk memasukkan 18 Data Kegiatan / Galeri Pelatihan Private ke WordPress
+ * Bersih tanpa foto mockup/dummy.
+ */
+
+// Hapus data kegiatan yang ada terlebih dahulu agar bersih
+$existing_posts = get_posts(array(
+    'post_type'      => 'kegiatan',
+    'numberposts'    => -1,
+    'post_status'    => 'any',
+));
+foreach ($existing_posts as $ep) {
+    wp_delete_post($ep->ID, true);
+}
+
+$data_kegiatan = array(
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Agus Yatino',
+        'tanggal'  => '31 Mei 2025',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Parfum Laundry Alkoholbase\nPelicin Setrika\nDeterjen Matic\nParfum Laundry Waterbase",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Pendahuluan & Profil Pelatihan</h2><p>Pelaksanaan program pelatihan private formulasi chemical laundry bersama Bapak Agus Yatino dirancang untuk memberikan pemahaman menyeluruh, mulai dari pengenalan struktur kimia bahan aktif hingga teknik produksi mandiri. Sesi 1-on-1 ini memberikan keleluasaan bagi peserta untuk berkonsultasi langsung mengenai kebutuhan operasional usaha laundry komersial maupun rencana distribusi produk pembersih secara mandiri.</p><h2>Praktikum Formulasi Produk</h2><p>Selama sesi praktikum di laboratorium Cleanique Academy, materi difokuskan pada empat formula inti:</p><ul><li><strong>Deterjen Matic Rendah Busa:</strong> Formulasi surfaktan biodegradable dengan daya angkat noda tinggi yang aman untuk mesin cuci bukaan depan (front load) dan bukaan atas (top load).</li><li><strong>Pelicin & Pewangi Setrika:</strong> Teknik pencampuran pelicin serat kain anti-kerut dengan aroma segar yang tidak meninggalkan bercak pada pakaian putih maupun berwarna.</li><li><strong>Parfum Laundry Alkoholbase:</strong> Metode pengikatan konsentrat bibit parfum dengan zat fiksatif khusus agar aroma tahan lama hingga berminggu-minggu dalam kemasan plastik.</li><li><strong>Parfum Laundry Waterbase:</strong> Formulasi inovatif bebas alkohol yang ramah serat kain sutra dan pakaian premium dengan teknologi mikroemulsi stabil.</li></ul><h2>Pengujian Laboratorium & Standar Kualitas</h2><p>Peserta mempraktikkan langsung pengujian derajat keasaman (pH balance) pada rentang 7.0 - 8.0 guna menjamin keamanan deterjen terhadap serat pakaian dan kulit pengguna. Uji viskositas dan stabilitas larutan juga dilakukan untuk memastikan produk tidak mengalami pengendapan atau pemisahan fase saat disimpan dalam jangka waktu panjang.</p><h2>Kalkulasi HPP & Manajemen Bisnis</h2><p>Sesi ditutup dengan bedah analisa harga pokok produksi (HPP). Peserta dibimbing menyusun formulasi dengan efisiensi biaya bahan baku maksimal tanpa menurunkan standar kualitas premium, sehingga memiliki margin keuntungan yang kompetitif di pasar lokal.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Astiwati Djamaludin SE (Alvero Go Clean)',
+        'tanggal'  => '18 Oktober 2025',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Parfum Laundry Alkoholbase\nPelicin Setrika\nDeterjen Matic\nParfum Laundry Waterbase",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Pengembangan Lini Usaha Alvero Go Clean</h2><p>Sebagai langkah strategis dalam memperluas jangkauan bisnis jasa kebersihan dan laundry, Ibu Astiwati Djamaludin SE dari Alvero Go Clean mengikuti pelatihan private intensif formulasi kimia di Cleanique Academy Yogyakarta. Pelatihan ini menitikberatkan pada standardisasi mutu produk chemical mandiri agar memiliki keunggulan kompetitif dibandingkan produk massal di pasaran.</p><h2>Fokus Modul Praktikum</h2><p>Dalam sesi praktikum laboratorium, peserta membedah komposisi kimia empat produk unggulan:</p><ul><li><strong>Deterjen Matic Konsentrat:</strong> Pemilihan surfaktan ramah lingkungan dengan daya dispersi minyak tinggi untuk efisiensi takaran cuci pada mesin komersial.</li><li><strong>Pelicin Setrika Anti-Static:</strong> Formula pelicin yang memberikan kemudahan menyetrika dengan perlindungan serat kain dari panas berlebih.</li><li><strong>Parfum Laundry Grade Ekstra Fiksatif:</strong> Teknik formulasi parfum tahan lama dengan fiksatif organik yang mengunci molekul aroma pada serat tekstil.</li><li><strong>Parfum Waterbase Bebas Bercak:</strong> Solusi pewangi non-alkohol ramah lingkungan untuk segmen pelanggan sensitif dan laundry busana eksklusif.</li></ul><h2>Quality Control & Pengujian Produk</h2><p>Setiap batch hasil racikan diuji melalui serangkaian parameter kendali mutu, mencakup uji homogenitas larutan, kestabilan aroma pada suhu ruang, serta pengukuran pH larutan yang aman bagi operator laundry.</p><h2>Strategi Efisiensi Operasional</h2><p>Melalui produksi mandiri, Alvero Go Clean berhasil memangkas biaya pengadaan chemical laundry hingga lebih dari 50 persen, sekaligus menjamin ketersediaan stok chemical berkualitas tinggi untuk seluruh cabang operasional.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Dwi Purnomo Putro',
+        'tanggal'  => '31 Agustus 2025',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Deterjen Cair Matic\nSoftener\nPelicin Setrika\nPewangi Laundry\nPewangi Waterbase\nSabun Cuci Piring",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Komprehensif Modul Formulasi Homecare & Laundry</h2><p>Pelatihan private bersama Bapak Dwi Purnomo Putro menyajikan modul terlengkap yang menggabungkan lini chemical laundry profesional dan produk pembersih rumah tangga siap edar. Pendampingan personal memungkinkan pendalaman teori surfaktan dan reaksi kimia secara presisi.</p><h2>Enam Formulasi yang Dikuasai</h2><p>Peserta mempraktikkan langsung formulasi 6 produk inti:</p><ul><li><strong>Deterjen Cair Matic:</strong> Pembersih konsentrat dengan daya angkat noda lemak dan protein tanpa merusak warna kain.</li><li><strong>Softener Pakaian Sekali Bilas:</strong> Pelembut dengan bahan aktif kationik yang mengurangi kusut dan memberikan efek antistatis pada pakaian.</li><li><strong>Pelicin Setrika Harum Segar:</strong> Formulasi pelicin serat kain yang mempermudah proses setrika dan menghemat waktu pengerjaan.</li><li><strong>Pewangi Laundry Alkoholbase:</strong> Komposisi parfum dengan daya lekat aroma maksimal pada serat kain setelah proses pengeringan mesin.</li><li><strong>Pewangi Laundry Waterbase:</strong> Alternatif pewangi bebas alkohol yang lembut dan aman untuk segala jenis bahan tekstil.</li><li><strong>Sabun Cuci Piring Ekstra Busa:</strong> Pembersih perabot dapur formula kental dengan agen degreaser alami yang lembut di tangan.</li></ul><h2>Evaluasi Teknis Laboratorium</h2><p>Setiap produk melalui uji viskositas dengan garam pengental khusus dan penstabil emulsi, uji busa, serta uji kejernihan larutan untuk menghasilkan standar visual dan performa setara produk pabrikan ternama.</p><h2>Rencana Komersialisasi Produk</h2><p>Dengan penguasaan 6 formula ini, peserta memiliki bekal fundamental untuk membangun unit usaha supplier chemical mandiri yang melayani hotel, restoran, kafe, dan jaringan laundry kiloan di daerah asalnya.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Nur Wahidi',
+        'tanggal'  => '25 September 2024',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Parfum Laundry Alkoholbase\nPelicin Setrika\nDeterjen Matic\nParfum Laundry Waterbase",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Pendampingan Formulasi Skala Wirausaha</h2><p>Bapak Nur Wahidi mengikuti sesi pelatihan private di Cleanique Academy dengan tujuan meningkatkan efisiensi operasional dan kualitas chemical pada unit usaha laundry miliknya. Melalui bimbingan langsung, peserta mempelajari seluk-beluk pemilihan bahan baku kimia murni tanpa campuran yang merugikan.</p><h2>Praktik Formulasi 4 Produk Utama</h2><p>Modul praktikum meliputi:</p><ul><li><strong>Parfum Laundry Alkoholbase:</strong> Pengetahuan mendalam tentang rasio bibit parfum, pelarut alkohol mutu tinggi, dan agen pengikat fiksatif untuk ketahanan aroma maksimal.</li><li><strong>Pelicin Setrika:</strong> Racikan bahan pelicin berbasis emulsi silikon yang licin sempurna, tidak lengket, dan tidak menimbulkan kerak pada alas setrika uap.</li><li><strong>Deterjen Matic Rendah Busa:</strong> Formulasi hemat air dan ramah lingkungan yang mengoptimalkan daya bersih pada putaran mesin cuci komersial.</li><li><strong>Parfum Laundry Waterbase:</strong> Formulasi ramah lingkungan berbasis air yang tidak menimbulkan noda minyak pada serat kain halus.</li></ul><h2>Uji Coba & Standardisasi SOP</h2><p>Pelatihan dilengkapi dengan penyusunan Standard Operating Procedure (SOP) produksi skala rumahan, teknik penyimpanan bahan kimia yang aman, serta penanganan takaran aditif agar kualitas produk selalu konsisten pada setiap batch pembuatan.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Shindy Ayuliasari (Dan Laundry)',
+        'tanggal'  => '06 April 2023',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Parfum Laundry Alkoholbase\nPelicin Setrika\nDeterjen Matic\nParfum Laundry Waterbase",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Penguatan Kualitas Layanan Dan Laundry</h2><p>Ibu Shindy Ayuliasari mewakili brand Dan Laundry mengambil sesi bimbingan private formulasi chemical guna menciptakan produk pembersih dan pewangi dengan aroma khas yang menjadi identitas brand. Memproduksi chemical secara mandiri memungkinkan Dan Laundry memberikan hasil cuci yang lebih wangi, bersih, dan higienis kepada pelanggan setianya.</p><h2>Rangkaian Praktikum Mandiri</h2><p>Materi praktikum dirancang sistematis mencakup:</p><ul><li><strong>Formulasi Parfum Khas Laundry:</strong> Teknik peracikan bibit aroma eksklusif dengan stabilizer aroma agar keharuman bertahan lama di lemari pakaian pelanggan.</li><li><strong>Pelicin Setrika Cepat Rapi:</strong> Formula pelicin yang mempercepat waktu penyetrikaan pakaian hingga 30 persen dan melindungi kain dari noda gosong.</li><li><strong>Deterjen Matic Busa Terkontrol:</strong> Komposisi surfaktan dengan enzim pembersih noda darah, minyak, dan keringat yang aman untuk pakaian bayi sekalipun.</li><li><strong>Parfum Waterbase Anti-Bercak:</strong> Solusi pewangi pakaian berbahan dasar air yang aman disemprotkan langsung sebelum proses packing.</li></ul><h2>Hasil & Pencapaian</h2><p>Melalui sesi private ini, Dan Laundry berhasil menyusun formula chemical orisinal yang menghemat pengeluaran belanja bahan pembersih bulanan hingga 60 persen dan meningkatkan kepuasan pelanggan secara signifikan.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Yohanes Agun Susilo Indrajaya',
+        'tanggal'  => '29 Mei 2024',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Parfum Laundry Alkoholbase\nPelicin Setrika\nDeterjen Matic\nParfum Laundry Waterbase",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Pendalaman Formulasi Skala Industri</h2><p>Bapak Yohanes Agun Susilo Indrajaya mengikuti sesi pelatihan private intensif di Cleanique Academy untuk memperdalam pemahaman teknologi surfaktan dan formulasi fiksatif aroma. Diskusi teknis diarahkan pada penciptaan produk yang tidak hanya efektif membersihkan, tetapi juga ramah terhadap mesin cuci dan lingkungan sekitar.</p><h2>Detail Praktik Laboratorium</h2><p>Materi inti yang dipelajari dan diracik meliputi:</p><ul><li><strong>Deterjen Matic Konsentrat:</strong> Formulasi deterjen bebas fosfat dengan kemampuan dispersi kotoran tinggi sehingga air cucian tidak meninggalkan residu abu-abu pada pakaian.</li><li><strong>Pelicin Setrika Formula Halus:</strong> Racikan anti-kusut yang memberikan kelembutan alami pada serat katun, poliester, dan linen.</li><li><strong>Parfum Alkoholbase Berfiksatif Tinggi:</strong> Penerapan zat fiksatif organik untuk memperlambat penguapan minyak wangi pada suhu tropis.</li><li><strong>Parfum Waterbase Lembut di Kulit:</strong> Pewangi ramah lingkungan dengan emulgator food grade yang aman dari risiko iritasi kulit.</li></ul><h2>Uji Mutu & Efisiensi Bahan</h2><p>Peserta mempraktikkan langsung pengukuran densitas larutan dan uji daya bersih pada berbagai jenis sampel kain bernoda. Dengan pemahaman ini, peserta siap memproduksi chemical laundry berkualitas tinggi secara mandiri.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Muhammad Agus Ismahin',
+        'tanggal'  => '13 Desember 2025',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Parfum Laundry Alkoholbase",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Fokus Khusus Formulasi Parfum Laundry Profesional</h2><p>Bapak Muhammad Agus Ismahin mengambil program pelatihan private dengan spesialisasi mendalam pada formulasi Parfum Laundry Alkoholbase. Mengingat aroma wangi merupakan faktor penentu kepuasan pelanggan laundry, pendalaman formula fiksasi aroma menjadi prioritas utama dalam sesi ini.</p><h2>Materi & Eksperimen Fiksasi Aroma</h2><p>Dalam sesi praktikum, materi dibedah secara komprehensif:</p><ul><li><strong>Karakteristik & Piramida Aroma:</strong> Memahami Top Notes, Middle Notes, dan Base Notes dari berbagai konsentrat bibit parfum laundry populer.</li><li><strong>Pemilihan Pelarut Mutu Tinggi:</strong> Menggunakan pelarut berderajat kemurnian tinggi yang tidak meninggalkan aroma menyengat yang mengaburkan wangi asli bibit parfum.</li><li><strong>Teknik Fiksasi Khusus:</strong> Penerapan zat fiksatif dengan rasio persentase presisi untuk mengunci aroma wangi agar tahan lama di serat pakaian hingga lebih dari 30 hari.</li><li><strong>Pencegahan Noda Minyak:</strong> Metode pencampuran sempurna agar larutan parfum tidak meninggalkan noda minyak atau kekuningan pada pakaian putih.</li></ul><h2>Hasil Akhir & Uji Ketahanan</h2><p>Hasil racikan parfum langsung diuji pada serat pakaian dengan simulasi pengeringan mesin dan penyimpanan tertutup. Peserta berhasil meracik formula parfum grade premium siap pakai dengan biaya produksi yang sangat ekonomis.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Kevin Yuarto Susilo',
+        'tanggal'  => '22 Desember 2025',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Parfum Laundry Alkoholbase\nPelicin Setrika\nDeterjen Matic\nParfum Laundry Waterbase",
+        'video'    => 'https://youtube.com/shorts/I0cHQQjjplc',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Praktikum Intensif Formulasi Kimia Kebersihan</h2><p>Pelatihan private formulasi chemical laundry bersama Kevin Yuarto Susilo berlangsung dinamis di Workshop Cleanique Academy Yogyakarta. Seluruh rangkaian proses penimbangan bahan, pencampuran, hingga pengemasan terekam dalam dokumentasi video praktikum.</p><h2>Rincian Modul yang Dipraktikkan</h2><p>Empat formula utama yang berhasil dikuasai peserta mencakup:</p><ul><li><strong>Deterjen Matic Efisiensi Tinggi:</strong> Komposisi surfaktan dengan agen anti-redeposisi agar kotoran yang terangkat tidak menempel kembali saat proses pencucian.</li><li><strong>Pelicin Setrika Harum:</strong> Formulasi pelicin serat kain yang mempermudah proses setrika, membuat pakaian rapi lebih cepat, dan harum tahan lama.</li><li><strong>Parfum Laundry Alkoholbase Grade A:</strong> Racikan parfum dengan fiksatif pengikat molekul wangi yang kuat pada serat kain.</li><li><strong>Parfum Waterbase Non-Alkohol:</strong> Formula pewangi alternatif berbasis air yang higienis, anti-bakteri, dan aman untuk pakaian anak-anak.</li></ul><h2>Dokumentasi Video & Praktik Langsung</h2><p>Simak rekaman video pelaksanaan praktikum pada tautan video publikasi di atas. Peserta mempraktikkan langsung uji viskositas, pengukuran pH, serta kalkulasi modal produksi per liter produk.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Putu Hendrawan, S.Pd.H',
+        'tanggal'  => '24 November 2025',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Detergen Cair\nSoftener Pakaian\nAntinoda Pakaian\nParfum Laundry\nSabun Cuci Piring\nHandwash",
+        'video'    => 'https://youtube.com/shorts/uvOTwZyTD9o',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Bimbingan Private Formulasi Multi-Produk</h2><p>Bapak Putu Hendrawan, S.Pd.H mengikuti sesi pelatihan intensif private di Cleanique Academy dengan target menguasai paket lengkap chemical laundry dan personal care pembersih. Dengan bimbingan instruktur ahli, peserta secara mandiri meracik formula dari bahan baku mentah menjadi produk bernilai jual tinggi.</p><h2>Enam Formula Utama yang Dipraktikkan</h2><p>Daftar formula yang diselesaikan meliputi:</p><ul><li><strong>Detergen Cair Konsentrat:</strong> Formula pembersih pakaian dengan daya angkat noda berat dan busa seimbang.</li><li><strong>Softener Pakaian Lembut:</strong> Formula pelembut serat kain dengan agen pelindung warna dan kemudahan saat disetrika.</li><li><strong>Chemical Antinoda Pakaian Khusus:</strong> Solusi pembersih noda membandel seperti noda karat, darah, minyak, dan getah tanpa merusak serat kain.</li><li><strong>Parfum Laundry Ekstra Fiksatif:</strong> Formula wangi mewah dengan daya tahan lama di dalam lemari atau packing plastik.</li><li><strong>Sabun Cuci Piring Ekstra Busa:</strong> Pembersih piring kental berdaya cuci tinggi dengan aroma jeruk nipis segar yang ampuh menghilangkan bau amis.</li><li><strong>Handwash Sabun Cuci Tangan:</strong> Formula sabun cuci tangan berbusa lembut dengan pelembap kulit dan antiseptik aktif.</li></ul><h2>Uji Karakteristik & Video Kegiatan</h2><p>Keseruan dan ketelitian selama praktikum terekam dalam video dokumentasi di atas. Seluruh produk yang dihasilkan telah melalui uji stabilitas larutan, uji pH balance kulit, dan uji efektivitas pembersihan.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Butet Marthalena',
+        'tanggal'  => '10 - 11 Desember 2025',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Deterjen Cair Matic\nSoftener Pakaian\nParfum Waterbase\nChemical Dryclean\nPelicin Setrika\nParfum Alkoholbase",
+        'video'    => 'https://youtube.com/shorts/gYkgvehpTcg',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Pelatihan 2 Hari Formulasi Chemical Laundry & Dry Clean</h2><p>Pelatihan private yang berlangsung selama dua hari penuh bersama Ibu Butet Marthalena dirancang khusus untuk mendalami teknik pencucian profesional dan chemical dry clean. Sesi komprehensif ini memberikan wawasan mendalam mengenai perlakuan kimiawi yang tepat untuk berbagai jenis kain sensitif seperti wol, sutra, dan kebaya.</p><h2>Materi Formulasi Praktikum</h2><p>Enam modul produk yang berhasil diformulasikan peserta:</p><ul><li><strong>Deterjen Cair Matic Industri:</strong> Pembersih konsentrat tinggi dengan formula proteksi warna dan pencegah korosi pada drum mesin cuci.</li><li><strong>Softener Pakaian Ekstra Lembut:</strong> Pelembut kain dengan daya serap air yang tetap baik dan perlindungan serat kain dari keausan.</li><li><strong>Chemical Dryclean Khusus:</strong> Larutan solvent ramah serat kain premium untuk membersihkan pakaian jas dan gaun tanpa merusak bentuk asli tekstil.</li><li><strong>Pelicin Setrika Formula Cepat Rapi:</strong> Formula pelicin serat yang tidak meninggalkan kerak putih pada kain berwarna gelap.</li><li><strong>Parfum Alkoholbase & Waterbase:</strong> Variasi formulasi parfum berbasis alkohol maupun air dengan fiksatif impor untuk ketahanan wangi maksimal.</li></ul><h2>Dokumentasi & Video Pelaksanaan</h2><p>Melalui panduan intensif instruktur, peserta dapat melihat langsung reaksi kimia dan teknik pencampuran yang benar melalui rekaman video praktikum yang tersedia.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Widiyanti',
+        'tanggal'  => '30 Maret - 01 April 2026',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Sabun Cuci Piring\nDeterjen Cair\nKarbol\nSabun Mandi\nPengusir Tikus\nParfum Interior",
+        'video'    => 'https://youtube.com/shorts/WtAANbDMMF4',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Program 3 Hari Formulasi Homecare & Produk Inovatif</h2><p>Ibu Widiyanti menyelesaikan program private intensive selama 3 hari di Cleanique Academy dengan menguasai portofolio produk kebersihan rumah tangga dan produk inovasi fungsional. Pendekatan praktik berbasis laboratorium memberikan keterampilan teknis yang matang bagi peserta.</p><h2>Ragam Formulasi yang Dikuasai</h2><p>Materi praktikum mencakup 6 produk multifungsi:</p><ul><li><strong>Sabun Cuci Piring Kental:</strong> Formula busa melimpah dengan agen degreaser alami penghancur lemak membandel pada perabot dapur.</li><li><strong>Deterjen Cair Komersial:</strong> Formulasi pembersih pakaian dengan daya dispersi kotoran tinggi dan pH netral.</li><li><strong>Karbol Wangi Desinfektan:</strong> Formula pembersih lantai berbasis minyak pinus alami dengan daya bunuh kuman dan penghilang bau tak sedap.</li><li><strong>Sabun Mandi Cair Lembut:</strong> Sabun badan berbusa creamy dengan kandungan pelembap kulit alami yang aman untuk penggunaan sehari-hari.</li><li><strong>Cairan Formula Pengusir Tikus:</strong> Formulasi inovatif berbasis ekstrak aroma aromatik alami yang aman bagi manusia namun efektif mengusir hama tikus.</li><li><strong>Parfum Interior & Ruangan:</strong> Pewangi ruangan dengan diffuser base yang menyebarkan aroma segar secara merata dan tahan lama.</li></ul><h2>Dokumentasi Video & Hasil Produk</h2><p>Keseruan dan ketelitian selama proses pembuatan terekam pada video Shorts di atas. Seluruh produk berhasil diracik dan dikemas rapi dengan standar komersial.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - M Amar Fariswan',
+        'tanggal'  => '15 April 2026',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Deterjen Cair\nParfum Laundry Alcohol Base\nSoftener\nSabun Pencuci Piring",
+        'video'    => 'https://youtube.com/shorts/6uz-Ds1LdcM',
+        'testimoni'=> 'https://youtube.com/shorts/0-J-G1u0vUg',
+        'gallery'  => '',
+        'content'  => '<h2>Pendampingan Praktik & Testimoni Mitra</h2><p>Bapak M Amar Fariswan mengikuti pelatihan private intensif di Cleanique Academy dengan fokus pada empat produk pilar kebutuhan industri kebersihan dan laundry. Pelatihan ini disertai dokumentasi lengkap video proses praktikum serta video testimoni langsung kepuasan peserta atas kejelasan materi yang disampaikan instruktur.</p><h2>Empat Pilar Formulasi Utama</h2><p>Materi praktikum meliputi:</p><ul><li><strong>Deterjen Cair Matic:</strong> Teknik pencampuran surfaktan anionik dan non-ionik untuk menghasilkan deterjen kental, stabil, dan berdaya cuci tinggi.</li><li><strong>Parfum Laundry Alcohol Base:</strong> Formulasi wangi eksklusif dengan zat pengikat fiksatif untuk ketahanan aroma maksimal pada serat pakaian.</li><li><strong>Softener Pakaian Sekali Bilas:</strong> Formulasi pelembut kain dengan aroma segar yang mempermudah proses setrika dan menghemat air bilasan.</li><li><strong>Sabun Pencuci Piring Busa Kental:</strong> Pembersih perabot dapur dengan daya angkat minyak tinggi dan pH yang lembut di kulit tangan.</li></ul><h2>Video Praktikum & Testimoni</h2><p>Kunjungi tautan video publikasi di atas untuk menyaksikan secara langsung proses meracik formula di laboratorium serta testimoni jujur dari Bapak M Amar Fariswan mengenai kualitas bimbingan di Cleanique Academy.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Andreas Sitorus',
+        'tanggal'  => 'Juni 2026',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Deterjen Laundry\nPelicin Setrika\nParfum Laundry\nShampo Mobil\nSemir Ban\nPembersih Kaca Mobil",
+        'video'    => 'https://youtube.com/shorts/E3hSCVE2J-w',
+        'testimoni'=> 'https://youtube.com/shorts/r0xV7kEMg2w',
+        'gallery'  => '',
+        'content'  => '<h2>Ekspansi Formulasi Lini Laundry & Auto Care Otomotif</h2><p>Bapak Andreas Sitorus mengambil program private formulasi dengan kombinasi unik antara lini chemical laundry dan produk perawatan otomotif (auto care). Pelatihan ini membuka peluang pasar ganda yang sangat prospektif di sektor jasa pencucian pakaian dan usaha cuci mobil/motor.</p><h2>Daftar Formulasi yang Dikuasai</h2><p>Peserta sukses meracik 6 formula unggulan:</p><ul><li><strong>Deterjen Laundry Komersial:</strong> Formula pembersih pakaian dengan daya angkat noda berat dan busa rendah untuk mesin cuci.</li><li><strong>Pelicin Setrika Formula Halus:</strong> Pelicin serat kain anti-kusut yang memberikan aroma wangi segar saat disetrika.</li><li><strong>Parfum Laundry Ekstra Fiksatif:</strong> Pewangi pakaian dengan daya lekat aroma tahan lama pada serat tekstil.</li><li><strong>Shampo Mobil Busa Salju (Snow Wash):</strong> Formula shampo mobil ber-pH balance dengan teknologi busa tebal yang mengangkat kotoran jalanan tanpa mengikis lapisan cat kendaraan.</li><li><strong>Semir Ban Silikon Kilap Basah (Wet Look):</strong> Racikan pengkilap ban dengan kandungan emulsi silikon murni yang melindungi karet ban dari keretakan dan memberikan kilap hitam pekat tahan lama.</li><li><strong>Pembersih Kaca Mobil Anti-Jamur:</strong> Formula cairan pembersih kaca yang jernih, bebas minyak, dan mencegah pembentukan jamur kaca.</li></ul><h2>Publikasi Video Praktikum & Testimoni</h2><p>Seluruh tahapan praktikum dan tanggapan langsung Bapak Andreas Sitorus dapat disaksikan pada tautan video YouTube Shorts di atas.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Tri Wisnu Wardana',
+        'tanggal'  => 'Juni 2026',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Deterjen Matic\nPelicin Setrika\nParfum Laundry\nSoftener",
+        'video'    => 'https://youtube.com/shorts/dMuit11KLPk',
+        'testimoni'=> 'https://youtube.com/shorts/Kfpkyy17otE',
+        'gallery'  => '',
+        'content'  => '<h2>Pendampingan Intensif Mandiri Bersama Tri Wisnu Wardana</h2><p>Bapak Tri Wisnu Wardana mengikuti sesi pelatihan private di Cleanique Academy dengan fokus pada 4 produk utama operasional laundry. Sesi ini dirancang untuk memastikan peserta benar-benar memahami peran masing-masing bahan kimia, fungsi surfaktan, stabilitas emulsi, hingga teknik pengemasan produk yang aman.</p><h2>Empat Formula Utama</h2><p>Modul praktikum yang diselesaikan meliputi:</p><ul><li><strong>Deterjen Matic Berkualitas Tinggi:</strong> Formulasi ramah mesin cuci dengan daya angkat noda optimal dan perlindungan warna pakaian.</li><li><strong>Pelicin Setrika Harum:</strong> Formula anti-kusut yang memudahkan proses setrika sekaligus memberikan keharuman segar pada pakaian.</li><li><strong>Parfum Laundry Tahan Lama:</strong> Peracikan bibit wangi dengan zat fiksatif organik agar aroma tidak cepat menguap.</li><li><strong>Softener Pelembut Kain:</strong> Formula pelembut serat kain dengan agen anti-bakteri pencegah bau apek saat proses penjemuran.</li></ul><h2>Akses Video & Ulasan Peserta</h2><p>Tonton video dokumentasi praktikum dan video testimoni Bapak Tri Wisnu Wardana melalui tautan yang terlampir untuk melihat suasana pelatihan yang aplikatif dan mudah dipahami.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Dodi Junian Saputra, S.E',
+        'tanggal'  => 'Agustus 2026',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Sabun Cuci Piring\nPembersih Lantai",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Fokus Formulasi Pembersih Rumah Tangga</h2><p>Bapak Dodi Junian Saputra, S.E mengikuti pelatihan private di Cleanique Academy dengan spesialisasi pada produk homecare cepat laku di pasaran: Sabun Cuci Piring dan Pembersih Lantai. Pendampingan difokuskan pada penciptaan produk dengan biaya produksi rendah namun memiliki daya bersih dan kekentalan setara merek terkemuka.</p><h2>Praktik Formulasi 2 Produk Unggulan</h2><p>Rincian modul praktikum meliputi:</p><ul><li><strong>Sabun Cuci Piring Formula Kental:</strong> Teknik pelarutan surfaktan konsentrat tinggi dengan garam pengental khusus, agen pembusa melimpah, dan pewangi ekstrak jeruk nipis segar yang ampuh memotong minyak dan lemak membandel.</li><li><strong>Pembersih Lantai Harum Berkilau:</strong> Formulasi pembersih lantai dengan bahan aktif pembunuh kuman, kilap alami tanpa rasa lengket di telapak kaki, dan aroma segar aromaterapi.</li></ul><h2>Kalkulasi Usaha & Standar Mutu</h2><p>Peserta mempelajari kalkulasi harga pokok produksi (HPP) per liter serta teknik pengemasan botol dan jerigen untuk distribusi ke warung, restoran, dan konsumen rumah tangga.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Yustisia Puspita, S.Si',
+        'tanggal'  => 'Agustus 2026',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Deterjen Cair\nKarbol",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Diskusi Ilmiah & Formulasi Kimia Kebersihan</h2><p>Ibu Yustisia Puspita, S.Si mengikuti pelatihan private di Cleanique Academy untuk memvalidasi dan mempraktikkan formulasi kimia pembersih berbasis standar industri. Latar belakang sains peserta memperkaya diskusi teknis mengenai mekanisme kerja surfaktan dan emulsi minyak atsiri.</p><h2>Modul Praktikum Laboratorium</h2><p>Materi inti yang dipraktikkan meliputi:</p><ul><li><strong>Deterjen Cair Konsentrat:</strong> Formulasi deterjen ramah lingkungan dengan kombinasi surfaktan anionik dan amfoterik untuk stabilitas busa dan daya angkat kotoran tanah maupun protein.</li><li><strong>Karbol Wangi Desinfektan:</strong> Formulasi emulsi karbol berbahan dasar minyak pinus alami (pine oil) dengan daya sanitasi tinggi, ampuh mengusir bau tak sedap di kamar mandi dan lantai rumah sakit/klinik.</li></ul><h2>Hasil Uji Stabilitas Larutan</h2><p>Kedua produk yang diformulasikan melalui uji stabilitas suhu dan kejernihan untuk menjamin daya simpan produk tetap prima hingga lebih dari 2 tahun.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Irwan',
+        'tanggal'  => 'Agustus 2026',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Sabun Cuci Piring",
+        'video'    => '',
+        'testimoni'=> '',
+        'gallery'  => '',
+        'content'  => '<h2>Fokus Khusus Produksi Sabun Cuci Piring Komersial</h2><p>Bapak Irwan mengikuti sesi bimbingan private di Cleanique Academy dengan fokus tunggal yang tajam: menguasai formulasi sabun cuci piring grade komersial yang siap diproduksi secara massal untuk menyuplai warung makan, catering, dan kebutuhan rumah tangga.</p><h2>Praktik Formulasi Mendalam</h2><p>Dalam sesi praktikum laboratorium, peserta membedah:</p><ul><li><strong>Kombinasi Surfaktan Primer & Sekunder:</strong> Menciptakan busa melimpah dan stabil yang tetap efektif mengangkat minyak nabati maupun hewani dalam air bersuhu dingin.</li><li><strong>Pengentalan & Kejernihan Formula:</strong> Teknik pelarutan garam pengatur viskositas yang tepat agar sabun kental sempurna, tidak keruh, dan tidak menggumpal.</li><li><strong>Penambahan Agen Pelembut Kulit:</strong> Menjaga pH larutan pada angka 6.5 - 7.5 sehingga tidak membuat kulit tangan kering atau perih saat mencuci piring dalam jumlah banyak.</li><li><strong>Aroma & Pewarnaan:</strong> Teknik penambahan pigmen warna hijau segar dan ekstrak aroma jeruk nipis yang tahan lama.</li></ul><h2>Efisiensi HPP & Peluang Usaha</h2><p>Dengan bimbingan langsung, Bapak Irwan berhasil menyusun formula sabun cuci piring berbiaya produksi rendah yang siap bersaing dengan produk pabrikan ternama.</p>',
+    ),
+    array(
+        'title'    => 'Pelatihan Private Formulasi - Feny Helena P Tarigan',
+        'tanggal'  => 'Agustus 2026',
+        'lokasi'   => 'Sleman, D.I. Yogyakarta',
+        'peserta'  => '1 Peserta',
+        'materi'   => "Deterjen Matic\nPelicin Setrika\nParfum Laundry\nSoftener",
+        'video'    => 'https://youtube.com/shorts/s5pj5HnlSvs',
+        'testimoni'=> 'https://youtube.com/shorts/YVxkeZBBMHo',
+        'gallery'  => '',
+        'content'  => '<h2>Pelatihan Private Bersama Feny Helena P Tarigan</h2><p>Ibu Feny Helena P Tarigan mengikuti sesi pelatihan intensif di Cleanique Academy dengan target menguasai 4 formula fundamental chemical laundry. Pendampingan langkah demi langkah memastikan pemahaman menyeluruh terhadap takaran zat aditif dan kontrol kualitas produk jadi.</p><h2>Empat Formulasi Utama</h2><p>Modul yang berhasil dipraktikkan meliputi:</p><ul><li><strong>Deterjen Matic Busa Terkontrol:</strong> Formulasi deterjen konsentrat yang ramah lingkungan dengan enzim aktif pembersih noda pakaian.</li><li><strong>Pelicin Setrika Anti-Kusut:</strong> Larutan pelicin yang membuat proses setrika lebih licin dan pakaian rapi lebih lama.</li><li><strong>Parfum Laundry Ekstra Fiksatif:</strong> Peracikan bibit wangi dengan formula fiksatif pengikat aroma yang tahan lama di serat pakaian.</li><li><strong>Softener Pakaian Sekali Bilas:</strong> Pelembut kain dengan formula anti-statis dan perlindungan kelembutan serat pakaian.</li></ul><h2>Dokumentasi Video & Testimoni Lengkap</h2><p>Saksikan proses pembuatan produk serta ulasan pengalaman belajar Ibu Feny Helena P Tarigan melalui tautan video YouTube Shorts praktikum dan testimoni yang tertera di atas.</p>',
+    ),
+);
+
+echo "Memulai input data galeri baru tanpa mockup (" . count($data_kegiatan) . " item)...\n\n";
+
+$inserted = 0;
+foreach ($data_kegiatan as $item) {
+    $post_id = wp_insert_post(array(
+        'post_title'   => $item['title'],
+        'post_content' => $item['content'],
+        'post_status'  => 'publish',
+        'post_type'    => 'kegiatan',
+    ));
+
+    if (!is_wp_error($post_id) && $post_id > 0) {
+        update_post_meta($post_id, '_cac_tanggal_kegiatan', $item['tanggal']);
+        update_post_meta($post_id, '_cac_lokasi_detail', $item['lokasi']);
+        update_post_meta($post_id, '_cac_jumlah_peserta', $item['peserta']);
+        update_post_meta($post_id, '_cac_materi_singkat', $item['materi']);
+        update_post_meta($post_id, '_cac_gallery_urls', $item['gallery']);
+        if (!empty($item['video'])) {
+            update_post_meta($post_id, '_cac_video_url', $item['video']);
+        }
+        if (!empty($item['testimoni'])) {
+            update_post_meta($post_id, '_cac_testimoni_video_url', $item['testimoni']);
+        }
+        $inserted++;
+        echo "[CREATED] ID: {$post_id} | {$item['title']}\n";
+    } else {
+        echo "[FAILED] {$item['title']}\n";
+    }
+}
+
+echo "\nSelesai! Total {$inserted} item kegiatan baru berhasil dimasukkan ke database (tanpa mockup).\n";
