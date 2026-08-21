@@ -53,30 +53,5 @@ function cac_register_taxonomies() {
             'show_in_rest'      => true,
         )
     );
-
-    // 3. Kategori Program
-    register_taxonomy(
-        'kategori_program',
-        'program',
-        array(
-            'labels'            => array(
-                'name'              => 'Kategori Program',
-                'singular_name'     => 'Kategori Program',
-                'search_items'      => 'Cari Kategori Program',
-                'all_items'         => 'Semua Kategori Program',
-                'edit_item'         => 'Edit Kategori Program',
-                'update_item'       => 'Perbarui Kategori Program',
-                'add_new_item'      => 'Tambah Kategori Program Baru',
-                'new_item_name'     => 'Nama Kategori Program Baru',
-                'menu_name'         => 'Kategori Program',
-            ),
-            'hierarchical'      => true,
-            'show_ui'           => true,
-            'show_admin_column' => true,
-            'query_var'         => true,
-            'rewrite'           => array( 'slug' => 'kategori-program' ),
-            'show_in_rest'      => true,
-        )
-    );
 }
 add_action( 'init', 'cac_register_taxonomies' );
