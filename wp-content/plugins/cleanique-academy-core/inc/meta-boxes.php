@@ -3,11 +3,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// Enqueue WordPress Media Scripts in Admin for Kegiatan CPT
+// Enqueue WordPress Media Scripts in Admin for Kegiatan & Post
 function cac_admin_enqueue_scripts( $hook ) {
     global $post;
     if ( in_array( $hook, array( 'post.php', 'post-new.php' ), true ) ) {
-        if ( isset( $post ) && 'kegiatan' === $post->post_type ) {
+        if ( isset( $post ) && in_array( $post->post_type, array( 'kegiatan', 'post' ), true ) ) {
             wp_enqueue_media();
         }
     }
@@ -16,6 +16,7 @@ add_action( 'admin_enqueue_scripts', 'cac_admin_enqueue_scripts' );
 
 // Register Meta Boxes
 function cac_add_custom_meta_boxes() {
+    // 1. Kegiatan Meta Box
     add_meta_box(
         'cac_kegiatan_details',
         'Detail & Media Kegiatan',
@@ -25,6 +26,17 @@ function cac_add_custom_meta_boxes() {
         'high'
     );
 
+    // 2. Post / Artikel Gallery Meta Box
+    add_meta_box(
+        'cac_post_gallery_details',
+        'Galeri & Dokumentasi Foto Artikel',
+        'cac_post_gallery_meta_box_html',
+        'post',
+        'normal',
+        'high'
+    );
+
+    // 3. Testimoni Meta Box
     add_meta_box(
         'cac_testimoni_details',
         'Detail Peserta Testimoni',
@@ -90,39 +102,46 @@ function cac_kegiatan_meta_box_html( $post ) {
         <hr style="margin: 18px 0; border: 0; border-top: 1px solid #e2e8f0;">
 
         <!-- BULK IMAGE GALLERY UPLOADER -->
-        <div>
-            <label><strong>Galeri Foto Dokumentasi Kegiatan (Upload Bulk / File):</strong></label>
-            <p style="margin: 6px 0 12px 0; color: #475569; font-size: 13px;">
-                Unggah banyak foto langsung dari komputer atau pilih foto yang sudah ada di Media Library WordPress.
-            </p>
+        <?php cac_render_gallery_uploader_ui( $gallery_urls, 'Galeri Foto Dokumentasi Kegiatan (Upload Bulk / File):', 'Unggah banyak foto langsung dari komputer atau pilih foto yang sudah ada di Media Library WordPress.' ); ?>
+    </div>
+    <?php
+}
 
-            <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                <button type="button" class="button button-primary button-large" id="cac_btn_upload_gallery" style="display: inline-flex; align-items: center; gap: 6px;">
-                    <span class="dashicons dashicons-format-gallery" style="line-height: 1.3;"></span>
-                    <span>Unggah / Pilih Foto Galeri (Bisa Banyak Sekaligus)</span>
-                </button>
-                <button type="button" class="button button-secondary" id="cac_btn_clear_gallery" style="color: #b91c1c;">
-                    Hapus Semua Foto
-                </button>
-                <span id="cac_gallery_count_badge" style="font-weight: 600; font-size: 12px; color: #0284c7; background: #e0f2fe; padding: 4px 10px; border-radius: 12px;">
-                    0 foto terpilih
-                </span>
-            </div>
+// 2. Reusable Gallery Uploader UI Component
+function cac_render_gallery_uploader_ui( $gallery_urls = '', $label = 'Galeri Foto Dokumentasi (Upload Bulk / File):', $desc = 'Unggah banyak foto langsung dari komputer atau pilih foto yang sudah ada di Media Library WordPress.' ) {
+    ?>
+    <div>
+        <label><strong><?php echo esc_html( $label ); ?></strong></label>
+        <p style="margin: 6px 0 12px 0; color: #475569; font-size: 13px;">
+            <?php echo esc_html( $desc ); ?>
+        </p>
 
-            <!-- Preview Container -->
-            <div id="cac_gallery_preview_grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; padding: 14px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; min-height: 100px;">
-                <!-- Dynamically populated by JS -->
-            </div>
-
-            <!-- Fallback / Raw Textarea Sync -->
-            <details style="margin-top: 12px; font-size: 12px;">
-                <summary style="cursor: pointer; color: #64748b; font-weight: 600;">Lihat / Edit URL Gambar Manual (Teks)</summary>
-                <div style="margin-top: 8px;">
-                    <textarea id="cac_gallery_urls" name="cac_gallery_urls" class="widefat" rows="4" placeholder="https://domain.com/foto1.jpg&#10;https://domain.com/foto2.jpg"><?php echo esc_textarea( $gallery_urls ); ?></textarea>
-                    <span class="description" style="color: #64748b;">Daftar URL foto dokumentasi (1 baris per URL). Terhubung otomatis dengan visual uploader di atas.</span>
-                </div>
-            </details>
+        <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <button type="button" class="button button-primary button-large" id="cac_btn_upload_gallery" style="display: inline-flex; align-items: center; gap: 6px;">
+                <span class="dashicons dashicons-format-gallery" style="line-height: 1.3;"></span>
+                <span>Unggah / Pilih Foto Galeri (Bisa Banyak Sekaligus)</span>
+            </button>
+            <button type="button" class="button button-secondary" id="cac_btn_clear_gallery" style="color: #b91c1c;">
+                Hapus Semua Foto
+            </button>
+            <span id="cac_gallery_count_badge" style="font-weight: 600; font-size: 12px; color: #0284c7; background: #e0f2fe; padding: 4px 10px; border-radius: 12px;">
+                0 foto terpilih
+            </span>
         </div>
+
+        <!-- Preview Container -->
+        <div id="cac_gallery_preview_grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; padding: 14px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; min-height: 100px;">
+            <!-- Dynamically populated by JS -->
+        </div>
+
+        <!-- Fallback / Raw Textarea Sync -->
+        <details style="margin-top: 12px; font-size: 12px;">
+            <summary style="cursor: pointer; color: #64748b; font-weight: 600;">Lihat / Edit URL Gambar Manual (Teks)</summary>
+            <div style="margin-top: 8px;">
+                <textarea id="cac_gallery_urls" name="cac_gallery_urls" class="widefat" rows="4" placeholder="https://domain.com/foto1.jpg&#10;https://domain.com/foto2.jpg"><?php echo esc_textarea( $gallery_urls ); ?></textarea>
+                <span class="description" style="color: #64748b;">Daftar URL foto (1 baris per URL). Terhubung otomatis dengan visual uploader di atas.</span>
+            </div>
+        </details>
     </div>
 
     <!-- JavaScript Media Uploader Logic -->
@@ -215,7 +234,7 @@ function cac_kegiatan_meta_box_html( $post ) {
             }
 
             if (urls.length === 0) {
-                previewGrid.innerHTML = '<div class="cac-gal-empty"><span class="dashicons dashicons-format-gallery" style="font-size: 32px; width: 32px; height: 32px; opacity: 0.5; margin-bottom: 6px; display: inline-block;"></span><br>Belum ada foto galeri kegiatan.<br>Klik tombol <strong>"Unggah / Pilih Foto Galeri"</strong> di atas untuk menambah foto.</div>';
+                previewGrid.innerHTML = '<div class="cac-gal-empty"><span class="dashicons dashicons-format-gallery" style="font-size: 32px; width: 32px; height: 32px; opacity: 0.5; margin-bottom: 6px; display: inline-block;"></span><br>Belum ada foto galeri.<br>Klik tombol <strong>"Unggah / Pilih Foto Galeri"</strong> di atas untuk menambah foto.</div>';
                 return;
             }
 
@@ -267,7 +286,7 @@ function cac_kegiatan_meta_box_html( $post ) {
                 }
 
                 mediaFrame = wp.media({
-                    title: 'Pilih atau Unggah Foto Galeri Kegiatan',
+                    title: 'Pilih atau Unggah Foto Galeri',
                     button: {
                         text: 'Tambahkan ke Galeri'
                     },
@@ -303,7 +322,7 @@ function cac_kegiatan_meta_box_html( $post ) {
         if (clearBtn) {
             clearBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                if (confirm('Yakin ingin menghapus semua foto dari galeri kegiatan ini?')) {
+                if (confirm('Yakin ingin menghapus semua foto dari galeri ini?')) {
                     setImages([]);
                 }
             });
@@ -313,7 +332,22 @@ function cac_kegiatan_meta_box_html( $post ) {
     <?php
 }
 
-// 2. Testimoni Meta Box HTML
+// 3. Post / Artikel Gallery Meta Box HTML
+function cac_post_gallery_meta_box_html( $post ) {
+    wp_nonce_field( 'cac_save_post_gallery_meta', 'cac_post_gallery_nonce' );
+    $gallery_urls = get_post_meta( $post->ID, '_cac_gallery_urls', true );
+    ?>
+    <div class="cac-metabox-wrapper" style="padding: 5px 0;">
+        <?php cac_render_gallery_uploader_ui( 
+            $gallery_urls, 
+            'Galeri Foto Dokumentasi & Edukasi Artikel (Upload Bulk):', 
+            'Unggah foto praktikum, bahan kimia, sampel formula, atau dokumentasi visual edukasi untuk artikel ini. Foto akan otomatis muncul dalam grid galeri responsif dengan efek Lightbox Zoom di halaman artikel.' 
+        ); ?>
+    </div>
+    <?php
+}
+
+// 4. Testimoni Meta Box HTML
 function cac_testimoni_meta_box_html( $post ) {
     wp_nonce_field( 'cac_save_testimoni_meta', 'cac_testimoni_nonce' );
     $profesi = get_post_meta( $post->ID, '_cac_profesi', true );
@@ -365,6 +399,13 @@ function cac_save_meta_boxes( $post_id ) {
         if ( isset( $_POST['cac_testimoni_video_url'] ) ) {
             update_post_meta( $post_id, '_cac_testimoni_video_url', esc_url_raw( trim( $_POST['cac_testimoni_video_url'] ) ) );
         }
+        if ( isset( $_POST['cac_gallery_urls'] ) ) {
+            update_post_meta( $post_id, '_cac_gallery_urls', sanitize_textarea_field( $_POST['cac_gallery_urls'] ) );
+        }
+    }
+
+    // Post / Artikel Gallery
+    if ( isset( $_POST['cac_post_gallery_nonce'] ) && wp_verify_nonce( $_POST['cac_post_gallery_nonce'], 'cac_save_post_gallery_meta' ) ) {
         if ( isset( $_POST['cac_gallery_urls'] ) ) {
             update_post_meta( $post_id, '_cac_gallery_urls', sanitize_textarea_field( $_POST['cac_gallery_urls'] ) );
         }

@@ -18,6 +18,20 @@ while ( have_posts() ) : the_post();
     $cat_name        = ! empty( $categories ) ? $categories[0]->name : 'Artikel & Edukasi';
     $featured_img    = cleanique_get_post_thumbnail_url( get_the_ID(), 'full' );
     
+    // Parse Gallery URLs for Article
+    $gallery_raw     = get_post_meta( get_the_ID(), '_cac_gallery_urls', true );
+    $gallery_urls    = array();
+    if ( ! empty( $gallery_raw ) ) {
+        $lines = explode( "\n", str_replace( "\r", "", $gallery_raw ) );
+        foreach ( $lines as $line ) {
+            $trimmed = trim( $line );
+            if ( ! empty( $trimmed ) ) {
+                $gallery_urls[] = $trimmed;
+            }
+        }
+    }
+    $total_photos    = count( $gallery_urls );
+
     // Get Admin-Configured Promo Banner Settings from Customizer
     $promo_image_url = get_theme_mod( 'cleanique_promo_banner_image', get_template_directory_uri() . '/assets/images/promo-banner.jpeg' );
     $promo_text      = get_theme_mod( 'cleanique_promo_text', 'Dapatkan Promo Pelatihan Terbatas berlaku bagi yang melakukan registrasi bulan ini, terbatas hanya untuk 10 pendaftar pertama.' );
@@ -42,7 +56,7 @@ while ( have_posts() ) : the_post();
         </h1>
 
         <!-- Metadata Strip -->
-        <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1.5rem; color: #bae6fd; font-weight: 600; font-size: 0.92rem;">
+        <div class="article-meta-strip" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1.5rem; color: #bae6fd; font-weight: 600; font-size: 0.92rem;">
             <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 <span>Oleh <?php echo esc_html( $author_name ); ?></span>
@@ -92,6 +106,60 @@ while ( have_posts() ) : the_post();
                     <div class="article-body">
                         <?php echo $main_content; ?>
                     </div>
+
+                    <!-- 2.5 Galeri Foto Pembahasan & Dokumentasi Edukasi -->
+                    <?php if ( $total_photos > 0 ) : ?>
+                        <div class="article-gallery-section" style="margin-top: 3.5rem; margin-bottom: 3.5rem; border-top: 1px solid var(--color-border); padding-top: 2.5rem;">
+                            <div style="margin-bottom: 1.5rem;">
+                                <div class="hero-editorial-pill" style="margin-bottom: 0.65rem; display: inline-flex;">
+                                    <span class="pill-pulse-dot"></span>
+                                    <span style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;">DOKUMENTASI &amp; PRAKTIKUM VISUAL</span>
+                                </div>
+                                <h2 style="font-size: 1.65rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 0.35rem;">Galeri Foto Pembahasan</h2>
+                                <p style="color: var(--color-text-muted); font-size: 0.95rem; margin: 0;">Klik pada foto untuk memperbesar tampilan.</p>
+                            </div>
+
+                            <?php if ( $total_photos === 1 ) : ?>
+                                <div class="gallery-spotlight-card" onclick="openGalleryLightbox(0)">
+                                    <img src="<?php echo esc_url( $gallery_urls[0] ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>">
+                                    <div class="gallery-overlay-hover">
+                                        <span class="gallery-badge-zoom">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                            <span>Perbesar Foto</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            <?php elseif ( $total_photos === 2 ) : ?>
+                                <div class="gallery-grid-2">
+                                    <?php foreach ( $gallery_urls as $index => $img_url ) : ?>
+                                        <div class="gallery-item-card" onclick="openGalleryLightbox(<?php echo $index; ?>)">
+                                            <img src="<?php echo esc_url( $img_url ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>">
+                                            <div class="gallery-overlay-hover">
+                                                <span class="gallery-badge-zoom">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                    <span>Perbesar</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php else : ?>
+                                <div class="gallery-grid-auto">
+                                    <?php foreach ( $gallery_urls as $index => $img_url ) : ?>
+                                        <div class="gallery-item-card" onclick="openGalleryLightbox(<?php echo $index; ?>)">
+                                            <img src="<?php echo esc_url( $img_url ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>">
+                                            <div class="gallery-overlay-hover">
+                                                <span class="gallery-badge-zoom">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                    <span>Perbesar</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
 
                     <!-- 3. Fully Admin-Editable Promo Section (Image + Text + Pill Button) -->
                     <?php if ( $promo_image_url ) : ?>
@@ -346,6 +414,54 @@ function cleaniqueCopyArticleLink(btn, url) {
     }
 }
 </script>
+
+<?php if ( $total_photos > 0 ) : ?>
+<!-- Lightbox Modal for Article Gallery Photos -->
+<div id="galleryLightbox" style="display: none; position: fixed; inset: 0; background: rgba(7, 35, 56, 0.95); backdrop-filter: blur(8px); z-index: 999999; align-items: center; justify-content: center; padding: 1.5rem;">
+    <button onclick="closeGalleryLightbox()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;" aria-label="Tutup">&times;</button>
+    <button onclick="prevGalleryImage()" style="position: absolute; left: 1.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;" aria-label="Foto Sebelumnya">&lsaquo;</button>
+    <img id="lightboxImage" src="" alt="Perbesar Gambar Galeri" style="max-width: 90vw; max-height: 85vh; border-radius: var(--radius-lg); object-fit: contain; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2);">
+    <button onclick="nextGalleryImage()" style="position: absolute; right: 1.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;" aria-label="Foto Selanjutnya">&rsaquo;</button>
+</div>
+
+<script>
+var galleryImages = <?php echo json_encode( array_values( $gallery_urls ) ); ?>;
+var currentImageIndex = 0;
+
+function openGalleryLightbox(index) {
+    if (galleryImages[index]) {
+        currentImageIndex = index;
+        document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+        document.getElementById('galleryLightbox').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeGalleryLightbox() {
+    document.getElementById('galleryLightbox').style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+function prevGalleryImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+}
+
+function nextGalleryImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+}
+
+document.addEventListener('keydown', function(e) {
+    var lightbox = document.getElementById('galleryLightbox');
+    if (lightbox && lightbox.style.display === 'flex') {
+        if (e.key === 'Escape') closeGalleryLightbox();
+        if (e.key === 'ArrowLeft') prevGalleryImage();
+        if (e.key === 'ArrowRight') nextGalleryImage();
+    }
+});
+</script>
+<?php endif; ?>
 
 <?php
 endwhile;

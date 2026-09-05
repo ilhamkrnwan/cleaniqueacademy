@@ -2,20 +2,20 @@
 /**
  * Single Kegiatan Template (Detail Galeri & Dokumentasi Event)
  *
- * Follows DESAIN.md: Modern Professional Academy x Luxury Editorial Corporate
+ * Clean Modern Editorial Layout without Nested Heavy Cards
  */
 get_header();
 
 while ( have_posts() ) : the_post();
-    $tanggal      = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
-    $lokasi       = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
-    $peserta      = get_post_meta( get_the_ID(), '_cac_jumlah_peserta', true );
-    $materi       = get_post_meta( get_the_ID(), '_cac_materi_singkat', true );
-    $gallery_raw  = get_post_meta( get_the_ID(), '_cac_gallery_urls', true );
-    $video_url    = get_post_meta( get_the_ID(), '_cac_video_url', true );
+    $tanggal       = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
+    $lokasi        = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
+    $peserta       = get_post_meta( get_the_ID(), '_cac_jumlah_peserta', true );
+    $materi        = get_post_meta( get_the_ID(), '_cac_materi_singkat', true );
+    $gallery_raw   = get_post_meta( get_the_ID(), '_cac_gallery_urls', true );
+    $video_url     = get_post_meta( get_the_ID(), '_cac_video_url', true );
     $testimoni_url = get_post_meta( get_the_ID(), '_cac_testimoni_video_url', true );
 
-    // Parse gallery URLs from meta (no mockups, only real photos if provided)
+    // Parse gallery URLs from meta
     $gallery_urls = array();
     if ( ! empty( $gallery_raw ) ) {
         $lines = explode( "\n", str_replace( "\r", "", $gallery_raw ) );
@@ -26,206 +26,183 @@ while ( have_posts() ) : the_post();
             }
         }
     }
+    $total_photos = count( $gallery_urls );
 ?>
 
-<!-- 1. BESPOKE LUXURY EDITORIAL HERO SECTION -->
-<section class="about-hero-section" style="background-image: linear-gradient(145deg, rgba(7, 35, 56, 0.94) 0%, rgba(11, 93, 143, 0.90) 60%, rgba(8, 127, 193, 0.86) 100%), url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-lab-practical.jpg' ); ?>');">
-    <div class="container about-hero-container">
+<!-- 1. HERO SECTION -->
+<section class="kegiatan-hero-section" style="background-image: linear-gradient(145deg, rgba(7, 35, 56, 0.94) 0%, rgba(11, 93, 143, 0.90) 60%, rgba(8, 127, 193, 0.86) 100%), url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-lab-practical.jpg' ); ?>');">
+    <div class="kegiatan-hero-container">
+        <!-- Minimal Breadcrumbs at Top -->
+        <nav class="kegiatan-hero-breadcrumbs" aria-label="Breadcrumb">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Beranda</a>
+            <span class="bc-sep">/</span>
+            <a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>">Galeri Kegiatan</a>
+        </nav>
+
         <div class="hero-editorial-pill">
             <span class="pill-pulse-dot"></span>
             <span>DOKUMENTASI PELATIHAN MITRA</span>
         </div>
 
-        <h1 class="about-hero-title" style="font-size: clamp(1.85rem, 3.5vw, 2.75rem); max-width: 900px; margin: 0 auto 1.25rem auto;">
+        <h1 class="kegiatan-hero-title">
             <?php the_title(); ?>
         </h1>
 
-        <!-- Metadata Strip -->
-        <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1.5rem; color: #bae6fd; font-weight: 600; font-size: 0.92rem;">
+        <!-- Clean Inline Metadata (No bulky stacked buttons) -->
+        <div class="kegiatan-hero-meta">
             <?php if ( $lokasi ) : ?>
-                <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     <span><?php echo esc_html( $lokasi ); ?></span>
                 </span>
-                <span style="color: rgba(255,255,255,0.4);">&bull;</span>
             <?php endif; ?>
 
             <?php if ( $tanggal ) : ?>
-                <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <?php if ( $lokasi ) : ?><span class="meta-sep">&bull;</span><?php endif; ?>
+                <span class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                     <span><?php echo esc_html( $tanggal ); ?></span>
                 </span>
-                <span style="color: rgba(255,255,255,0.4);">&bull;</span>
             <?php endif; ?>
 
             <?php if ( $peserta ) : ?>
-                <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <?php if ( $lokasi || $tanggal ) : ?><span class="meta-sep">&bull;</span><?php endif; ?>
+                <span class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     <span><?php echo esc_html( ( stripos( $peserta, 'peserta' ) !== false ) ? $peserta : $peserta . ' Peserta' ); ?></span>
                 </span>
-                <span style="color: rgba(255,255,255,0.4);">&bull;</span>
             <?php endif; ?>
 
-            <?php if ( ! empty( $gallery_urls ) ) : ?>
-                <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                    <span><?php echo count( $gallery_urls ); ?> Foto Dokumentasi</span>
+            <?php if ( $total_photos > 0 ) : ?>
+                <?php if ( $lokasi || $tanggal || $peserta ) : ?><span class="meta-sep">&bull;</span><?php endif; ?>
+                <span class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span><?php echo $total_photos; ?> Foto</span>
                 </span>
             <?php endif; ?>
         </div>
-
-        <nav class="about-hero-breadcrumbs" aria-label="Breadcrumb">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Beranda</a>
-            <span class="breadcrumb-separator">&rsaquo;</span>
-            <a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>">Galeri Kegiatan</a>
-            <span class="breadcrumb-separator">&rsaquo;</span>
-            <span><?php echo esc_html( wp_trim_words( get_the_title(), 5 ) ); ?></span>
-        </nav>
     </div>
 </section>
 
-<!-- 2. DETAIL DOKUMENTASI CONTENT -->
-<section class="section" style="padding-top: 3.5rem;">
-    <div class="container" style="max-width: 980px;">
+<!-- 2. ARTICLE & MEDIA CONTENT -->
+<section class="section" style="padding-top: 3.5rem; padding-bottom: 4rem;">
+    <div class="kegiatan-detail-container">
         
-        <!-- 1. VIDEO PELATIHANS / PRAKTIKUM (DI ATAS KONTEN) -->
+        <!-- VIDEO PRAKTIKUM (DIRECT EMBED TANPA WRAPPER CARD BERLEBIHAN) -->
         <?php if ( ! empty( $video_url ) ) : 
             $embed_video = cleanique_get_youtube_embed_url( $video_url );
+            $is_shorts   = ( strpos( $video_url, '/shorts/' ) !== false );
         ?>
-            <div style="margin-bottom: 2.75rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.75rem; box-shadow: var(--shadow-sm);">
-                <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
-                    <div class="editorial-badge" style="margin-bottom: 0.5rem;">
-                        <span class="badge-dot"></span>
-                        <span>VIDEO PELATIHAN &amp; PRAKTIKUM</span>
-                        <span class="badge-code">PRAKTIK LANGSUNG</span>
-                    </div>
-                    <h2 class="section-title" style="font-size: 1.45rem; margin-bottom: 0.35rem;">Rekaman Praktikum Formulasi Kimia</h2>
-                    <div class="section-accent-bar" style="margin: 0 0 0.5rem 0;"></div>
-                    <p class="section-description" style="margin: 0; max-width: 100%; font-size: 0.9rem;">Tonton langsung proses praktik pembuatan formula kimia kebersihan selama pelatihan berlangsung.</p>
-                </div>
-
-                <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000;">
-                        <iframe src="<?php echo esc_url( $embed_video ); ?>" title="Video Dokumentasi Praktikum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
-                    </div>
-                    <div style="padding: 0.85rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
-                        <span style="font-weight: 700; font-size: 0.92rem; color: var(--color-primary-dark);">Video Praktikum Formulasi</span>
-                        <a href="<?php echo esc_url( $video_url ); ?>" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 600; color: var(--color-primary); display: inline-flex; align-items: center; gap: 0.35rem;">
-                            <span>Buka di YouTube</span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
+            <div style="<?php echo $is_shorts ? 'max-width: 420px; margin: 0 auto 3rem auto;' : 'width: 100%; margin: 0 0 3rem 0;'; ?>">
+                <div style="position: relative; padding-bottom: <?php echo $is_shorts ? '177.77%' : '56.25%'; ?>; height: 0; overflow: hidden; border-radius: var(--radius-xl); background: #000000; box-shadow: var(--shadow-md);">
+                    <iframe src="<?php echo esc_url( $embed_video ); ?>" title="Video Dokumentasi Praktikum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
                 </div>
             </div>
         <?php endif; ?>
 
-        <!-- Main Featured Image -->
+        <!-- Main Featured Image (Jika Ada Thumbnail Utama) -->
         <?php if ( has_post_thumbnail() ) : ?>
-            <div style="margin-bottom: 2.75rem; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--color-border);">
+            <div style="margin-bottom: 3rem; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md);">
                 <?php the_post_thumbnail( 'full', array( 'style' => 'width:100%; height:auto; display:block;' ) ); ?>
             </div>
         <?php endif; ?>
 
-        <!-- Pokok Materi Formulasi (Pill Badges Bersih & Modern) -->
+        <!-- Pokok Materi Formulasi (Clean Inline Tag List) -->
         <?php if ( $materi ) : 
-            $materi_items = array_filter( array_map( 'trim', explode( "\n", str_replace( "\r", "", $materi ) ) ) );
+            $materi_items = array_filter( array_map( 'trim', preg_split( '/[\n,]+/', str_replace( "\r", "", $materi ) ) ) );
             if ( ! empty( $materi_items ) ) :
         ?>
-            <div style="margin-bottom: 2.75rem; padding: 1.25rem 1.5rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
-                <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#087fc1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                    <span>Materi &amp; Formulasi Praktikum:</span>
-                </div>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                    <?php foreach ( $materi_items as $item ) : ?>
-                        <span style="display: inline-flex; align-items: center; gap: 0.4rem; background: #ffffff; color: var(--color-primary-dark); padding: 0.4rem 0.9rem; border-radius: var(--radius-full); font-size: 0.9rem; font-weight: 600; border: 1px solid var(--color-border); box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#087fc1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span><?php echo esc_html( $item ); ?></span>
-                        </span>
-                    <?php endforeach; ?>
-                </div>
+            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 0.65rem; margin-bottom: 2.75rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-border);">
+                <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.25rem;">Formulasi Praktikum:</span>
+                <?php foreach ( $materi_items as $item ) : ?>
+                    <span style="display: inline-flex; align-items: center; gap: 0.35rem; background: #f1f5f9; color: var(--color-primary-dark); padding: 0.35rem 0.85rem; border-radius: var(--radius-full); font-size: 0.88rem; font-weight: 600;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span><?php echo esc_html( $item ); ?></span>
+                    </span>
+                <?php endforeach; ?>
             </div>
         <?php 
             endif;
         endif; 
         ?>
 
-        <!-- Post Content -->
-        <div class="entry-content" style="font-size: 1.05rem; line-height: 1.85; margin-bottom: 3.5rem; color: #334155;">
+        <!-- Article Content Body -->
+        <div class="kegiatan-article-body">
             <?php the_content(); ?>
         </div>
 
-        <!-- 2. VIDEO TESTIMONI PESERTA (DI BAWAH KONTEN) -->
+        <!-- VIDEO TESTIMONI PESERTA (JIKA ADA) -->
         <?php if ( ! empty( $testimoni_url ) ) : 
             $embed_testi = cleanique_get_youtube_embed_url( $testimoni_url );
+            $is_testi_shorts = ( strpos( $testimoni_url, '/shorts/' ) !== false );
         ?>
-            <div style="margin-top: 3rem; margin-bottom: 3.5rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.75rem; box-shadow: var(--shadow-sm);">
-                <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
-                    <div class="editorial-badge" style="margin-bottom: 0.5rem;">
-                        <span class="badge-dot"></span>
-                        <span>TESTIMONI MITRA</span>
-                        <span class="badge-code">ULASAN PESERTA</span>
-                    </div>
-                    <h2 class="section-title" style="font-size: 1.45rem; margin-bottom: 0.35rem;">Video Kesan &amp; Pengalaman Peserta</h2>
-                    <div class="section-accent-bar" style="margin: 0 0 0.5rem 0;"></div>
-                    <p class="section-description" style="margin: 0; max-width: 100%; font-size: 0.9rem;">Tanggapan langsung dari peserta mengenai bimbingan, materi, dan pendampingan di Cleanique Academy.</p>
-                </div>
-
-                <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000;">
-                        <iframe src="<?php echo esc_url( $embed_testi ); ?>" title="Video Testimoni Peserta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
-                    </div>
-                    <div style="padding: 0.85rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
-                        <span style="font-weight: 700; font-size: 0.92rem; color: var(--color-primary-dark);">Video Testimoni Peserta</span>
-                        <a href="<?php echo esc_url( $testimoni_url ); ?>" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 600; color: var(--color-primary); display: inline-flex; align-items: center; gap: 0.35rem;">
-                            <span>Buka di YouTube</span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
+            <div style="margin: 3.5rem 0; <?php echo $is_testi_shorts ? 'max-width: 420px; margin-left: auto; margin-right: auto;' : ''; ?>">
+                <h3 style="font-size: 1.35rem; margin-bottom: 1rem; color: var(--color-secondary);">Video Kesan &amp; Testimoni Peserta</h3>
+                <div style="position: relative; padding-bottom: <?php echo $is_testi_shorts ? '177.77%' : '56.25%'; ?>; height: 0; overflow: hidden; border-radius: var(--radius-xl); background: #000000; box-shadow: var(--shadow-md);">
+                    <iframe src="<?php echo esc_url( $embed_testi ); ?>" title="Video Testimoni Peserta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
                 </div>
             </div>
         <?php endif; ?>
 
-        <!-- MULTI-IMAGE GALLERY GRID SECTION (ONLY IF REAL PHOTOS EXIST) -->
-        <?php if ( ! empty( $gallery_urls ) ) : ?>
-            <div style="margin-top: 3.5rem; margin-bottom: 3.5rem;">
-                <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
-                    <div class="editorial-badge">
-                        <span class="badge-dot"></span>
-                        <span>FOTO DOKUMENTASI</span>
-                        <span class="badge-code">ALBUM KEGIATAN</span>
-                    </div>
-                    <h2 class="section-title" style="font-size: 1.85rem; margin-bottom: 0.5rem;">Foto Suasana &amp; Aktivitas Peserta</h2>
-                    <div class="section-accent-bar" style="margin: 0 0 1rem 0;"></div>
-                    <p class="section-description" style="margin: 0; max-width: 100%;">Klik pada foto untuk memperbesar tampilan dan melihat album lengkap.</p>
+        <!-- FOTO DOKUMENTASI GALLERY SECTION -->
+        <?php if ( $total_photos > 0 ) : ?>
+            <div class="kegiatan-gallery-section" style="margin-top: 3.5rem; margin-bottom: 3.5rem;">
+                <div style="margin-bottom: 1.5rem;">
+                    <h2 style="font-size: 1.6rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 0.4rem;">Foto Suasana &amp; Aktivitas Peserta</h2>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; margin: 0;">Klik pada foto untuk memperbesar tampilan.</p>
                 </div>
 
-                <div class="grid grid-3" style="gap: 1.25rem;">
-                    <?php foreach ( $gallery_urls as $index => $img_url ) : ?>
-                        <div class="gallery-item-card" onclick="openGalleryLightbox(<?php echo $index; ?>)" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; height: 220px; cursor: pointer; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: transform 0.25s ease, box-shadow 0.25s ease;">
-                            <img src="<?php echo esc_url( $img_url ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease;">
-                            <div class="gallery-overlay-hover" style="position: absolute; inset: 0; background: rgba(7, 35, 56, 0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease;">
-                                <span style="background: #ffffff; color: var(--color-primary-dark); padding: 0.45rem 1rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem; box-shadow: var(--shadow-md);">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                                    <span>Perbesar Foto</span>
-                                </span>
-                            </div>
+                <?php if ( $total_photos === 1 ) : ?>
+                    <!-- Single Photo Spotlight -->
+                    <div class="gallery-spotlight-card" onclick="openGalleryLightbox(0)">
+                        <img src="<?php echo esc_url( $gallery_urls[0] ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>">
+                        <div class="gallery-overlay-hover">
+                            <span class="gallery-badge-zoom">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                <span>Perbesar Foto</span>
+                            </span>
                         </div>
-                    <?php endforeach; ?>
-                </div>
+                    </div>
+
+                <?php elseif ( $total_photos === 2 ) : ?>
+                    <!-- 2 Photos Balanced Layout -->
+                    <div class="gallery-grid-2">
+                        <?php foreach ( $gallery_urls as $index => $img_url ) : ?>
+                            <div class="gallery-item-card" onclick="openGalleryLightbox(<?php echo $index; ?>)">
+                                <img src="<?php echo esc_url( $img_url ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>">
+                                <div class="gallery-overlay-hover">
+                                    <span class="gallery-badge-zoom">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                        <span>Perbesar</span>
+                                    </span>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                <?php else : ?>
+                    <!-- 3+ Photos Responsive Grid -->
+                    <div class="gallery-grid-auto">
+                        <?php foreach ( $gallery_urls as $index => $img_url ) : ?>
+                            <div class="gallery-item-card" onclick="openGalleryLightbox(<?php echo $index; ?>)">
+                                <img src="<?php echo esc_url( $img_url ); ?>" alt="Dokumentasi <?php echo esc_attr( get_the_title() ); ?>">
+                                <div class="gallery-overlay-hover">
+                                    <span class="gallery-badge-zoom">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                        <span>Perbesar</span>
+                                    </span>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
             </div>
         <?php endif; ?>
 
-        <!-- SHARE BUTTONS SOSIAL MEDIA RESMI -->
-        <div class="share-section-card" style="margin-top: 3.5rem; margin-bottom: 3rem;">
-            <div class="share-title-group">
-                <svg class="share-header-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-                    <polyline points="16 6 12 2 8 6"></polyline>
-                    <line x1="12" y1="2" x2="12" y2="15"></line>
-                </svg>
-                <span class="share-title-text">Bagikan Dokumentasi Ini:</span>
-            </div>
+        <!-- SHARE ROW (CLEAN & FLAT) -->
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); margin: 3.5rem 0;">
+            <span style="font-weight: 700; font-size: 0.95rem; color: var(--color-secondary);">Bagikan Dokumentasi:</span>
 
             <div class="share-buttons-wrapper">
                 <!-- WhatsApp -->
@@ -255,8 +232,8 @@ while ( have_posts() ) : the_post();
             </div>
         </div>
 
-        <!-- NAVIGASI GALERI SEBELUMNYA & GALERI SELANJUTNYA -->
-        <div class="post-navigation-grid" style="margin-top: 3.5rem; margin-bottom: 3.5rem;">
+        <!-- NAVIGASI PREV & NEXT -->
+        <div class="post-navigation-grid">
             <?php
             $prev_kegiatan = get_previous_post();
             $next_kegiatan = get_next_post();
@@ -278,20 +255,14 @@ while ( have_posts() ) : the_post();
             <?php endif; ?>
         </div>
 
-        <!-- GALERI SERUPA (RELATED GALLERY POSTS) -->
-        <div class="related-kegiatan-section" style="margin-top: 3.5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
-            <div class="section-header" style="text-align: left; margin-bottom: 1.75rem;">
-                <div class="editorial-badge">
-                    <span class="badge-dot"></span>
-                    <span>DOKUMENTASI LAINNYA</span>
-                    <span class="badge-code">ALBUM SERUPA</span>
-                </div>
-                <h2 class="section-title" style="font-size: 1.65rem; margin-bottom: 0.5rem;">Dokumentasi Pelatihan Lainnya</h2>
-                <div class="section-accent-bar" style="margin: 0 0 1rem 0;"></div>
-                <p class="section-description" style="margin: 0; max-width: 100%;">Lihat foto pelaksanaan kelas praktikum dan pelatihan mitra Cleanique Academy di kota-kota lainnya.</p>
+        <!-- GALERI SERUPA -->
+        <div style="margin-top: 4rem; border-top: 1px solid var(--color-border); padding-top: 3.5rem;">
+            <div style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.6rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 0.4rem;">Dokumentasi Pelatihan Lainnya</h2>
+                <p style="color: var(--color-text-muted); font-size: 0.95rem; margin: 0;">Lihat foto pelaksanaan kelas praktikum dan pelatihan mitra di kota-kota lainnya.</p>
             </div>
 
-            <div class="grid grid-3" style="gap: 1.25rem;">
+            <div class="grid grid-3" style="gap: 1.5rem;">
                 <?php
                 $related_kegiatan = new WP_Query( array(
                     'post_type'      => 'kegiatan',
@@ -304,7 +275,7 @@ while ( have_posts() ) : the_post();
                         $r_tanggal = get_post_meta( get_the_ID(), '_cac_tanggal_kegiatan', true );
                         $r_lokasi  = get_post_meta( get_the_ID(), '_cac_lokasi_detail', true );
                         ?>
-                        <div class="gallery-overlay-card">
+                        <div class="gallery-overlay-card" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
                             <div class="gallery-card-image-wrap">
                                 <img src="<?php echo esc_url( cleanique_get_kegiatan_thumbnail_url( get_the_ID() ) ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
                                 <div class="gallery-card-badge-top">
@@ -333,9 +304,9 @@ while ( have_posts() ) : the_post();
     </div>
 </section>
 
-<!-- SEKSI KONTAK KANTOR PUSAT & CALL TO ACTION (DEEP BLUE) -->
+<!-- SEKSI CALL TO ACTION -->
 <section id="kontak" class="section section-dark-cta">
-    <div class="container" style="max-width: 880px;">
+    <div class="kegiatan-detail-container" style="text-align: center;">
         <div class="contact-cta-box">
             <span class="contact-cta-subtitle">KONSULTASI &amp; JADWAL BATCH</span>
             <h2 class="contact-cta-title">Tertarik Mengikuti Kegiatan Praktikum Pelatihan Serupa?</h2>
@@ -348,7 +319,7 @@ while ( have_posts() ) : the_post();
     </div>
 </section>
 
-<?php if ( ! empty( $gallery_urls ) ) : ?>
+<?php if ( $total_photos > 0 ) : ?>
 <!-- Lightbox Modal for Gallery Photos -->
 <div id="galleryLightbox" style="display: none; position: fixed; inset: 0; background: rgba(7, 35, 56, 0.95); backdrop-filter: blur(8px); z-index: 999999; align-items: center; justify-content: center; padding: 1.5rem;">
     <button onclick="closeGalleryLightbox()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;">&times;</button>
@@ -356,19 +327,6 @@ while ( have_posts() ) : the_post();
     <img id="lightboxImage" src="" style="max-width: 90vw; max-height: 85vh; border-radius: var(--radius-lg); object-fit: contain; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2);">
     <button onclick="nextGalleryImage()" style="position: absolute; right: 1.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;">&rsaquo;</button>
 </div>
-
-<style>
-.gallery-item-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-.gallery-item-card:hover img {
-  transform: scale(1.06);
-}
-.gallery-item-card:hover .gallery-overlay-hover {
-  opacity: 1;
-}
-</style>
 
 <script>
 var galleryImages = <?php echo json_encode( array_values( $gallery_urls ) ); ?>;

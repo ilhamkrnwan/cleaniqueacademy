@@ -14,17 +14,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( is_front_page() ) : ?>
 
-    <!-- 1. Simple Landing Page Header for Front Page (Rule 3 - Perfectly Responsive) -->
+    <!-- 1. Landing Page Header for Front Page (Rule 3 - Strictly Logo Left & WhatsApp CTA Right) -->
     <header class="site-header site-header-landing">
         <div class="container header-container">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo" title="Beranda Cleanique Academy">
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" alt="Cleanique Academy" class="logo-image">
             </a>
 
-            <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin konsultasi pendaftaran.' ) ); ?>" target="_blank" class="btn btn-whatsapp btn-sm btn-header-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
-                <span>Konsultasi WhatsApp</span>
-            </a>
+            <div class="header-landing-right">
+                <div class="header-live-badge" title="Pendaftaran Pelatihan Buka">
+                    <span class="live-dot"></span>
+                    <span class="live-text">Pendaftaran Buka</span>
+                </div>
+                <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin konsultasi pendaftaran.' ) ); ?>" target="_blank" class="btn btn-whatsapp btn-sm btn-header-wa">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
+                    <span>Konsultasi WhatsApp</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -38,26 +44,26 @@ if ( ! defined( 'ABSPATH' ) ) {
             </a>
 
             <!-- Desktop Navigation Menu -->
-            <nav class="main-navigation desktop-nav">
+            <nav class="main-navigation desktop-nav" aria-label="Navigasi Utama">
                 <ul class="nav-menu">
-                    <li><a href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>">Tentang Kami</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>">Program</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>">Galeri</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/artikel/' ) ); ?>">Artikel</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>">Kontak</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>" class="<?php echo is_page('tentang-kami') ? 'active' : ''; ?>">Tentang Kami</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>" class="<?php echo (is_page('program-pelatihan') || is_singular('program')) ? 'active' : ''; ?>">Program</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>" class="<?php echo (is_page('dokumentasi-event') || is_singular('kegiatan')) ? 'active' : ''; ?>">Galeri</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/artikel/' ) ); ?>" class="<?php echo (is_page('artikel') || is_single()) ? 'active' : ''; ?>">Artikel</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>" class="<?php echo is_page('kontak') ? 'active' : ''; ?>">Kontak</a></li>
                 </ul>
             </nav>
 
             <!-- Header Right Group (WhatsApp Button + Mobile Hamburger Toggle) -->
-            <div class="header-right-group" style="display: flex; align-items: center; gap: 0.6rem;">
+            <div class="header-right-group">
                 <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin konsultasi pendaftaran.' ) ); ?>" target="_blank" class="btn btn-whatsapp btn-sm btn-header-wa">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.228-1.157zm12.339-6.495c-.068-.113-.25-.181-.523-.317-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.272-.704.886-.863 1.067-.159.182-.318.204-.59.068-.272-.136-1.151-.424-2.193-1.353-.81-.723-1.357-1.616-1.516-1.888-.159-.272-.017-.419.119-.554.122-.122.272-.318.408-.477.136-.159.182-.272.272-.454.091-.182.045-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.447-.461-.613-.469-.159-.008-.341-.01-.523-.01s-.477.068-.727.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.923 2.936 4.659 4.116.65.281 1.158.448 1.554.573.653.207 1.247.178 1.716.108.523-.078 1.61-.658 1.838-1.295.227-.636.227-1.181.159-1.295z"/></svg>
                     <span>WhatsApp</span>
                 </a>
 
                 <!-- Mobile Hamburger Toggle Button -->
-                <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
-                    <svg class="icon-hamburger" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Buka Menu Navigasi">
+                    <svg class="icon-hamburger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -69,19 +75,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <!-- Mobile Drawer Overlay & Panel -->
     <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
-    <div class="mobile-drawer-panel" id="mobileDrawerPanel">
+    <div class="mobile-drawer-panel" id="mobileDrawerPanel" aria-label="Menu Navigasi Mobile">
         
         <!-- Drawer Header -->
         <div class="mobile-drawer-header">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" alt="Cleanique Academy" style="height: 36px; width: auto; display: block;">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" alt="Cleanique Academy" class="drawer-logo-img">
             </a>
 
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div class="drawer-action-group">
                 <a href="<?php echo esc_url( cleanique_get_whatsapp_url( 'Halo Cleanique Academy, saya ingin konsultasi pendaftaran.' ) ); ?>" target="_blank" class="btn btn-whatsapp btn-sm">
                     <span>WhatsApp</span>
                 </a>
-                <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Menu">
+                <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Tutup Menu">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -92,11 +98,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <!-- Vertical Menu Items -->
         <ul class="mobile-menu-list">
-            <li><a href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>">Tentang Kami</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>">Program</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>">Galeri</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/artikel/' ) ); ?>">Artikel</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>">Kontak</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/tentang-kami/' ) ); ?>" class="<?php echo is_page('tentang-kami') ? 'active' : ''; ?>">Tentang Kami</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/program-pelatihan/' ) ); ?>" class="<?php echo (is_page('program-pelatihan') || is_singular('program')) ? 'active' : ''; ?>">Program Pelatihan</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/dokumentasi-event/' ) ); ?>" class="<?php echo (is_page('dokumentasi-event') || is_singular('kegiatan')) ? 'active' : ''; ?>">Galeri Dokumentasi</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/artikel/' ) ); ?>" class="<?php echo (is_page('artikel') || is_single()) ? 'active' : ''; ?>">Artikel & Edukasi</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>" class="<?php echo is_page('kontak') ? 'active' : ''; ?>">Kontak Perusahaan</a></li>
         </ul>
 
         <!-- Drawer Footer Info Section -->
